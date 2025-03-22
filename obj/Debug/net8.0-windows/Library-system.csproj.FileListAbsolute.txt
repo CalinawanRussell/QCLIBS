@@ -38,3 +38,4 @@ C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\refint\Library-
 C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\Library-system.pdb
 C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\Library-system.genruntimeconfig.cache
 C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\ref\Library-system.dll
+C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\Library_system.Properties.Resources.resources

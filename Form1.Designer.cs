@@ -29,9 +29,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox3 = new PictureBox();
@@ -81,7 +81,6 @@
             panel21 = new Panel();
             label11 = new Label();
             dashboard_panel = new Panel();
-            label12 = new Label();
             user_panel = new Panel();
             users_dgv = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -90,6 +89,16 @@
             Column4 = new DataGridViewTextBoxColumn();
             button3 = new Button();
             textBox1 = new TextBox();
+            panel23 = new Panel();
+            panel24 = new Panel();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            numericUpDown1 = new NumericUpDown();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            numericUpDown2 = new NumericUpDown();
+            button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -118,6 +127,10 @@
             dashboard_panel.SuspendLayout();
             user_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)users_dgv).BeginInit();
+            panel23.SuspendLayout();
+            panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -245,6 +258,7 @@
             pictureBox4.Location = new Point(8, 8);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(32, 32);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 8;
             pictureBox4.TabStop = false;
             // 
@@ -576,7 +590,6 @@
             // 
             // dashboard_panel
             // 
-            dashboard_panel.Controls.Add(label12);
             dashboard_panel.Controls.Add(flowLayoutPanel2);
             dashboard_panel.Controls.Add(panel17);
             dashboard_panel.Controls.Add(panel20);
@@ -586,16 +599,6 @@
             dashboard_panel.Name = "dashboard_panel";
             dashboard_panel.Size = new Size(960, 731);
             dashboard_panel.TabIndex = 5;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(7, 3);
-            label12.Name = "label12";
-            label12.Size = new Size(84, 22);
-            label12.TabIndex = 1;
-            label12.Text = "Dashboard";
             // 
             // user_panel
             // 
@@ -615,25 +618,25 @@
             users_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             users_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
             users_dgv.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new Padding(5);
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             users_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             users_dgv.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            users_dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            users_dgv.DefaultCellStyle = dataGridViewCellStyle8;
             users_dgv.GridColor = Color.White;
             users_dgv.Location = new Point(7, 49);
             users_dgv.MultiSelect = false;
@@ -642,9 +645,9 @@
             users_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             users_dgv.RowHeadersVisible = false;
             users_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new Padding(10);
-            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Padding = new Padding(10);
+            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle9;
             users_dgv.ShowCellErrors = false;
             users_dgv.ShowCellToolTips = false;
             users_dgv.ShowEditingIcon = false;
@@ -695,12 +698,109 @@
             textBox1.Size = new Size(259, 30);
             textBox1.TabIndex = 0;
             // 
+            // panel23
+            // 
+            panel23.Controls.Add(panel24);
+            panel23.Location = new Point(206, 55);
+            panel23.Name = "panel23";
+            panel23.Size = new Size(961, 729);
+            panel23.TabIndex = 6;
+            // 
+            // panel24
+            // 
+            panel24.BackColor = Color.White;
+            panel24.Controls.Add(button4);
+            panel24.Controls.Add(numericUpDown2);
+            panel24.Controls.Add(textBox6);
+            panel24.Controls.Add(textBox5);
+            panel24.Controls.Add(textBox4);
+            panel24.Controls.Add(numericUpDown1);
+            panel24.Controls.Add(textBox3);
+            panel24.Controls.Add(textBox2);
+            panel24.Location = new Point(152, 95);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(648, 355);
+            panel24.TabIndex = 0;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(9, 41);
+            textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "Author";
+            textBox3.Size = new Size(212, 23);
+            textBox3.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(9, 11);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Title";
+            textBox2.Size = new Size(212, 23);
+            textBox2.TabIndex = 0;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(227, 11);
+            numericUpDown1.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(80, 23);
+            numericUpDown1.TabIndex = 2;
+            numericUpDown1.ThousandsSeparator = true;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(9, 101);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "Description";
+            textBox4.Size = new Size(631, 208);
+            textBox4.TabIndex = 3;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(227, 71);
+            textBox5.Name = "textBox5";
+            textBox5.PlaceholderText = "Genre";
+            textBox5.Size = new Size(178, 23);
+            textBox5.TabIndex = 4;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(9, 71);
+            textBox6.Name = "textBox6";
+            textBox6.PlaceholderText = "Publisher";
+            textBox6.Size = new Size(212, 23);
+            textBox6.TabIndex = 5;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Location = new Point(227, 41);
+            numericUpDown2.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(80, 23);
+            numericUpDown2.TabIndex = 6;
+            numericUpDown2.ThousandsSeparator = true;
+            numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // button4
+            // 
+            button4.Location = new Point(530, 315);
+            button4.Name = "button4";
+            button4.Size = new Size(110, 33);
+            button4.TabIndex = 7;
+            button4.Text = "Add Book";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             BackColor = Color.FromArgb(249, 249, 249);
             ClientSize = new Size(1168, 784);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel23);
             Controls.Add(user_panel);
             Controls.Add(dashboard_panel);
             FormBorderStyle = FormBorderStyle.None;
@@ -743,10 +843,14 @@
             panel21.ResumeLayout(false);
             panel21.PerformLayout();
             dashboard_panel.ResumeLayout(false);
-            dashboard_panel.PerformLayout();
             user_panel.ResumeLayout(false);
             user_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)users_dgv).EndInit();
+            panel23.ResumeLayout(false);
+            panel24.ResumeLayout(false);
+            panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ResumeLayout(false);
         }
 
@@ -801,7 +905,6 @@
         private Panel panel21;
         private Label label11;
         private Panel dashboard_panel;
-        private Label label12;
         private Panel user_panel;
         private Button button3;
         private TextBox textBox1;
@@ -810,5 +913,15 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private Panel panel23;
+        private Panel panel24;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox4;
+        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDown2;
+        private TextBox textBox6;
+        private TextBox textBox5;
+        private Button button4;
     }
 }
