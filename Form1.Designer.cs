@@ -2,6 +2,7 @@
 {
     partial class Form1
     {
+        /// HAHAH LAMAOOA
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -167,7 +168,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(225, 10);
+            textBox1.Location = new Point(224, 10);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Search";
             textBox1.Size = new Size(410, 30);

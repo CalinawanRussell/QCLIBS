@@ -48,11 +48,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gigabyte\\source\\repos\\Library-system\\Library-system.csproj",
+      "projectUniqueName": "C:\\Users\\Gigabyte\\source\\Library-System\\Library-system.csproj",
       "projectName": "Library-system",
-      "projectPath": "C:\\Users\\Gigabyte\\source\\repos\\Library-system\\Library-system.csproj",
+      "projectPath": "C:\\Users\\Gigabyte\\source\\Library-System\\Library-system.csproj",
       "packagesPath": "C:\\Users\\Gigabyte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gigabyte\\source\\repos\\Library-system\\obj\\",
+      "outputPath": "C:\\Users\\Gigabyte\\source\\Library-System\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
