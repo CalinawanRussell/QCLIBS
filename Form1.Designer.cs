@@ -29,15 +29,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
             label2 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
             panel2 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
@@ -79,6 +80,15 @@
             panel21 = new Panel();
             label11 = new Label();
             dashboard_panel = new Panel();
+            label12 = new Label();
+            user_panel = new Panel();
+            button3 = new Button();
+            textBox1 = new TextBox();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -105,6 +115,8 @@
             panel22.SuspendLayout();
             panel21.SuspendLayout();
             dashboard_panel.SuspendLayout();
+            user_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -113,9 +125,6 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(dateTimePicker2);
-            panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label2);
             panel1.Dock = DockStyle.Top;
@@ -151,31 +160,6 @@
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(850, 14);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(100, 23);
-            dateTimePicker2.TabIndex = 4;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(744, 14);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(100, 23);
-            dateTimePicker1.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(206, 11);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search";
-            textBox1.Size = new Size(476, 30);
-            textBox1.TabIndex = 2;
-            // 
             // pictureBox1
             // 
             pictureBox1.Location = new Point(16, 9);
@@ -193,6 +177,22 @@
             label2.Size = new Size(107, 24);
             label2.TabIndex = 0;
             label2.Text = "Library App";
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(852, 3);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(100, 23);
+            dateTimePicker2.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(747, 3);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(100, 23);
+            dateTimePicker1.TabIndex = 3;
             // 
             // panel2
             // 
@@ -397,7 +397,7 @@
             flowLayoutPanel2.Controls.Add(panel14);
             flowLayoutPanel2.Controls.Add(panel15);
             flowLayoutPanel2.Controls.Add(panel16);
-            flowLayoutPanel2.Location = new Point(3, 3);
+            flowLayoutPanel2.Location = new Point(3, 29);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(952, 193);
             flowLayoutPanel2.TabIndex = 2;
@@ -470,7 +470,7 @@
             // 
             panel17.Controls.Add(panel19);
             panel17.Controls.Add(panel18);
-            panel17.Location = new Point(4, 213);
+            panel17.Location = new Point(4, 226);
             panel17.Name = "panel17";
             panel17.Size = new Size(952, 225);
             panel17.TabIndex = 3;
@@ -575,13 +575,105 @@
             // 
             // dashboard_panel
             // 
+            dashboard_panel.Controls.Add(label12);
             dashboard_panel.Controls.Add(flowLayoutPanel2);
             dashboard_panel.Controls.Add(panel17);
             dashboard_panel.Controls.Add(panel20);
+            dashboard_panel.Controls.Add(dateTimePicker1);
+            dashboard_panel.Controls.Add(dateTimePicker2);
             dashboard_panel.Location = new Point(206, 53);
             dashboard_panel.Name = "dashboard_panel";
             dashboard_panel.Size = new Size(960, 731);
             dashboard_panel.TabIndex = 5;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(7, 3);
+            label12.Name = "label12";
+            label12.Size = new Size(84, 22);
+            label12.TabIndex = 1;
+            label12.Text = "Dashboard";
+            // 
+            // user_panel
+            // 
+            user_panel.Controls.Add(dataGridView1);
+            user_panel.Controls.Add(button3);
+            user_panel.Controls.Add(textBox1);
+            user_panel.Location = new Point(206, 53);
+            user_panel.Name = "user_panel";
+            user_panel.Size = new Size(960, 731);
+            user_panel.TabIndex = 5;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(858, 13);
+            button3.Name = "button3";
+            button3.Size = new Size(97, 30);
+            button3.TabIndex = 1;
+            button3.Text = "Add User";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(593, 13);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search User";
+            textBox1.Size = new Size(259, 30);
+            textBox1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.Location = new Point(7, 49);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.Size = new Size(945, 675);
+            dataGridView1.TabIndex = 2;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Student ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Full Name";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Email";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Books Borrowed";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
             // 
             // Form1
             // 
@@ -589,6 +681,7 @@
             ClientSize = new Size(1168, 784);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(user_panel);
             Controls.Add(dashboard_panel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
@@ -630,6 +723,10 @@
             panel21.ResumeLayout(false);
             panel21.PerformLayout();
             dashboard_panel.ResumeLayout(false);
+            dashboard_panel.PerformLayout();
+            user_panel.ResumeLayout(false);
+            user_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -640,7 +737,6 @@
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
         private DateTimePicker dateTimePicker1;
-        private TextBox textBox1;
         private PictureBox pictureBox1;
         private Label label2;
         private PictureBox pictureBox3;
@@ -685,5 +781,14 @@
         private Panel panel21;
         private Label label11;
         private Panel dashboard_panel;
+        private Label label12;
+        private Panel user_panel;
+        private Button button3;
+        private TextBox textBox1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
     }
 }
