@@ -11,12 +11,12 @@ namespace Library_system
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            users_dgv.Rows.Add("23-1854", "Ulgasan, Xeroj N.", "Xerojulgasan@gmail.com", "10");
+            users_dgv.Rows.Add("23-1854", "Ulgasan, Xeroj N.", "Xerojulgasan@gmail.com", "10");
+            users_dgv.Rows.Add("23-1854", "Ulgasan, Xeroj N.", "Xerojulgasan@gmail.com", "10");
+            users_dgv.Rows.Add("23-1854", "Ulgasan, Xeroj N.", "Xerojulgasan@gmail.com", "10");
+            users_dgv.Rows.Add("23-1854", "Ulgasan, Xeroj N.", "Xerojulgasan@gmail.com", "10");
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

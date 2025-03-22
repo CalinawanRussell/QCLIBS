@@ -29,8 +29,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox3 = new PictureBox();
@@ -82,13 +83,13 @@
             dashboard_panel = new Panel();
             label12 = new Label();
             user_panel = new Panel();
-            button3 = new Button();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
+            users_dgv = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            button3 = new Button();
+            textBox1 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -116,7 +117,7 @@
             panel21.SuspendLayout();
             dashboard_panel.SuspendLayout();
             user_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)users_dgv).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -598,7 +599,7 @@
             // 
             // user_panel
             // 
-            user_panel.Controls.Add(dataGridView1);
+            user_panel.Controls.Add(users_dgv);
             user_panel.Controls.Add(button3);
             user_panel.Controls.Add(textBox1);
             user_panel.Location = new Point(206, 53);
@@ -606,56 +607,57 @@
             user_panel.Size = new Size(960, 731);
             user_panel.TabIndex = 5;
             // 
-            // button3
+            // users_dgv
             // 
-            button3.Location = new Point(858, 13);
-            button3.Name = "button3";
-            button3.Size = new Size(97, 30);
-            button3.TabIndex = 1;
-            button3.Text = "Add User";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(593, 13);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search User";
-            textBox1.Size = new Size(259, 30);
-            textBox1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            users_dgv.AllowUserToAddRows = false;
+            users_dgv.AllowUserToDeleteRows = false;
+            users_dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            users_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            users_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
+            users_dgv.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            users_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            users_dgv.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            users_dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            users_dgv.GridColor = Color.White;
+            users_dgv.Location = new Point(7, 49);
+            users_dgv.MultiSelect = false;
+            users_dgv.Name = "users_dgv";
+            users_dgv.ReadOnly = true;
+            users_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            users_dgv.RowHeadersVisible = false;
+            users_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.Location = new Point(7, 49);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView1.Size = new Size(945, 675);
-            dataGridView1.TabIndex = 2;
+            dataGridViewCellStyle3.Padding = new Padding(10);
+            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            users_dgv.ShowCellErrors = false;
+            users_dgv.ShowCellToolTips = false;
+            users_dgv.ShowEditingIcon = false;
+            users_dgv.ShowRowErrors = false;
+            users_dgv.Size = new Size(945, 675);
+            users_dgv.TabIndex = 2;
             // 
             // Column1
             // 
             Column1.HeaderText = "Student ID";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.True;
             // 
             // Column2
             // 
@@ -675,6 +677,24 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
+            // button3
+            // 
+            button3.Location = new Point(858, 13);
+            button3.Name = "button3";
+            button3.Size = new Size(97, 30);
+            button3.TabIndex = 1;
+            button3.Text = "Add User";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(593, 13);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search User";
+            textBox1.Size = new Size(259, 30);
+            textBox1.TabIndex = 0;
+            // 
             // Form1
             // 
             BackColor = Color.FromArgb(249, 249, 249);
@@ -686,7 +706,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += Form1_Load_1;
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -726,7 +746,7 @@
             dashboard_panel.PerformLayout();
             user_panel.ResumeLayout(false);
             user_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)users_dgv).EndInit();
             ResumeLayout(false);
         }
 
@@ -785,7 +805,7 @@
         private Panel user_panel;
         private Button button3;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private DataGridView users_dgv;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
