@@ -78,6 +78,7 @@
             button1 = new Button();
             panel21 = new Panel();
             label11 = new Label();
+            dashboard_panel = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -103,6 +104,7 @@
             panel20.SuspendLayout();
             panel22.SuspendLayout();
             panel21.SuspendLayout();
+            dashboard_panel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -168,10 +170,10 @@
             // textBox1
             // 
             textBox1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(224, 10);
+            textBox1.Location = new Point(206, 11);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Search";
-            textBox1.Size = new Size(410, 30);
+            textBox1.Size = new Size(476, 30);
             textBox1.TabIndex = 2;
             // 
             // pictureBox1
@@ -233,9 +235,9 @@
             label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(50, 13);
             label3.Name = "label3";
-            label3.Size = new Size(52, 22);
+            label3.Size = new Size(84, 22);
             label3.TabIndex = 9;
-            label3.Text = "label3";
+            label3.Text = "Dashboard";
             // 
             // pictureBox4
             // 
@@ -261,9 +263,9 @@
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(50, 13);
             label4.Name = "label4";
-            label4.Size = new Size(52, 22);
+            label4.Size = new Size(47, 22);
             label4.TabIndex = 9;
-            label4.Text = "label4";
+            label4.Text = "Users";
             // 
             // pictureBox5
             // 
@@ -289,9 +291,9 @@
             label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(50, 13);
             label5.Name = "label5";
-            label5.Size = new Size(52, 22);
+            label5.Size = new Size(83, 22);
             label5.TabIndex = 9;
-            label5.Text = "label5";
+            label5.Text = "Add Books";
             // 
             // pictureBox6
             // 
@@ -317,9 +319,9 @@
             label6.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(50, 13);
             label6.Name = "label6";
-            label6.Size = new Size(52, 22);
+            label6.Size = new Size(129, 22);
             label6.TabIndex = 9;
-            label6.Text = "label6";
+            label6.Text = "Check-out Books";
             // 
             // pictureBox7
             // 
@@ -345,9 +347,9 @@
             label7.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(50, 13);
             label7.Name = "label7";
-            label7.Size = new Size(52, 22);
+            label7.Size = new Size(66, 22);
             label7.TabIndex = 9;
-            label7.Text = "label7";
+            label7.Text = "Settings";
             // 
             // pictureBox8
             // 
@@ -373,9 +375,9 @@
             label8.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.Location = new Point(50, 13);
             label8.Name = "label8";
-            label8.Size = new Size(52, 22);
+            label8.Size = new Size(42, 22);
             label8.TabIndex = 9;
-            label8.Text = "label8";
+            label8.Text = "Help";
             // 
             // pictureBox9
             // 
@@ -395,7 +397,7 @@
             flowLayoutPanel2.Controls.Add(panel14);
             flowLayoutPanel2.Controls.Add(panel15);
             flowLayoutPanel2.Controls.Add(panel16);
-            flowLayoutPanel2.Location = new Point(207, 61);
+            flowLayoutPanel2.Location = new Point(3, 3);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(952, 193);
             flowLayoutPanel2.TabIndex = 2;
@@ -468,7 +470,7 @@
             // 
             panel17.Controls.Add(panel19);
             panel17.Controls.Add(panel18);
-            panel17.Location = new Point(207, 260);
+            panel17.Location = new Point(4, 213);
             panel17.Name = "panel17";
             panel17.Size = new Size(952, 225);
             panel17.TabIndex = 3;
@@ -486,7 +488,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(5, 6);
+            label10.Location = new Point(6, 6);
             label10.Name = "label10";
             label10.Size = new Size(126, 22);
             label10.TabIndex = 1;
@@ -515,9 +517,9 @@
             // 
             panel20.Controls.Add(panel22);
             panel20.Controls.Add(panel21);
-            panel20.Location = new Point(207, 491);
+            panel20.Location = new Point(4, 455);
             panel20.Name = "panel20";
-            panel20.Size = new Size(952, 291);
+            panel20.Size = new Size(952, 272);
             panel20.TabIndex = 4;
             // 
             // panel22
@@ -527,7 +529,7 @@
             panel22.Controls.Add(button1);
             panel22.Location = new Point(717, 3);
             panel22.Name = "panel22";
-            panel22.Size = new Size(232, 285);
+            panel22.Size = new Size(232, 266);
             panel22.TabIndex = 1;
             // 
             // button2
@@ -558,28 +560,36 @@
             panel21.Controls.Add(label11);
             panel21.Location = new Point(3, 3);
             panel21.Name = "panel21";
-            panel21.Size = new Size(708, 285);
+            panel21.Size = new Size(708, 266);
             panel21.TabIndex = 0;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(6, 7);
+            label11.Location = new Point(6, 6);
             label11.Name = "label11";
             label11.Size = new Size(136, 22);
             label11.TabIndex = 2;
             label11.Text = "Recent Checkouts";
             // 
+            // dashboard_panel
+            // 
+            dashboard_panel.Controls.Add(flowLayoutPanel2);
+            dashboard_panel.Controls.Add(panel17);
+            dashboard_panel.Controls.Add(panel20);
+            dashboard_panel.Location = new Point(206, 53);
+            dashboard_panel.Name = "dashboard_panel";
+            dashboard_panel.Size = new Size(960, 731);
+            dashboard_panel.TabIndex = 5;
+            // 
             // Form1
             // 
             BackColor = Color.FromArgb(249, 249, 249);
             ClientSize = new Size(1168, 784);
-            Controls.Add(panel20);
-            Controls.Add(panel17);
-            Controls.Add(flowLayoutPanel2);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(dashboard_panel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -619,6 +629,7 @@
             panel22.ResumeLayout(false);
             panel21.ResumeLayout(false);
             panel21.PerformLayout();
+            dashboard_panel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -673,5 +684,6 @@
         private Button button1;
         private Panel panel21;
         private Label label11;
+        private Panel dashboard_panel;
     }
 }
