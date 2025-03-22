@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T5PY1yT00yU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gigabyte\\source\\repos\\Library-system\\Library-system.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gigabyte\\.nuget\\packages\\system.windows.forms.datavisualization\\1.0.0-prerelease.20110.1\\system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
+  ],
+  "logs": []
+}
