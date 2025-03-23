@@ -111,6 +111,7 @@
             label11 = new Label();
             dashboard_panel = new Panel();
             user_panel = new Panel();
+            pictureBox11 = new PictureBox();
             users_dgv = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -136,6 +137,7 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             borrow_record_panel = new Panel();
+            pictureBox10 = new PictureBox();
             button5 = new Button();
             status_cms = new ContextMenuStrip(components);
             borrowedToolStripMenuItem = new ToolStripMenuItem();
@@ -189,12 +191,14 @@
             ((System.ComponentModel.ISupportInitialize)recent_checkout_dgv).BeginInit();
             dashboard_panel.SuspendLayout();
             user_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).BeginInit();
             add_book_panel.SuspendLayout();
             panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             borrow_record_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             status_cms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -226,25 +230,31 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Image = Properties.Resources.user2_icon_black;
             pictureBox3.Location = new Point(994, 9);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(32, 32);
+            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = Properties.Resources.notification_black;
             pictureBox2.Location = new Point(956, 9);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(32, 32);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = Properties.Resources.Library_icon;
             pictureBox1.Location = new Point(16, 9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -323,10 +333,11 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Image = Properties.Resources.dashboard_icon_black;
             pictureBox4.Location = new Point(8, 8);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(32, 32);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox4.TabIndex = 8;
             pictureBox4.TabStop = false;
             pictureBox4.Click += dashboard_click;
@@ -355,9 +366,11 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.Image = Properties.Resources.user_icon_black;
             pictureBox5.Location = new Point(8, 8);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(32, 32);
+            pictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox5.TabIndex = 8;
             pictureBox5.TabStop = false;
             pictureBox5.Click += user_click;
@@ -386,9 +399,11 @@
             // 
             // pictureBox6
             // 
+            pictureBox6.Image = Properties.Resources.Book_icon_black;
             pictureBox6.Location = new Point(8, 8);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(32, 32);
+            pictureBox6.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox6.TabIndex = 8;
             pictureBox6.TabStop = false;
             pictureBox6.Click += add_books_click;
@@ -417,9 +432,11 @@
             // 
             // pictureBox7
             // 
+            pictureBox7.Image = Properties.Resources.book2_icon_black;
             pictureBox7.Location = new Point(8, 8);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(32, 32);
+            pictureBox7.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox7.TabIndex = 8;
             pictureBox7.TabStop = false;
             pictureBox7.Click += borrow_record_click;
@@ -446,9 +463,11 @@
             // 
             // pictureBox8
             // 
+            pictureBox8.Image = Properties.Resources.Setting_icon_black;
             pictureBox8.Location = new Point(8, 8);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(32, 32);
+            pictureBox8.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox8.TabIndex = 8;
             pictureBox8.TabStop = false;
             // 
@@ -474,9 +493,11 @@
             // 
             // pictureBox9
             // 
+            pictureBox9.Image = Properties.Resources.user_help_icon_black;
             pictureBox9.Location = new Point(8, 8);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(32, 32);
+            pictureBox9.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox9.TabIndex = 8;
             pictureBox9.TabStop = false;
             // 
@@ -911,6 +932,7 @@
             // 
             // user_panel
             // 
+            user_panel.Controls.Add(pictureBox11);
             user_panel.Controls.Add(users_dgv);
             user_panel.Controls.Add(button3);
             user_panel.Controls.Add(textBox1);
@@ -918,6 +940,16 @@
             user_panel.Name = "user_panel";
             user_panel.Size = new Size(960, 731);
             user_panel.TabIndex = 5;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Image = Properties.Resources.Search_icon_black;
+            pictureBox11.Location = new Point(828, 16);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(22, 24);
+            pictureBox11.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox11.TabIndex = 12;
+            pictureBox11.TabStop = false;
             // 
             // users_dgv
             // 
@@ -1175,6 +1207,7 @@
             // 
             // borrow_record_panel
             // 
+            borrow_record_panel.Controls.Add(pictureBox10);
             borrow_record_panel.Controls.Add(button5);
             borrow_record_panel.Controls.Add(textBox7);
             borrow_record_panel.Controls.Add(status_btn);
@@ -1185,6 +1218,16 @@
             borrow_record_panel.Name = "borrow_record_panel";
             borrow_record_panel.Size = new Size(961, 729);
             borrow_record_panel.TabIndex = 7;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = Properties.Resources.Search_icon_black;
+            pictureBox10.Location = new Point(538, 14);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(22, 24);
+            pictureBox10.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox10.TabIndex = 11;
+            pictureBox10.TabStop = false;
             // 
             // button5
             // 
@@ -1223,10 +1266,10 @@
             // textBox7
             // 
             textBox7.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(304, 13);
+            textBox7.Location = new Point(277, 13);
             textBox7.Name = "textBox7";
             textBox7.PlaceholderText = "Search ID, name, title, author, etc.";
-            textBox7.Size = new Size(259, 26);
+            textBox7.Size = new Size(284, 26);
             textBox7.TabIndex = 9;
             // 
             // status_btn
@@ -1350,10 +1393,10 @@
             ClientSize = new Size(1168, 784);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(dashboard_panel);
             Controls.Add(borrow_record_panel);
             Controls.Add(add_book_panel);
             Controls.Add(user_panel);
+            Controls.Add(dashboard_panel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1412,6 +1455,7 @@
             dashboard_panel.ResumeLayout(false);
             user_panel.ResumeLayout(false);
             user_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).EndInit();
             add_book_panel.ResumeLayout(false);
             panel24.ResumeLayout(false);
@@ -1420,6 +1464,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             borrow_record_panel.ResumeLayout(false);
             borrow_record_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             status_cms.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -1538,5 +1583,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private PictureBox pictureBox11;
+        private PictureBox pictureBox10;
     }
 }
