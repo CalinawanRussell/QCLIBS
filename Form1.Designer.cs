@@ -29,12 +29,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox3 = new PictureBox();
@@ -94,6 +95,13 @@
             textBox1 = new TextBox();
             panel23 = new Panel();
             panel24 = new Panel();
+            label18 = new Label();
+            label17 = new Label();
+            label16 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
             button4 = new Button();
             numericUpDown2 = new NumericUpDown();
             textBox6 = new TextBox();
@@ -102,14 +110,14 @@
             numericUpDown1 = new NumericUpDown();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
             panel25 = new Panel();
+            status_btn = new Button();
+            status_cms = new ContextMenuStrip(components);
+            borrowedToolStripMenuItem = new ToolStripMenuItem();
+            returnedToolStripMenuItem = new ToolStripMenuItem();
+            reserveToolStripMenuItem = new ToolStripMenuItem();
+            dateTimePicker3 = new DateTimePicker();
+            dateTimePicker4 = new DateTimePicker();
             dataGridView1 = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
@@ -118,6 +126,8 @@
             Column6 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
+            textBox7 = new TextBox();
+            button5 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -151,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             panel25.SuspendLayout();
+            status_cms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -639,25 +650,25 @@
             users_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             users_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
             users_dgv.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = SystemColors.Control;
-            dataGridViewCellStyle22.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle22.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle22.Padding = new Padding(5);
-            dataGridViewCellStyle22.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
-            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = SystemColors.Control;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle13.Padding = new Padding(5);
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             users_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             users_dgv.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = SystemColors.Window;
-            dataGridViewCellStyle23.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle23.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
-            users_dgv.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = SystemColors.Window;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            users_dgv.DefaultCellStyle = dataGridViewCellStyle14;
             users_dgv.GridColor = Color.White;
             users_dgv.Location = new Point(7, 49);
             users_dgv.MultiSelect = false;
@@ -666,9 +677,9 @@
             users_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             users_dgv.RowHeadersVisible = false;
             users_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.Padding = new Padding(10);
-            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Padding = new Padding(10);
+            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle15;
             users_dgv.ShowCellErrors = false;
             users_dgv.ShowCellToolTips = false;
             users_dgv.ShowEditingIcon = false;
@@ -750,6 +761,69 @@
             panel24.Size = new Size(648, 450);
             panel24.TabIndex = 0;
             // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(9, 166);
+            label18.Name = "label18";
+            label18.Size = new Size(67, 15);
+            label18.TabIndex = 14;
+            label18.Text = "Description";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(227, 114);
+            label17.Name = "label17";
+            label17.Size = new Size(38, 15);
+            label17.TabIndex = 13;
+            label17.Text = "Genre";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(227, 10);
+            label16.Name = "label16";
+            label16.Size = new Size(53, 15);
+            label16.TabIndex = 12;
+            label16.Text = "Quantity";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(227, 62);
+            label15.Name = "label15";
+            label15.Size = new Size(92, 15);
+            label15.TabIndex = 11;
+            label15.Text = "Publication Year";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(9, 114);
+            label14.Name = "label14";
+            label14.Size = new Size(56, 15);
+            label14.TabIndex = 10;
+            label14.Text = "Publisher";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(9, 62);
+            label13.Name = "label13";
+            label13.Size = new Size(44, 15);
+            label13.TabIndex = 9;
+            label13.Text = "Author";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(9, 10);
+            label12.Name = "label12";
+            label12.Size = new Size(29, 15);
+            label12.TabIndex = 8;
+            label12.Text = "Title";
+            // 
             // button4
             // 
             button4.Location = new Point(530, 405);
@@ -822,76 +896,69 @@
             textBox2.Size = new Size(212, 23);
             textBox2.TabIndex = 0;
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(9, 10);
-            label12.Name = "label12";
-            label12.Size = new Size(29, 15);
-            label12.TabIndex = 8;
-            label12.Text = "Title";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(9, 62);
-            label13.Name = "label13";
-            label13.Size = new Size(44, 15);
-            label13.TabIndex = 9;
-            label13.Text = "Author";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(9, 114);
-            label14.Name = "label14";
-            label14.Size = new Size(56, 15);
-            label14.TabIndex = 10;
-            label14.Text = "Publisher";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(227, 62);
-            label15.Name = "label15";
-            label15.Size = new Size(92, 15);
-            label15.TabIndex = 11;
-            label15.Text = "Publication Year";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(227, 10);
-            label16.Name = "label16";
-            label16.Size = new Size(53, 15);
-            label16.TabIndex = 12;
-            label16.Text = "Quantity";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(227, 114);
-            label17.Name = "label17";
-            label17.Size = new Size(38, 15);
-            label17.TabIndex = 13;
-            label17.Text = "Genre";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(9, 166);
-            label18.Name = "label18";
-            label18.Size = new Size(67, 15);
-            label18.TabIndex = 14;
-            label18.Text = "Description";
-            // 
             // panel25
             // 
+            panel25.Controls.Add(button5);
+            panel25.Controls.Add(textBox7);
+            panel25.Controls.Add(status_btn);
+            panel25.Controls.Add(dateTimePicker3);
+            panel25.Controls.Add(dateTimePicker4);
             panel25.Controls.Add(dataGridView1);
             panel25.Location = new Point(206, 54);
             panel25.Name = "panel25";
             panel25.Size = new Size(961, 729);
             panel25.TabIndex = 7;
+            // 
+            // status_btn
+            // 
+            status_btn.ContextMenuStrip = status_cms;
+            status_btn.Location = new Point(574, 15);
+            status_btn.Name = "status_btn";
+            status_btn.Size = new Size(92, 23);
+            status_btn.TabIndex = 8;
+            status_btn.Text = "Status";
+            status_btn.UseVisualStyleBackColor = true;
+            status_btn.Click += status_btn_Click;
+            // 
+            // status_cms
+            // 
+            status_cms.Items.AddRange(new ToolStripItem[] { borrowedToolStripMenuItem, returnedToolStripMenuItem, reserveToolStripMenuItem });
+            status_cms.Name = "contextMenuStrip1";
+            status_cms.Size = new Size(126, 70);
+            // 
+            // borrowedToolStripMenuItem
+            // 
+            borrowedToolStripMenuItem.Name = "borrowedToolStripMenuItem";
+            borrowedToolStripMenuItem.Size = new Size(125, 22);
+            borrowedToolStripMenuItem.Text = "Borrowed";
+            // 
+            // returnedToolStripMenuItem
+            // 
+            returnedToolStripMenuItem.Name = "returnedToolStripMenuItem";
+            returnedToolStripMenuItem.Size = new Size(125, 22);
+            returnedToolStripMenuItem.Text = "Returned";
+            // 
+            // reserveToolStripMenuItem
+            // 
+            reserveToolStripMenuItem.Name = "reserveToolStripMenuItem";
+            reserveToolStripMenuItem.Size = new Size(125, 22);
+            reserveToolStripMenuItem.Text = "Reserve";
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Format = DateTimePickerFormat.Short;
+            dateTimePicker3.Location = new Point(672, 15);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(100, 23);
+            dateTimePicker3.TabIndex = 5;
+            // 
+            // dateTimePicker4
+            // 
+            dateTimePicker4.Format = DateTimePickerFormat.Short;
+            dateTimePicker4.Location = new Point(777, 15);
+            dateTimePicker4.Name = "dateTimePicker4";
+            dateTimePicker4.Size = new Size(100, 23);
+            dateTimePicker4.TabIndex = 6;
             // 
             // dataGridView1
             // 
@@ -901,25 +968,25 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = Color.FromArgb(249, 249, 249);
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle25.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = SystemColors.Control;
-            dataGridViewCellStyle25.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle25.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle25.Padding = new Padding(5);
-            dataGridViewCellStyle25.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = SystemColors.Control;
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle16.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle16.Padding = new Padding(5);
+            dataGridViewCellStyle16.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column6, Column5, Column7 });
-            dataGridViewCellStyle26.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = SystemColors.Window;
-            dataGridViewCellStyle26.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle26.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = DataGridViewTriState.True;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = SystemColors.Window;
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle17.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle17;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(8, 48);
             dataGridView1.MultiSelect = false;
@@ -928,9 +995,9 @@
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.Padding = new Padding(10);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.Padding = new Padding(10);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle18;
             dataGridView1.ShowCellErrors = false;
             dataGridView1.ShowCellToolTips = false;
             dataGridView1.ShowEditingIcon = false;
@@ -980,6 +1047,25 @@
             Column7.HeaderText = "Status";
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
+            // 
+            // textBox7
+            // 
+            textBox7.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox7.Location = new Point(304, 13);
+            textBox7.Name = "textBox7";
+            textBox7.PlaceholderText = "Search ID, name, title, author, etc.";
+            textBox7.Size = new Size(259, 26);
+            textBox7.TabIndex = 9;
+            // 
+            // button5
+            // 
+            button5.ContextMenuStrip = status_cms;
+            button5.Location = new Point(883, 15);
+            button5.Name = "button5";
+            button5.Size = new Size(72, 23);
+            button5.TabIndex = 10;
+            button5.Text = "Filter";
+            button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1040,6 +1126,8 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             panel25.ResumeLayout(false);
+            panel25.PerformLayout();
+            status_cms.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -1129,5 +1217,14 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column7;
+        private DateTimePicker dateTimePicker3;
+        private DateTimePicker dateTimePicker4;
+        private Button status_btn;
+        private ContextMenuStrip status_cms;
+        private ToolStripMenuItem borrowedToolStripMenuItem;
+        private ToolStripMenuItem returnedToolStripMenuItem;
+        private ToolStripMenuItem reserveToolStripMenuItem;
+        private TextBox textBox7;
+        private Button button5;
     }
 }

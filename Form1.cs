@@ -18,5 +18,9 @@ namespace Library_system
             users_dgv.Rows.Add("23-1854", "Ulgasan, Xeroj N.", "Xerojulgasan@gmail.com", "10");
         }
 
+        private void status_btn_Click(object sender, EventArgs e)
+        {
+            status_cms.Show(status_btn, new Point(0, status_btn.Height));
+        }
     }
 }
