@@ -29,9 +29,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox3 = new PictureBox();
@@ -91,14 +94,30 @@
             textBox1 = new TextBox();
             panel23 = new Panel();
             panel24 = new Panel();
+            button4 = new Button();
+            numericUpDown2 = new NumericUpDown();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            numericUpDown1 = new NumericUpDown();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            numericUpDown2 = new NumericUpDown();
-            button4 = new Button();
+            label12 = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            panel25 = new Panel();
+            dataGridView1 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -129,8 +148,10 @@
             ((System.ComponentModel.ISupportInitialize)users_dgv).BeginInit();
             panel23.SuspendLayout();
             panel24.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -334,9 +355,9 @@
             label6.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(50, 13);
             label6.Name = "label6";
-            label6.Size = new Size(129, 22);
+            label6.Size = new Size(122, 22);
             label6.TabIndex = 9;
-            label6.Text = "Check-out Books";
+            label6.Text = "Borrow Records";
             // 
             // pictureBox7
             // 
@@ -618,25 +639,25 @@
             users_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             users_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
             users_dgv.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new Padding(5);
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = SystemColors.Control;
+            dataGridViewCellStyle22.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle22.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle22.Padding = new Padding(5);
+            dataGridViewCellStyle22.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
+            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             users_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             users_dgv.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            users_dgv.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = SystemColors.Window;
+            dataGridViewCellStyle23.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle23.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
+            users_dgv.DefaultCellStyle = dataGridViewCellStyle23;
             users_dgv.GridColor = Color.White;
             users_dgv.Location = new Point(7, 49);
             users_dgv.MultiSelect = false;
@@ -645,9 +666,9 @@
             users_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             users_dgv.RowHeadersVisible = false;
             users_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Padding = new Padding(10);
-            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.Padding = new Padding(10);
+            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle24;
             users_dgv.ShowCellErrors = false;
             users_dgv.ShowCellToolTips = false;
             users_dgv.ShowEditingIcon = false;
@@ -709,6 +730,13 @@
             // panel24
             // 
             panel24.BackColor = Color.White;
+            panel24.Controls.Add(label18);
+            panel24.Controls.Add(label17);
+            panel24.Controls.Add(label16);
+            panel24.Controls.Add(label15);
+            panel24.Controls.Add(label14);
+            panel24.Controls.Add(label13);
+            panel24.Controls.Add(label12);
             panel24.Controls.Add(button4);
             panel24.Controls.Add(numericUpDown2);
             panel24.Controls.Add(textBox6);
@@ -719,64 +747,21 @@
             panel24.Controls.Add(textBox2);
             panel24.Location = new Point(152, 95);
             panel24.Name = "panel24";
-            panel24.Size = new Size(648, 355);
+            panel24.Size = new Size(648, 450);
             panel24.TabIndex = 0;
             // 
-            // textBox3
+            // button4
             // 
-            textBox3.Location = new Point(9, 41);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Author";
-            textBox3.Size = new Size(212, 23);
-            textBox3.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(9, 11);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Title";
-            textBox2.Size = new Size(212, 23);
-            textBox2.TabIndex = 0;
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(227, 11);
-            numericUpDown1.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
-            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(80, 23);
-            numericUpDown1.TabIndex = 2;
-            numericUpDown1.ThousandsSeparator = true;
-            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(9, 101);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Description";
-            textBox4.Size = new Size(631, 208);
-            textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(227, 71);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "Genre";
-            textBox5.Size = new Size(178, 23);
-            textBox5.TabIndex = 4;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(9, 71);
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = "Publisher";
-            textBox6.Size = new Size(212, 23);
-            textBox6.TabIndex = 5;
+            button4.Location = new Point(530, 405);
+            button4.Name = "button4";
+            button4.Size = new Size(110, 33);
+            button4.TabIndex = 7;
+            button4.Text = "Add Book";
+            button4.UseVisualStyleBackColor = true;
             // 
             // numericUpDown2
             // 
-            numericUpDown2.Location = new Point(227, 41);
+            numericUpDown2.Location = new Point(227, 81);
             numericUpDown2.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
             numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDown2.Name = "numericUpDown2";
@@ -785,14 +770,216 @@
             numericUpDown2.ThousandsSeparator = true;
             numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // button4
+            // textBox6
             // 
-            button4.Location = new Point(530, 315);
-            button4.Name = "button4";
-            button4.Size = new Size(110, 33);
-            button4.TabIndex = 7;
-            button4.Text = "Add Book";
-            button4.UseVisualStyleBackColor = true;
+            textBox6.Location = new Point(9, 133);
+            textBox6.Name = "textBox6";
+            textBox6.PlaceholderText = "Publisher";
+            textBox6.Size = new Size(212, 23);
+            textBox6.TabIndex = 5;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(227, 133);
+            textBox5.Name = "textBox5";
+            textBox5.PlaceholderText = "Genre";
+            textBox5.Size = new Size(178, 23);
+            textBox5.TabIndex = 4;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(9, 185);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "Description";
+            textBox4.Size = new Size(631, 208);
+            textBox4.TabIndex = 3;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(227, 29);
+            numericUpDown1.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(80, 23);
+            numericUpDown1.TabIndex = 2;
+            numericUpDown1.ThousandsSeparator = true;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(9, 81);
+            textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "Author";
+            textBox3.Size = new Size(212, 23);
+            textBox3.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(9, 29);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Title";
+            textBox2.Size = new Size(212, 23);
+            textBox2.TabIndex = 0;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(9, 10);
+            label12.Name = "label12";
+            label12.Size = new Size(29, 15);
+            label12.TabIndex = 8;
+            label12.Text = "Title";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(9, 62);
+            label13.Name = "label13";
+            label13.Size = new Size(44, 15);
+            label13.TabIndex = 9;
+            label13.Text = "Author";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(9, 114);
+            label14.Name = "label14";
+            label14.Size = new Size(56, 15);
+            label14.TabIndex = 10;
+            label14.Text = "Publisher";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(227, 62);
+            label15.Name = "label15";
+            label15.Size = new Size(92, 15);
+            label15.TabIndex = 11;
+            label15.Text = "Publication Year";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(227, 10);
+            label16.Name = "label16";
+            label16.Size = new Size(53, 15);
+            label16.TabIndex = 12;
+            label16.Text = "Quantity";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(227, 114);
+            label17.Name = "label17";
+            label17.Size = new Size(38, 15);
+            label17.TabIndex = 13;
+            label17.Text = "Genre";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(9, 166);
+            label18.Name = "label18";
+            label18.Size = new Size(67, 15);
+            label18.TabIndex = 14;
+            label18.Text = "Description";
+            // 
+            // panel25
+            // 
+            panel25.Controls.Add(dataGridView1);
+            panel25.Location = new Point(206, 54);
+            panel25.Name = "panel25";
+            panel25.Size = new Size(961, 729);
+            panel25.TabIndex = 7;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.BackgroundColor = Color.FromArgb(249, 249, 249);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle25.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = SystemColors.Control;
+            dataGridViewCellStyle25.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle25.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle25.Padding = new Padding(5);
+            dataGridViewCellStyle25.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column6, Column5, Column7 });
+            dataGridViewCellStyle26.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = SystemColors.Window;
+            dataGridViewCellStyle26.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle26.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = DataGridViewTriState.True;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridView1.GridColor = Color.White;
+            dataGridView1.Location = new Point(8, 48);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.Padding = new Padding(10);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridView1.ShowCellErrors = false;
+            dataGridView1.ShowCellToolTips = false;
+            dataGridView1.ShowEditingIcon = false;
+            dataGridView1.ShowRowErrors = false;
+            dataGridView1.Size = new Size(945, 654);
+            dataGridView1.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Borrow ID";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Borrowed By";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Book Title";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "Books Book Author";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Borrow Date";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Return Date";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Status";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
             // 
             // Form1
             // 
@@ -800,6 +987,7 @@
             ClientSize = new Size(1168, 784);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel25);
             Controls.Add(panel23);
             Controls.Add(user_panel);
             Controls.Add(dashboard_panel);
@@ -849,8 +1037,10 @@
             panel23.ResumeLayout(false);
             panel24.ResumeLayout(false);
             panel24.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            panel25.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -923,5 +1113,21 @@
         private TextBox textBox6;
         private TextBox textBox5;
         private Button button4;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label17;
+        private Label label18;
+        private Panel panel25;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column7;
     }
 }
