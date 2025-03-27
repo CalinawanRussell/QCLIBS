@@ -42,6 +42,9 @@
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox3 = new PictureBox();
@@ -110,16 +113,28 @@
             dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
             label11 = new Label();
             dashboard_panel = new Panel();
+            label26 = new Label();
             user_panel = new Panel();
+            label29 = new Label();
             pictureBox11 = new PictureBox();
             users_dgv = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             button3 = new Button();
             textBox1 = new TextBox();
             add_book_panel = new Panel();
+            label30 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            button6 = new Button();
+            label28 = new Label();
+            dataGridView2 = new DataGridView();
+            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column13 = new DataGridViewTextBoxColumn();
             panel24 = new Panel();
             label18 = new Label();
             label17 = new Label();
@@ -137,6 +152,7 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             borrow_record_panel = new Panel();
+            label27 = new Label();
             pictureBox10 = new PictureBox();
             button5 = new Button();
             status_cms = new ContextMenuStrip(components);
@@ -155,6 +171,8 @@
             Column6 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
+            pictureBox12 = new PictureBox();
+            textBox8 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -194,6 +212,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).BeginInit();
             add_book_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -201,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             status_cms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -392,9 +412,9 @@
             label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(50, 13);
             label5.Name = "label5";
-            label5.Size = new Size(83, 22);
+            label5.Size = new Size(51, 22);
             label5.TabIndex = 9;
-            label5.Text = "Add Books";
+            label5.Text = "Books";
             label5.Click += add_books_click;
             // 
             // pictureBox6
@@ -703,7 +723,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             overview_history_dgv.DefaultCellStyle = dataGridViewCellStyle2;
             overview_history_dgv.GridColor = Color.White;
-            overview_history_dgv.Location = new Point(6, 34);
+            overview_history_dgv.Location = new Point(4, 34);
             overview_history_dgv.MultiSelect = false;
             overview_history_dgv.Name = "overview_history_dgv";
             overview_history_dgv.ReadOnly = true;
@@ -718,7 +738,7 @@
             overview_history_dgv.ShowCellToolTips = false;
             overview_history_dgv.ShowEditingIcon = false;
             overview_history_dgv.ShowRowErrors = false;
-            overview_history_dgv.Size = new Size(460, 179);
+            overview_history_dgv.Size = new Size(462, 181);
             overview_history_dgv.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn5
@@ -853,7 +873,7 @@
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             recent_checkout_dgv.DefaultCellStyle = dataGridViewCellStyle5;
             recent_checkout_dgv.GridColor = Color.White;
-            recent_checkout_dgv.Location = new Point(7, 31);
+            recent_checkout_dgv.Location = new Point(5, 31);
             recent_checkout_dgv.MultiSelect = false;
             recent_checkout_dgv.Name = "recent_checkout_dgv";
             recent_checkout_dgv.ReadOnly = true;
@@ -868,7 +888,7 @@
             recent_checkout_dgv.ShowCellToolTips = false;
             recent_checkout_dgv.ShowEditingIcon = false;
             recent_checkout_dgv.ShowRowErrors = false;
-            recent_checkout_dgv.Size = new Size(694, 227);
+            recent_checkout_dgv.Size = new Size(698, 230);
             recent_checkout_dgv.TabIndex = 4;
             // 
             // Column11
@@ -920,6 +940,7 @@
             // 
             // dashboard_panel
             // 
+            dashboard_panel.Controls.Add(label26);
             dashboard_panel.Controls.Add(flowLayoutPanel2);
             dashboard_panel.Controls.Add(panel17);
             dashboard_panel.Controls.Add(panel20);
@@ -930,8 +951,18 @@
             dashboard_panel.Size = new Size(960, 731);
             dashboard_panel.TabIndex = 5;
             // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(6, 8);
+            label26.Name = "label26";
+            label26.Size = new Size(64, 15);
+            label26.TabIndex = 5;
+            label26.Text = "Dashboard";
+            // 
             // user_panel
             // 
+            user_panel.Controls.Add(label29);
             user_panel.Controls.Add(pictureBox11);
             user_panel.Controls.Add(users_dgv);
             user_panel.Controls.Add(button3);
@@ -940,6 +971,15 @@
             user_panel.Name = "user_panel";
             user_panel.Size = new Size(960, 731);
             user_panel.TabIndex = 5;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(6, 6);
+            label29.Name = "label29";
+            label29.Size = new Size(35, 15);
+            label29.TabIndex = 13;
+            label29.Text = "Users";
             // 
             // pictureBox11
             // 
@@ -969,7 +1009,7 @@
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
             users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             users_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            users_dgv.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            users_dgv.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = SystemColors.Window;
             dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
@@ -1015,14 +1055,9 @@
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
-            // Column4
-            // 
-            Column4.HeaderText = "Books Borrowed";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
             // button3
             // 
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Location = new Point(858, 13);
             button3.Name = "button3";
             button3.Size = new Size(97, 30);
@@ -1041,11 +1076,141 @@
             // 
             // add_book_panel
             // 
+            add_book_panel.Controls.Add(pictureBox12);
+            add_book_panel.Controls.Add(textBox8);
+            add_book_panel.Controls.Add(label30);
+            add_book_panel.Controls.Add(dateTimePicker1);
+            add_book_panel.Controls.Add(dateTimePicker2);
+            add_book_panel.Controls.Add(button6);
+            add_book_panel.Controls.Add(label28);
+            add_book_panel.Controls.Add(dataGridView2);
             add_book_panel.Controls.Add(panel24);
             add_book_panel.Location = new Point(206, 55);
             add_book_panel.Name = "add_book_panel";
             add_book_panel.Size = new Size(961, 729);
             add_book_panel.TabIndex = 6;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(641, 6);
+            label30.Margin = new Padding(0);
+            label30.Name = "label30";
+            label30.Size = new Size(108, 15);
+            label30.TabIndex = 9;
+            label30.Text = "Date of Publication";
+            label30.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(644, 26);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(100, 23);
+            dateTimePicker1.TabIndex = 7;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(749, 26);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(100, 23);
+            dateTimePicker2.TabIndex = 8;
+            // 
+            // button6
+            // 
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Location = new Point(855, 19);
+            button6.Name = "button6";
+            button6.Size = new Size(97, 30);
+            button6.TabIndex = 4;
+            button6.Text = "Add Books";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(6, 6);
+            label28.Name = "label28";
+            label28.Size = new Size(39, 15);
+            label28.TabIndex = 1;
+            label28.Text = "Books";
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView2.BackgroundColor = Color.FromArgb(249, 249, 249);
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = SystemColors.Control;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.Padding = new Padding(5);
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, Column4, Column13 });
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridView2.GridColor = Color.White;
+            dataGridView2.Location = new Point(8, 68);
+            dataGridView2.MultiSelect = false;
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Padding = new Padding(10);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridView2.ShowCellErrors = false;
+            dataGridView2.ShowCellToolTips = false;
+            dataGridView2.ShowEditingIcon = false;
+            dataGridView2.ShowRowErrors = false;
+            dataGridView2.Size = new Size(945, 652);
+            dataGridView2.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewTextBoxColumn10.HeaderText = "Title";
+            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            dataGridViewTextBoxColumn10.ReadOnly = true;
+            dataGridViewTextBoxColumn10.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            dataGridViewTextBoxColumn11.HeaderText = "Author";
+            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            dataGridViewTextBoxColumn12.HeaderText = "Date of Publication";
+            dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Quantity";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            Column13.HeaderText = "Available";
+            Column13.Name = "Column13";
+            Column13.ReadOnly = true;
             // 
             // panel24
             // 
@@ -1065,10 +1230,12 @@
             panel24.Controls.Add(numericUpDown1);
             panel24.Controls.Add(textBox3);
             panel24.Controls.Add(textBox2);
-            panel24.Location = new Point(152, 95);
+            panel24.Enabled = false;
+            panel24.Location = new Point(156, 69);
             panel24.Name = "panel24";
             panel24.Size = new Size(648, 450);
             panel24.TabIndex = 0;
+            panel24.Visible = false;
             // 
             // label18
             // 
@@ -1207,6 +1374,7 @@
             // 
             // borrow_record_panel
             // 
+            borrow_record_panel.Controls.Add(label27);
             borrow_record_panel.Controls.Add(pictureBox10);
             borrow_record_panel.Controls.Add(button5);
             borrow_record_panel.Controls.Add(textBox7);
@@ -1218,6 +1386,15 @@
             borrow_record_panel.Name = "borrow_record_panel";
             borrow_record_panel.Size = new Size(961, 729);
             borrow_record_panel.TabIndex = 7;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(6, 6);
+            label27.Name = "label27";
+            label27.Size = new Size(90, 15);
+            label27.TabIndex = 12;
+            label27.Text = "Borrow Records";
             // 
             // pictureBox10
             // 
@@ -1232,6 +1409,7 @@
             // button5
             // 
             button5.ContextMenuStrip = status_cms;
+            button5.FlatStyle = FlatStyle.Flat;
             button5.Location = new Point(883, 15);
             button5.Name = "button5";
             button5.Size = new Size(72, 23);
@@ -1275,6 +1453,7 @@
             // status_btn
             // 
             status_btn.ContextMenuStrip = status_cms;
+            status_btn.FlatStyle = FlatStyle.Flat;
             status_btn.Location = new Point(574, 15);
             status_btn.Name = "status_btn";
             status_btn.Size = new Size(92, 23);
@@ -1303,29 +1482,30 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = Color.FromArgb(249, 249, 249);
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = SystemColors.Control;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle10.Padding = new Padding(5);
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = SystemColors.Control;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle13.Padding = new Padding(5);
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column6, Column5, Column7 });
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = SystemColors.Window;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(8, 48);
             dataGridView1.MultiSelect = false;
@@ -1334,9 +1514,9 @@
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Padding = new Padding(10);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Padding = new Padding(10);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle15;
             dataGridView1.ShowCellErrors = false;
             dataGridView1.ShowCellToolTips = false;
             dataGridView1.ShowEditingIcon = false;
@@ -1387,16 +1567,35 @@
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
+            // pictureBox12
+            // 
+            pictureBox12.Image = Properties.Resources.Search_icon_black;
+            pictureBox12.Location = new Point(613, 25);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(22, 24);
+            pictureBox12.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox12.TabIndex = 13;
+            pictureBox12.TabStop = false;
+            // 
+            // textBox8
+            // 
+            textBox8.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox8.Location = new Point(352, 24);
+            textBox8.Name = "textBox8";
+            textBox8.PlaceholderText = "Search book title or author";
+            textBox8.Size = new Size(284, 26);
+            textBox8.TabIndex = 12;
+            // 
             // Form1
             // 
             BackColor = Color.FromArgb(249, 249, 249);
             ClientSize = new Size(1168, 784);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(borrow_record_panel);
             Controls.Add(add_book_panel);
             Controls.Add(user_panel);
             Controls.Add(dashboard_panel);
+            Controls.Add(borrow_record_panel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1453,11 +1652,14 @@
             panel21.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)recent_checkout_dgv).EndInit();
             dashboard_panel.ResumeLayout(false);
+            dashboard_panel.PerformLayout();
             user_panel.ResumeLayout(false);
             user_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).EndInit();
             add_book_panel.ResumeLayout(false);
+            add_book_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel24.ResumeLayout(false);
             panel24.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
@@ -1467,6 +1669,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             status_cms.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ResumeLayout(false);
         }
 
@@ -1525,10 +1728,6 @@
         private Button button3;
         private TextBox textBox1;
         private DataGridView users_dgv;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Panel add_book_panel;
         private Panel panel24;
         private TextBox textBox3;
@@ -1585,5 +1784,24 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private PictureBox pictureBox11;
         private PictureBox pictureBox10;
+        private Label label26;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private Label label28;
+        private Label label27;
+        private Label label29;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column13;
+        private Button button6;
+        private Label label30;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
+        private PictureBox pictureBox12;
+        private TextBox textBox8;
     }
 }

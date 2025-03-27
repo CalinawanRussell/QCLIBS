@@ -1,9 +1,17 @@
+using Oracle.ManagedDataAccess.Client;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Library_system
 {
     public partial class Form1 : Form
     {
+
+        //BASAHIN MAIGI:
+        //TO DO:
+        // 1. Connect to oracle sql database
+        // 2. insert datas to the database from add panels
+        // IMPORTANT NOTE: burat burat haha tangina mo russell
+
         public Form1()
         {
             InitializeComponent();
@@ -15,6 +23,20 @@ namespace Library_system
             user_panel.Visible = false;
             add_book_panel.Visible = false;
             borrow_record_panel.Visible = false;
+
+            //TRIAL DATABASE
+
+            //string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+            //OracleConnection conn = new OracleConnection(connectionString);
+
+            //string query = "INSERT INTO users VALUES('23-1854', 'Xeroj', 'Ulgasan', 'Xerojulgasan@gmail.com')";
+
+            //OracleCommand cmd = new OracleCommand(query, conn);
+
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //MessageBox.Show("Data Inserted");
+            //conn.Close();
         }
 
         private void status_btn_Click(object sender, EventArgs e)
@@ -25,7 +47,7 @@ namespace Library_system
         //TAB CLICKS TO DO
         // Dashboard
         // Users
-        // Add Books
+        // Books
         // Borrow records
 
         //DASHBOARD CLICK

@@ -39,3 +39,9 @@ C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\Library-system.
 C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\Library-system.genruntimeconfig.cache
 C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\ref\Library-system.dll
 C:\Users\Gigabyte\source\Library-System\obj\Debug\net8.0-windows\Library_system.Properties.Resources.resources
+C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
+C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\Library-system.dll.config
+C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\System.DirectoryServices.Protocols.dll
+C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\runtimes\linux\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\runtimes\osx\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.DirectoryServices.Protocols.dll
