@@ -53,7 +53,7 @@
             label2 = new Label();
             date_to_dtp = new DateTimePicker();
             date_from_dtp = new DateTimePicker();
-            panel2 = new Panel();
+            tabs_panel = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
             label3 = new Label();
@@ -115,6 +115,17 @@
             dashboard_panel = new Panel();
             label26 = new Label();
             user_panel = new Panel();
+            adduser_panel = new Panel();
+            button6 = new Button();
+            button7 = new Button();
+            textBox12 = new TextBox();
+            label34 = new Label();
+            textBox11 = new TextBox();
+            label33 = new Label();
+            textBox10 = new TextBox();
+            label32 = new Label();
+            textBox9 = new TextBox();
+            label31 = new Label();
             label29 = new Label();
             pictureBox11 = new PictureBox();
             users_dgv = new DataGridView();
@@ -123,19 +134,16 @@
             Column3 = new DataGridViewTextBoxColumn();
             button3 = new Button();
             textBox1 = new TextBox();
-            add_book_panel = new Panel();
+            book_panel = new Panel();
+            pictureBox12 = new PictureBox();
+            textBox8 = new TextBox();
             label30 = new Label();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
-            button6 = new Button();
+            addbook_popup_button = new Button();
             label28 = new Label();
-            dataGridView2 = new DataGridView();
-            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column13 = new DataGridViewTextBoxColumn();
-            panel24 = new Panel();
+            addbook_panel = new Panel();
+            addbook_popup_exit_button = new Button();
             label18 = new Label();
             label17 = new Label();
             label16 = new Label();
@@ -151,6 +159,12 @@
             numericUpDown1 = new NumericUpDown();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
+            dataGridView2 = new DataGridView();
+            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column13 = new DataGridViewTextBoxColumn();
             borrow_record_panel = new Panel();
             label27 = new Label();
             pictureBox10 = new PictureBox();
@@ -171,13 +185,11 @@
             Column6 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
-            pictureBox12 = new PictureBox();
-            textBox8 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
+            tabs_panel.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -209,18 +221,19 @@
             ((System.ComponentModel.ISupportInitialize)recent_checkout_dgv).BeginInit();
             dashboard_panel.SuspendLayout();
             user_panel.SuspendLayout();
+            adduser_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).BeginInit();
-            add_book_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            panel24.SuspendLayout();
+            book_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            addbook_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             borrow_record_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             status_cms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -304,15 +317,15 @@
             date_from_dtp.Size = new Size(100, 23);
             date_from_dtp.TabIndex = 3;
             // 
-            // panel2
+            // tabs_panel
             // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(flowLayoutPanel1);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 53);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(200, 731);
-            panel2.TabIndex = 1;
+            tabs_panel.BackColor = Color.White;
+            tabs_panel.Controls.Add(flowLayoutPanel1);
+            tabs_panel.Dock = DockStyle.Left;
+            tabs_panel.Location = new Point(0, 53);
+            tabs_panel.Name = "tabs_panel";
+            tabs_panel.Size = new Size(200, 731);
+            tabs_panel.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -962,6 +975,7 @@
             // 
             // user_panel
             // 
+            user_panel.Controls.Add(adduser_panel);
             user_panel.Controls.Add(label29);
             user_panel.Controls.Add(pictureBox11);
             user_panel.Controls.Add(users_dgv);
@@ -971,6 +985,119 @@
             user_panel.Name = "user_panel";
             user_panel.Size = new Size(960, 731);
             user_panel.TabIndex = 5;
+            // 
+            // adduser_panel
+            // 
+            adduser_panel.BackColor = Color.White;
+            adduser_panel.Controls.Add(button6);
+            adduser_panel.Controls.Add(button7);
+            adduser_panel.Controls.Add(textBox12);
+            adduser_panel.Controls.Add(label34);
+            adduser_panel.Controls.Add(textBox11);
+            adduser_panel.Controls.Add(label33);
+            adduser_panel.Controls.Add(textBox10);
+            adduser_panel.Controls.Add(label32);
+            adduser_panel.Controls.Add(textBox9);
+            adduser_panel.Controls.Add(label31);
+            adduser_panel.Enabled = false;
+            adduser_panel.Location = new Point(327, 51);
+            adduser_panel.Name = "adduser_panel";
+            adduser_panel.Size = new Size(307, 413);
+            adduser_panel.TabIndex = 14;
+            adduser_panel.Visible = false;
+            // 
+            // button6
+            // 
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Location = new Point(156, 366);
+            button6.Name = "button6";
+            button6.Size = new Size(128, 30);
+            button6.TabIndex = 17;
+            button6.Text = "Add User";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Location = new Point(22, 366);
+            button7.Name = "button7";
+            button7.Size = new Size(128, 30);
+            button7.TabIndex = 16;
+            button7.Text = "Cancel";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += adduser_popup_exit;
+            // 
+            // textBox12
+            // 
+            textBox12.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox12.Location = new Point(13, 299);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(281, 35);
+            textBox12.TabIndex = 7;
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label34.Location = new Point(16, 270);
+            label34.Name = "label34";
+            label34.Size = new Size(124, 22);
+            label34.TabIndex = 6;
+            label34.Text = "Student Number";
+            // 
+            // textBox11
+            // 
+            textBox11.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox11.Location = new Point(12, 211);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(281, 35);
+            textBox11.TabIndex = 5;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label33.Location = new Point(15, 182);
+            label33.Name = "label33";
+            label33.Size = new Size(107, 22);
+            label33.TabIndex = 4;
+            label33.Text = "Email address";
+            // 
+            // textBox10
+            // 
+            textBox10.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox10.Location = new Point(12, 122);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(281, 35);
+            textBox10.TabIndex = 3;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label32.Location = new Point(15, 93);
+            label32.Name = "label32";
+            label32.Size = new Size(81, 22);
+            label32.TabIndex = 2;
+            label32.Text = "Last name";
+            // 
+            // textBox9
+            // 
+            textBox9.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox9.Location = new Point(12, 42);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(281, 35);
+            textBox9.TabIndex = 1;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label31.Location = new Point(15, 13);
+            label31.Name = "label31";
+            label31.Size = new Size(84, 22);
+            label31.TabIndex = 0;
+            label31.Text = "First name";
             // 
             // label29
             // 
@@ -1064,6 +1191,7 @@
             button3.TabIndex = 1;
             button3.Text = "Add User";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += adduser_popup;
             // 
             // textBox1
             // 
@@ -1074,21 +1202,40 @@
             textBox1.Size = new Size(259, 30);
             textBox1.TabIndex = 0;
             // 
-            // add_book_panel
+            // book_panel
             // 
-            add_book_panel.Controls.Add(pictureBox12);
-            add_book_panel.Controls.Add(textBox8);
-            add_book_panel.Controls.Add(label30);
-            add_book_panel.Controls.Add(dateTimePicker1);
-            add_book_panel.Controls.Add(dateTimePicker2);
-            add_book_panel.Controls.Add(button6);
-            add_book_panel.Controls.Add(label28);
-            add_book_panel.Controls.Add(dataGridView2);
-            add_book_panel.Controls.Add(panel24);
-            add_book_panel.Location = new Point(206, 55);
-            add_book_panel.Name = "add_book_panel";
-            add_book_panel.Size = new Size(961, 729);
-            add_book_panel.TabIndex = 6;
+            book_panel.Controls.Add(pictureBox12);
+            book_panel.Controls.Add(textBox8);
+            book_panel.Controls.Add(label30);
+            book_panel.Controls.Add(dateTimePicker1);
+            book_panel.Controls.Add(dateTimePicker2);
+            book_panel.Controls.Add(addbook_popup_button);
+            book_panel.Controls.Add(label28);
+            book_panel.Controls.Add(addbook_panel);
+            book_panel.Controls.Add(dataGridView2);
+            book_panel.Location = new Point(206, 55);
+            book_panel.Name = "book_panel";
+            book_panel.Size = new Size(961, 729);
+            book_panel.TabIndex = 6;
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.Image = Properties.Resources.Search_icon_black;
+            pictureBox12.Location = new Point(613, 25);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(22, 24);
+            pictureBox12.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox12.TabIndex = 13;
+            pictureBox12.TabStop = false;
+            // 
+            // textBox8
+            // 
+            textBox8.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox8.Location = new Point(352, 24);
+            textBox8.Name = "textBox8";
+            textBox8.PlaceholderText = "Search book title or author";
+            textBox8.Size = new Size(284, 26);
+            textBox8.TabIndex = 12;
             // 
             // label30
             // 
@@ -1117,15 +1264,16 @@
             dateTimePicker2.Size = new Size(100, 23);
             dateTimePicker2.TabIndex = 8;
             // 
-            // button6
+            // addbook_popup_button
             // 
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Location = new Point(855, 19);
-            button6.Name = "button6";
-            button6.Size = new Size(97, 30);
-            button6.TabIndex = 4;
-            button6.Text = "Add Books";
-            button6.UseVisualStyleBackColor = true;
+            addbook_popup_button.FlatStyle = FlatStyle.Flat;
+            addbook_popup_button.Location = new Point(855, 19);
+            addbook_popup_button.Name = "addbook_popup_button";
+            addbook_popup_button.Size = new Size(97, 30);
+            addbook_popup_button.TabIndex = 4;
+            addbook_popup_button.Text = "Add Books";
+            addbook_popup_button.UseVisualStyleBackColor = true;
+            addbook_popup_button.Click += addbook_popup;
             // 
             // label28
             // 
@@ -1136,106 +1284,41 @@
             label28.TabIndex = 1;
             label28.Text = "Books";
             // 
-            // dataGridView2
+            // addbook_panel
             // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView2.BackgroundColor = Color.FromArgb(249, 249, 249);
-            dataGridView2.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = SystemColors.Control;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle10.Padding = new Padding(5);
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, Column4, Column13 });
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = SystemColors.Window;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dataGridView2.DefaultCellStyle = dataGridViewCellStyle11;
-            dataGridView2.GridColor = Color.White;
-            dataGridView2.Location = new Point(8, 68);
-            dataGridView2.MultiSelect = false;
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Padding = new Padding(10);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            dataGridView2.ShowCellErrors = false;
-            dataGridView2.ShowCellToolTips = false;
-            dataGridView2.ShowEditingIcon = false;
-            dataGridView2.ShowRowErrors = false;
-            dataGridView2.Size = new Size(945, 652);
-            dataGridView2.TabIndex = 3;
+            addbook_panel.BackColor = Color.White;
+            addbook_panel.Controls.Add(addbook_popup_exit_button);
+            addbook_panel.Controls.Add(label18);
+            addbook_panel.Controls.Add(label17);
+            addbook_panel.Controls.Add(label16);
+            addbook_panel.Controls.Add(label15);
+            addbook_panel.Controls.Add(label14);
+            addbook_panel.Controls.Add(label13);
+            addbook_panel.Controls.Add(label12);
+            addbook_panel.Controls.Add(button4);
+            addbook_panel.Controls.Add(numericUpDown2);
+            addbook_panel.Controls.Add(textBox6);
+            addbook_panel.Controls.Add(textBox5);
+            addbook_panel.Controls.Add(textBox4);
+            addbook_panel.Controls.Add(numericUpDown1);
+            addbook_panel.Controls.Add(textBox3);
+            addbook_panel.Controls.Add(textBox2);
+            addbook_panel.Enabled = false;
+            addbook_panel.Location = new Point(156, 69);
+            addbook_panel.Name = "addbook_panel";
+            addbook_panel.Size = new Size(648, 450);
+            addbook_panel.TabIndex = 0;
+            addbook_panel.Visible = false;
             // 
-            // dataGridViewTextBoxColumn10
+            // addbook_popup_exit_button
             // 
-            dataGridViewTextBoxColumn10.HeaderText = "Title";
-            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            dataGridViewTextBoxColumn10.ReadOnly = true;
-            dataGridViewTextBoxColumn10.Resizable = DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            dataGridViewTextBoxColumn11.HeaderText = "Author";
-            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            dataGridViewTextBoxColumn12.HeaderText = "Date of Publication";
-            dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Quantity";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            Column13.HeaderText = "Available";
-            Column13.Name = "Column13";
-            Column13.ReadOnly = true;
-            // 
-            // panel24
-            // 
-            panel24.BackColor = Color.White;
-            panel24.Controls.Add(label18);
-            panel24.Controls.Add(label17);
-            panel24.Controls.Add(label16);
-            panel24.Controls.Add(label15);
-            panel24.Controls.Add(label14);
-            panel24.Controls.Add(label13);
-            panel24.Controls.Add(label12);
-            panel24.Controls.Add(button4);
-            panel24.Controls.Add(numericUpDown2);
-            panel24.Controls.Add(textBox6);
-            panel24.Controls.Add(textBox5);
-            panel24.Controls.Add(textBox4);
-            panel24.Controls.Add(numericUpDown1);
-            panel24.Controls.Add(textBox3);
-            panel24.Controls.Add(textBox2);
-            panel24.Enabled = false;
-            panel24.Location = new Point(156, 69);
-            panel24.Name = "panel24";
-            panel24.Size = new Size(648, 450);
-            panel24.TabIndex = 0;
-            panel24.Visible = false;
+            addbook_popup_exit_button.Location = new Point(414, 405);
+            addbook_popup_exit_button.Name = "addbook_popup_exit_button";
+            addbook_popup_exit_button.Size = new Size(110, 33);
+            addbook_popup_exit_button.TabIndex = 15;
+            addbook_popup_exit_button.Text = "Cancel";
+            addbook_popup_exit_button.UseVisualStyleBackColor = true;
+            addbook_popup_exit_button.Click += addbook_popup_exit;
             // 
             // label18
             // 
@@ -1371,6 +1454,82 @@
             textBox2.PlaceholderText = "Title";
             textBox2.Size = new Size(212, 23);
             textBox2.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView2.BackgroundColor = Color.FromArgb(249, 249, 249);
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = SystemColors.Control;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.Padding = new Padding(5);
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, Column4, Column13 });
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridView2.GridColor = Color.White;
+            dataGridView2.Location = new Point(8, 68);
+            dataGridView2.MultiSelect = false;
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridView2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Padding = new Padding(10);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridView2.ShowCellErrors = false;
+            dataGridView2.ShowCellToolTips = false;
+            dataGridView2.ShowEditingIcon = false;
+            dataGridView2.ShowRowErrors = false;
+            dataGridView2.Size = new Size(945, 652);
+            dataGridView2.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewTextBoxColumn10.HeaderText = "Title";
+            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            dataGridViewTextBoxColumn10.ReadOnly = true;
+            dataGridViewTextBoxColumn10.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            dataGridViewTextBoxColumn11.HeaderText = "Author";
+            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            dataGridViewTextBoxColumn12.HeaderText = "Date of Publication";
+            dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Quantity";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            Column13.HeaderText = "Available";
+            Column13.Name = "Column13";
+            Column13.ReadOnly = true;
             // 
             // borrow_record_panel
             // 
@@ -1567,32 +1726,13 @@
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
-            // pictureBox12
-            // 
-            pictureBox12.Image = Properties.Resources.Search_icon_black;
-            pictureBox12.Location = new Point(613, 25);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(22, 24);
-            pictureBox12.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox12.TabIndex = 13;
-            pictureBox12.TabStop = false;
-            // 
-            // textBox8
-            // 
-            textBox8.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox8.Location = new Point(352, 24);
-            textBox8.Name = "textBox8";
-            textBox8.PlaceholderText = "Search book title or author";
-            textBox8.Size = new Size(284, 26);
-            textBox8.TabIndex = 12;
-            // 
             // Form1
             // 
             BackColor = Color.FromArgb(249, 249, 249);
             ClientSize = new Size(1168, 784);
-            Controls.Add(panel2);
+            Controls.Add(tabs_panel);
             Controls.Add(panel1);
-            Controls.Add(add_book_panel);
+            Controls.Add(book_panel);
             Controls.Add(user_panel);
             Controls.Add(dashboard_panel);
             Controls.Add(borrow_record_panel);
@@ -1605,7 +1745,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
+            tabs_panel.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -1655,21 +1795,23 @@
             dashboard_panel.PerformLayout();
             user_panel.ResumeLayout(false);
             user_panel.PerformLayout();
+            adduser_panel.ResumeLayout(false);
+            adduser_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).EndInit();
-            add_book_panel.ResumeLayout(false);
-            add_book_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            panel24.ResumeLayout(false);
-            panel24.PerformLayout();
+            book_panel.ResumeLayout(false);
+            book_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            addbook_panel.ResumeLayout(false);
+            addbook_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             borrow_record_panel.ResumeLayout(false);
             borrow_record_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             status_cms.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ResumeLayout(false);
         }
 
@@ -1677,7 +1819,7 @@
 
         private Label label1;
         private Panel panel1;
-        private Panel panel2;
+        private Panel tabs_panel;
         private FlowLayoutPanel flowLayoutPanel1;
         private DateTimePicker date_from_dtp;
         private PictureBox pictureBox1;
@@ -1728,8 +1870,8 @@
         private Button button3;
         private TextBox textBox1;
         private DataGridView users_dgv;
-        private Panel add_book_panel;
-        private Panel panel24;
+        private Panel book_panel;
+        private Panel addbook_panel;
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox4;
@@ -1797,11 +1939,23 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column13;
-        private Button button6;
+        private Button addbook_popup_button;
         private Label label30;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private PictureBox pictureBox12;
         private TextBox textBox8;
+        private Button addbook_popup_exit_button;
+        private Panel adduser_panel;
+        private TextBox textBox12;
+        private Label label34;
+        private TextBox textBox11;
+        private Label label33;
+        private TextBox textBox10;
+        private Label label32;
+        private TextBox textBox9;
+        private Label label31;
+        private Button button6;
+        private Button button7;
     }
 }

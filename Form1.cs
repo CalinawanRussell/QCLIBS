@@ -21,10 +21,10 @@ namespace Library_system
         {
             dashboard_panel.Visible = true;
             user_panel.Visible = false;
-            add_book_panel.Visible = false;
+            book_panel.Visible = false;
             borrow_record_panel.Visible = false;
 
-            //TRIAL DATABASE
+            //TRIAL connection
 
             //string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
             //OracleConnection conn = new OracleConnection(connectionString);
@@ -55,7 +55,7 @@ namespace Library_system
         {
             dashboard_panel.Visible = true;
             user_panel.Visible = false;
-            add_book_panel.Visible = false;
+            book_panel.Visible = false;
             borrow_record_panel.Visible = false;
         }
 
@@ -64,7 +64,7 @@ namespace Library_system
         {
             dashboard_panel.Visible = false;
             user_panel.Visible = true;
-            add_book_panel.Visible = false;
+            book_panel.Visible = false;
             borrow_record_panel.Visible = false;
         }
 
@@ -73,7 +73,7 @@ namespace Library_system
         {
             dashboard_panel.Visible = false;
             user_panel.Visible = false;
-            add_book_panel.Visible = true;
+            book_panel.Visible = true;
             borrow_record_panel.Visible = false;
         }
 
@@ -82,8 +82,90 @@ namespace Library_system
         {
             dashboard_panel.Visible = false;
             user_panel.Visible = false;
-            add_book_panel.Visible = false;
+            book_panel.Visible = false;
             borrow_record_panel.Visible = true;
+        }
+
+        //ADD USER CLICK
+        private void adduser_popup(object sender, EventArgs e)
+        {
+            disableall(adduser_panel);
+        }
+
+        private void adduser_popup_exit(object sender, EventArgs e)
+        {
+            enableall(adduser_panel);
+        }
+
+        //ADD BOOK CLICK
+        private void addbook_popup(object sender, EventArgs e)
+        {
+            disableall(addbook_panel);
+        }
+
+        private void addbook_popup_exit(object sender, EventArgs e)
+        {
+            enableall(addbook_panel);
+        }
+
+
+        //FUNCTIONS 
+        private void disableall(Panel enabledPanel)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Panel panel)
+                {
+                    panel.Enabled = false;
+                }
+            }
+
+            foreach (Control control in enabledPanel.Parent.Controls)
+            {
+                if (enabledPanel.Parent != null)
+                {
+                    enabledPanel.Parent.Enabled = true;
+
+                    if (control == enabledPanel)
+                    {
+                        control.Enabled = true;
+                        control.Visible = true;
+                    }
+                    else
+                    {
+                        control.Enabled = false;
+                    }
+                }
+            }
+        }
+
+        public void enableall(Panel disabledPanel)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Panel panel)
+                {
+                    panel.Enabled = true;
+                }
+            }
+
+            foreach (Control control in disabledPanel.Parent.Controls)
+            {
+                if (disabledPanel.Parent != null)
+                {
+                    //disabledPanel.Parent.Enabled = true;
+
+                    if (control == disabledPanel)
+                    {
+                        control.Enabled = false;
+                        control.Visible = false;
+                    }
+                    else
+                    {
+                        control.Enabled = true;
+                    }
+                }
+            }
         }
     }
 }
