@@ -115,24 +115,12 @@
             dashboard_panel = new Panel();
             label26 = new Label();
             user_panel = new Panel();
-            adduser_panel = new Panel();
-            button6 = new Button();
-            button7 = new Button();
-            textBox12 = new TextBox();
-            label34 = new Label();
-            textBox11 = new TextBox();
-            label33 = new Label();
-            textBox10 = new TextBox();
-            label32 = new Label();
-            textBox9 = new TextBox();
-            label31 = new Label();
             label29 = new Label();
             pictureBox11 = new PictureBox();
             users_dgv = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            button3 = new Button();
             textBox1 = new TextBox();
             book_panel = new Panel();
             pictureBox12 = new PictureBox();
@@ -143,22 +131,24 @@
             addbook_popup_button = new Button();
             label28 = new Label();
             addbook_panel = new Panel();
-            addbook_popup_exit_button = new Button();
             label18 = new Label();
+            addbook_pagecount_num = new NumericUpDown();
+            asdaw = new Label();
+            addbook_language_txtbox = new TextBox();
+            addbook_publicationDate_dtp = new DateTimePicker();
+            addbook_popup_exit_button = new Button();
             label17 = new Label();
             label16 = new Label();
             label15 = new Label();
             label14 = new Label();
             label13 = new Label();
             label12 = new Label();
-            button4 = new Button();
-            numericUpDown2 = new NumericUpDown();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            addbook_button = new Button();
+            addbook_publisher_txtbox = new TextBox();
+            addbook_genre_txtbox = new TextBox();
+            addbook_quantity_num = new NumericUpDown();
+            addbook_author_txtbox = new TextBox();
+            addbook_title_txtbox = new TextBox();
             dataGridView2 = new DataGridView();
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
@@ -221,14 +211,13 @@
             ((System.ComponentModel.ISupportInitialize)recent_checkout_dgv).BeginInit();
             dashboard_panel.SuspendLayout();
             user_panel.SuspendLayout();
-            adduser_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).BeginInit();
             book_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             addbook_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)addbook_pagecount_num).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)addbook_quantity_num).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             borrow_record_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -975,129 +964,14 @@
             // 
             // user_panel
             // 
-            user_panel.Controls.Add(adduser_panel);
             user_panel.Controls.Add(label29);
             user_panel.Controls.Add(pictureBox11);
             user_panel.Controls.Add(users_dgv);
-            user_panel.Controls.Add(button3);
             user_panel.Controls.Add(textBox1);
             user_panel.Location = new Point(206, 53);
             user_panel.Name = "user_panel";
             user_panel.Size = new Size(960, 731);
             user_panel.TabIndex = 5;
-            // 
-            // adduser_panel
-            // 
-            adduser_panel.BackColor = Color.White;
-            adduser_panel.Controls.Add(button6);
-            adduser_panel.Controls.Add(button7);
-            adduser_panel.Controls.Add(textBox12);
-            adduser_panel.Controls.Add(label34);
-            adduser_panel.Controls.Add(textBox11);
-            adduser_panel.Controls.Add(label33);
-            adduser_panel.Controls.Add(textBox10);
-            adduser_panel.Controls.Add(label32);
-            adduser_panel.Controls.Add(textBox9);
-            adduser_panel.Controls.Add(label31);
-            adduser_panel.Enabled = false;
-            adduser_panel.Location = new Point(327, 51);
-            adduser_panel.Name = "adduser_panel";
-            adduser_panel.Size = new Size(307, 413);
-            adduser_panel.TabIndex = 14;
-            adduser_panel.Visible = false;
-            // 
-            // button6
-            // 
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Location = new Point(156, 366);
-            button6.Name = "button6";
-            button6.Size = new Size(128, 30);
-            button6.TabIndex = 17;
-            button6.Text = "Add User";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Location = new Point(22, 366);
-            button7.Name = "button7";
-            button7.Size = new Size(128, 30);
-            button7.TabIndex = 16;
-            button7.Text = "Cancel";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += adduser_popup_exit;
-            // 
-            // textBox12
-            // 
-            textBox12.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox12.Location = new Point(13, 299);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(281, 35);
-            textBox12.TabIndex = 7;
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label34.Location = new Point(16, 270);
-            label34.Name = "label34";
-            label34.Size = new Size(124, 22);
-            label34.TabIndex = 6;
-            label34.Text = "Student Number";
-            // 
-            // textBox11
-            // 
-            textBox11.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox11.Location = new Point(12, 211);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(281, 35);
-            textBox11.TabIndex = 5;
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label33.Location = new Point(15, 182);
-            label33.Name = "label33";
-            label33.Size = new Size(107, 22);
-            label33.TabIndex = 4;
-            label33.Text = "Email address";
-            // 
-            // textBox10
-            // 
-            textBox10.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox10.Location = new Point(12, 122);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(281, 35);
-            textBox10.TabIndex = 3;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label32.Location = new Point(15, 93);
-            label32.Name = "label32";
-            label32.Size = new Size(81, 22);
-            label32.TabIndex = 2;
-            label32.Text = "Last name";
-            // 
-            // textBox9
-            // 
-            textBox9.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox9.Location = new Point(12, 42);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(281, 35);
-            textBox9.TabIndex = 1;
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label31.Location = new Point(15, 13);
-            label31.Name = "label31";
-            label31.Size = new Size(84, 22);
-            label31.TabIndex = 0;
-            label31.Text = "First name";
             // 
             // label29
             // 
@@ -1111,7 +985,7 @@
             // pictureBox11
             // 
             pictureBox11.Image = Properties.Resources.Search_icon_black;
-            pictureBox11.Location = new Point(828, 16);
+            pictureBox11.Location = new Point(927, 16);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(22, 24);
             pictureBox11.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -1182,21 +1056,10 @@
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
-            // button3
-            // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(858, 13);
-            button3.Name = "button3";
-            button3.Size = new Size(97, 30);
-            button3.TabIndex = 1;
-            button3.Text = "Add User";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += adduser_popup;
-            // 
             // textBox1
             // 
             textBox1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(593, 13);
+            textBox1.Location = new Point(693, 13);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Search User";
             textBox1.Size = new Size(259, 30);
@@ -1287,173 +1150,207 @@
             // addbook_panel
             // 
             addbook_panel.BackColor = Color.White;
-            addbook_panel.Controls.Add(addbook_popup_exit_button);
             addbook_panel.Controls.Add(label18);
+            addbook_panel.Controls.Add(addbook_pagecount_num);
+            addbook_panel.Controls.Add(asdaw);
+            addbook_panel.Controls.Add(addbook_language_txtbox);
+            addbook_panel.Controls.Add(addbook_publicationDate_dtp);
+            addbook_panel.Controls.Add(addbook_popup_exit_button);
             addbook_panel.Controls.Add(label17);
             addbook_panel.Controls.Add(label16);
             addbook_panel.Controls.Add(label15);
             addbook_panel.Controls.Add(label14);
             addbook_panel.Controls.Add(label13);
             addbook_panel.Controls.Add(label12);
-            addbook_panel.Controls.Add(button4);
-            addbook_panel.Controls.Add(numericUpDown2);
-            addbook_panel.Controls.Add(textBox6);
-            addbook_panel.Controls.Add(textBox5);
-            addbook_panel.Controls.Add(textBox4);
-            addbook_panel.Controls.Add(numericUpDown1);
-            addbook_panel.Controls.Add(textBox3);
-            addbook_panel.Controls.Add(textBox2);
+            addbook_panel.Controls.Add(addbook_button);
+            addbook_panel.Controls.Add(addbook_publisher_txtbox);
+            addbook_panel.Controls.Add(addbook_genre_txtbox);
+            addbook_panel.Controls.Add(addbook_quantity_num);
+            addbook_panel.Controls.Add(addbook_author_txtbox);
+            addbook_panel.Controls.Add(addbook_title_txtbox);
             addbook_panel.Enabled = false;
-            addbook_panel.Location = new Point(156, 69);
+            addbook_panel.Location = new Point(225, 69);
             addbook_panel.Name = "addbook_panel";
-            addbook_panel.Size = new Size(648, 450);
+            addbook_panel.Size = new Size(510, 334);
             addbook_panel.TabIndex = 0;
             addbook_panel.Visible = false;
-            // 
-            // addbook_popup_exit_button
-            // 
-            addbook_popup_exit_button.Location = new Point(414, 405);
-            addbook_popup_exit_button.Name = "addbook_popup_exit_button";
-            addbook_popup_exit_button.Size = new Size(110, 33);
-            addbook_popup_exit_button.TabIndex = 15;
-            addbook_popup_exit_button.Text = "Cancel";
-            addbook_popup_exit_button.UseVisualStyleBackColor = true;
-            addbook_popup_exit_button.Click += addbook_popup_exit;
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(9, 166);
+            label18.Font = new Font("Trebuchet MS", 12F);
+            label18.Location = new Point(272, 143);
             label18.Name = "label18";
-            label18.Size = new Size(67, 15);
-            label18.TabIndex = 14;
-            label18.Text = "Description";
+            label18.Size = new Size(89, 22);
+            label18.TabIndex = 20;
+            label18.Text = "Page Count";
+            // 
+            // addbook_pagecount_num
+            // 
+            addbook_pagecount_num.Font = new Font("Trebuchet MS", 12F);
+            addbook_pagecount_num.Location = new Point(272, 173);
+            addbook_pagecount_num.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            addbook_pagecount_num.Name = "addbook_pagecount_num";
+            addbook_pagecount_num.Size = new Size(212, 26);
+            addbook_pagecount_num.TabIndex = 6;
+            addbook_pagecount_num.ThousandsSeparator = true;
+            // 
+            // asdaw
+            // 
+            asdaw.AutoSize = true;
+            asdaw.Font = new Font("Trebuchet MS", 12F);
+            asdaw.Location = new Point(272, 79);
+            asdaw.Name = "asdaw";
+            asdaw.Size = new Size(115, 22);
+            asdaw.TabIndex = 18;
+            asdaw.Text = "Book Language";
+            // 
+            // addbook_language_txtbox
+            // 
+            addbook_language_txtbox.Font = new Font("Trebuchet MS", 12F);
+            addbook_language_txtbox.Location = new Point(272, 109);
+            addbook_language_txtbox.Name = "addbook_language_txtbox";
+            addbook_language_txtbox.PlaceholderText = "Book Language";
+            addbook_language_txtbox.Size = new Size(212, 26);
+            addbook_language_txtbox.TabIndex = 5;
+            // 
+            // addbook_publicationDate_dtp
+            // 
+            addbook_publicationDate_dtp.Font = new Font("Trebuchet MS", 12F);
+            addbook_publicationDate_dtp.Location = new Point(27, 237);
+            addbook_publicationDate_dtp.Name = "addbook_publicationDate_dtp";
+            addbook_publicationDate_dtp.Size = new Size(212, 26);
+            addbook_publicationDate_dtp.TabIndex = 3;
+            // 
+            // addbook_popup_exit_button
+            // 
+            addbook_popup_exit_button.FlatStyle = FlatStyle.Flat;
+            addbook_popup_exit_button.Location = new Point(142, 281);
+            addbook_popup_exit_button.Name = "addbook_popup_exit_button";
+            addbook_popup_exit_button.Size = new Size(106, 33);
+            addbook_popup_exit_button.TabIndex = 9;
+            addbook_popup_exit_button.Text = "Cancel";
+            addbook_popup_exit_button.UseVisualStyleBackColor = true;
+            addbook_popup_exit_button.Click += addbook_popup_exit;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(227, 114);
+            label17.Font = new Font("Trebuchet MS", 12F);
+            label17.Location = new Point(272, 15);
             label17.Name = "label17";
-            label17.Size = new Size(38, 15);
+            label17.Size = new Size(53, 22);
             label17.TabIndex = 13;
             label17.Text = "Genre";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(227, 10);
+            label16.Font = new Font("Trebuchet MS", 12F);
+            label16.Location = new Point(272, 207);
             label16.Name = "label16";
-            label16.Size = new Size(53, 15);
+            label16.Size = new Size(70, 22);
             label16.TabIndex = 12;
             label16.Text = "Quantity";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(227, 62);
+            label15.Font = new Font("Trebuchet MS", 12F);
+            label15.Location = new Point(27, 207);
             label15.Name = "label15";
-            label15.Size = new Size(92, 15);
+            label15.Size = new Size(127, 22);
             label15.TabIndex = 11;
-            label15.Text = "Publication Year";
+            label15.Text = "Publication Date";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(9, 114);
+            label14.Font = new Font("Trebuchet MS", 12F);
+            label14.Location = new Point(27, 143);
             label14.Name = "label14";
-            label14.Size = new Size(56, 15);
+            label14.Size = new Size(75, 22);
             label14.TabIndex = 10;
             label14.Text = "Publisher";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(9, 62);
+            label13.Font = new Font("Trebuchet MS", 12F);
+            label13.Location = new Point(27, 79);
             label13.Name = "label13";
-            label13.Size = new Size(44, 15);
+            label13.Size = new Size(57, 22);
             label13.TabIndex = 9;
             label13.Text = "Author";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(9, 10);
+            label12.Font = new Font("Trebuchet MS", 12F);
+            label12.Location = new Point(27, 15);
             label12.Name = "label12";
-            label12.Size = new Size(29, 15);
+            label12.Size = new Size(42, 22);
             label12.TabIndex = 8;
             label12.Text = "Title";
             // 
-            // button4
+            // addbook_button
             // 
-            button4.Location = new Point(530, 405);
-            button4.Name = "button4";
-            button4.Size = new Size(110, 33);
-            button4.TabIndex = 7;
-            button4.Text = "Add Book";
-            button4.UseVisualStyleBackColor = true;
+            addbook_button.FlatStyle = FlatStyle.Flat;
+            addbook_button.Location = new Point(263, 281);
+            addbook_button.Name = "addbook_button";
+            addbook_button.Size = new Size(106, 33);
+            addbook_button.TabIndex = 8;
+            addbook_button.Text = "Add Book";
+            addbook_button.UseVisualStyleBackColor = true;
+            addbook_button.Click += addbook;
             // 
-            // numericUpDown2
+            // addbook_publisher_txtbox
             // 
-            numericUpDown2.Location = new Point(227, 81);
-            numericUpDown2.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
-            numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(80, 23);
-            numericUpDown2.TabIndex = 6;
-            numericUpDown2.ThousandsSeparator = true;
-            numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            addbook_publisher_txtbox.Font = new Font("Trebuchet MS", 12F);
+            addbook_publisher_txtbox.Location = new Point(27, 173);
+            addbook_publisher_txtbox.Name = "addbook_publisher_txtbox";
+            addbook_publisher_txtbox.PlaceholderText = "Publisher";
+            addbook_publisher_txtbox.Size = new Size(212, 26);
+            addbook_publisher_txtbox.TabIndex = 2;
             // 
-            // textBox6
+            // addbook_genre_txtbox
             // 
-            textBox6.Location = new Point(9, 133);
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = "Publisher";
-            textBox6.Size = new Size(212, 23);
-            textBox6.TabIndex = 5;
+            addbook_genre_txtbox.Font = new Font("Trebuchet MS", 12F);
+            addbook_genre_txtbox.Location = new Point(272, 45);
+            addbook_genre_txtbox.Name = "addbook_genre_txtbox";
+            addbook_genre_txtbox.PlaceholderText = "Genre";
+            addbook_genre_txtbox.Size = new Size(212, 26);
+            addbook_genre_txtbox.TabIndex = 4;
             // 
-            // textBox5
+            // addbook_quantity_num
             // 
-            textBox5.Location = new Point(227, 133);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "Genre";
-            textBox5.Size = new Size(178, 23);
-            textBox5.TabIndex = 4;
+            addbook_quantity_num.Font = new Font("Trebuchet MS", 12F);
+            addbook_quantity_num.Location = new Point(272, 237);
+            addbook_quantity_num.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
+            addbook_quantity_num.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            addbook_quantity_num.Name = "addbook_quantity_num";
+            addbook_quantity_num.Size = new Size(212, 26);
+            addbook_quantity_num.TabIndex = 7;
+            addbook_quantity_num.ThousandsSeparator = true;
+            addbook_quantity_num.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // textBox4
+            // addbook_author_txtbox
             // 
-            textBox4.Location = new Point(9, 185);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Description";
-            textBox4.Size = new Size(631, 208);
-            textBox4.TabIndex = 3;
+            addbook_author_txtbox.Font = new Font("Trebuchet MS", 12F);
+            addbook_author_txtbox.Location = new Point(27, 109);
+            addbook_author_txtbox.Name = "addbook_author_txtbox";
+            addbook_author_txtbox.PlaceholderText = "Author";
+            addbook_author_txtbox.Size = new Size(212, 26);
+            addbook_author_txtbox.TabIndex = 1;
             // 
-            // numericUpDown1
+            // addbook_title_txtbox
             // 
-            numericUpDown1.Location = new Point(227, 29);
-            numericUpDown1.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
-            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(80, 23);
-            numericUpDown1.TabIndex = 2;
-            numericUpDown1.ThousandsSeparator = true;
-            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(9, 81);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Author";
-            textBox3.Size = new Size(212, 23);
-            textBox3.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(9, 29);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Title";
-            textBox2.Size = new Size(212, 23);
-            textBox2.TabIndex = 0;
+            addbook_title_txtbox.Font = new Font("Trebuchet MS", 12F);
+            addbook_title_txtbox.Location = new Point(27, 45);
+            addbook_title_txtbox.Name = "addbook_title_txtbox";
+            addbook_title_txtbox.PlaceholderText = "Title";
+            addbook_title_txtbox.Size = new Size(212, 26);
+            addbook_title_txtbox.TabIndex = 0;
             // 
             // dataGridView2
             // 
@@ -1795,8 +1692,6 @@
             dashboard_panel.PerformLayout();
             user_panel.ResumeLayout(false);
             user_panel.PerformLayout();
-            adduser_panel.ResumeLayout(false);
-            adduser_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).EndInit();
             book_panel.ResumeLayout(false);
@@ -1804,8 +1699,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             addbook_panel.ResumeLayout(false);
             addbook_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)addbook_pagecount_num).EndInit();
+            ((System.ComponentModel.ISupportInitialize)addbook_quantity_num).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             borrow_record_panel.ResumeLayout(false);
             borrow_record_panel.PerformLayout();
@@ -1867,26 +1762,22 @@
         private Label label11;
         private Panel dashboard_panel;
         private Panel user_panel;
-        private Button button3;
         private TextBox textBox1;
         private DataGridView users_dgv;
         private Panel book_panel;
         private Panel addbook_panel;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private Button button4;
+        private TextBox addbook_author_txtbox;
+        private TextBox addbook_title_txtbox;
+        private NumericUpDown addbook_quantity_num;
+        private TextBox addbook_publisher_txtbox;
+        private TextBox addbook_genre_txtbox;
+        private Button addbook_button;
         private Label label16;
         private Label label15;
         private Label label14;
         private Label label13;
         private Label label12;
         private Label label17;
-        private Label label18;
         private Panel borrow_record_panel;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -1946,16 +1837,10 @@
         private PictureBox pictureBox12;
         private TextBox textBox8;
         private Button addbook_popup_exit_button;
-        private Panel adduser_panel;
-        private TextBox textBox12;
-        private Label label34;
-        private TextBox textBox11;
-        private Label label33;
-        private TextBox textBox10;
-        private Label label32;
-        private TextBox textBox9;
-        private Label label31;
-        private Button button6;
-        private Button button7;
+        private DateTimePicker addbook_publicationDate_dtp;
+        private Label label18;
+        private NumericUpDown addbook_pagecount_num;
+        private Label asdaw;
+        private TextBox addbook_language_txtbox;
     }
 }

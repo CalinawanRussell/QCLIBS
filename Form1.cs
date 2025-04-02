@@ -1,5 +1,9 @@
 using Oracle.ManagedDataAccess.Client;
+using System.Security.Policy;
+using System.Text.RegularExpressions;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Xml;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Library_system
 {
@@ -23,6 +27,8 @@ namespace Library_system
             user_panel.Visible = false;
             book_panel.Visible = false;
             borrow_record_panel.Visible = false;
+
+            addbook_publicationDate_dtp.MaxDate = DateTime.Now;
 
             //TRIAL connection
 
@@ -86,17 +92,6 @@ namespace Library_system
             borrow_record_panel.Visible = true;
         }
 
-        //ADD USER CLICK
-        private void adduser_popup(object sender, EventArgs e)
-        {
-            disableall(adduser_panel);
-        }
-
-        private void adduser_popup_exit(object sender, EventArgs e)
-        {
-            enableall(adduser_panel);
-        }
-
         //ADD BOOK CLICK
         private void addbook_popup(object sender, EventArgs e)
         {
@@ -108,6 +103,71 @@ namespace Library_system
             enableall(addbook_panel);
         }
 
+        private void addbook(object sender, EventArgs e)
+        {
+            //DATABASE BOOK TABLE REFERENCE :
+
+            //CREATE TABLE books(
+            //    title VARCHAR(255),
+            //    author VARCHAR(255),
+            //    publisher VARCHAR(255),
+            //    publication_date DATE,
+            //    genre VARCHAR(100),
+            //    book_language VARCHAR(50),
+            //    page_count INT,
+            //    quantity INT NOT NULL
+            //);
+
+            string title = addbook_title_txtbox.Text;
+            string author = addbook_author_txtbox.Text;
+            string publisher = addbook_publisher_txtbox.Text;
+            DateTime publication_date = addbook_publicationDate_dtp.Value;
+            string genre = addbook_genre_txtbox.Text;
+            string book_language = addbook_language_txtbox.Text;
+            int page_count = (int)addbook_pagecount_num.Value;
+            int quantity = (int)addbook_quantity_num.Value;
+
+            DialogResult result = MessageBox.Show("Do you confirm the data that you have entered?", "Confirm Book Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Insert data into the database
+                try
+                {
+                    string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+                    using (OracleConnection conn = new OracleConnection(connectionString))
+                    {
+                        string query = "INSERT INTO books (title, author, publisher, publication_date, genre, book_language, page_count, quantity) " +
+                                        "VALUES(:title, :author, :publisher, :publication_date, :genre, :book_language, :page_count, :quantity)";
+
+
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            cmd.Parameters.Add(new OracleParameter("title", title));
+                            cmd.Parameters.Add(new OracleParameter("author", author));
+                            cmd.Parameters.Add(new OracleParameter("publisher", publisher));
+                            cmd.Parameters.Add(new OracleParameter("publication_date", publication_date));
+                            cmd.Parameters.Add(new OracleParameter("genre", genre));
+                            cmd.Parameters.Add(new OracleParameter("book_language", book_language));
+                            cmd.Parameters.Add(new OracleParameter("page_count", page_count));
+                            cmd.Parameters.Add(new OracleParameter("quantity", quantity));
+
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Book data inserted successfully.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Book data insertion canceled.");
+            }
+        }
 
         //FUNCTIONS 
         private void disableall(Panel enabledPanel)
@@ -130,6 +190,7 @@ namespace Library_system
                     {
                         control.Enabled = true;
                         control.Visible = true;
+                        control.Focus();
                     }
                     else
                     {
@@ -166,6 +227,27 @@ namespace Library_system
                     }
                 }
             }
+        }
+
+        //VALIDATION FUNCTIONS TO BE RECYCLED IN ACCOUNT REGISTRATION
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool IsValidStudentNumber(string studnum)
+        {
+            // Student number format: YY-NNNN
+            string pattern = @"^\d{2}-\d{4}$";
+            return Regex.IsMatch(studnum, pattern);
         }
     }
 }
