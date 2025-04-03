@@ -103,6 +103,16 @@ namespace Library_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Caret_down {
+            get {
+                object obj = ResourceManager.GetObject("Caret down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dashboard_icon_black {
             get {
                 object obj = ResourceManager.GetObject("dashboard icon black", resourceCulture);

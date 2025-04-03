@@ -1,9 +1,13 @@
 using Oracle.ManagedDataAccess.Client;
+using System;
+using System.Data;
+using System.Globalization;
 using System.Security.Policy;
 using System.Text.RegularExpressions;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Linq;
 
 namespace Library_system
 {
@@ -30,19 +34,14 @@ namespace Library_system
 
             addbook_publicationDate_dtp.MaxDate = DateTime.Now;
 
-            //TRIAL connection
+            dashboard_from_dtp.MaxDate = DateTime.Now.AddDays(-1);
+            dashboard_from_dtp.Value = DateTime.Now.AddDays(-7);
 
-            //string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
-            //OracleConnection conn = new OracleConnection(connectionString);
+            dashboard_to_dtp.MaxDate = DateTime.Now.AddSeconds(1);
+            dashboard_to_dtp.Value = DateTime.Now;
 
-            //string query = "INSERT INTO users VALUES('23-1854', 'Xeroj', 'Ulgasan', 'Xerojulgasan@gmail.com')";
-
-            //OracleCommand cmd = new OracleCommand(query, conn);
-
-            //conn.Open();
-            //cmd.ExecuteNonQuery();
-            //MessageBox.Show("Data Inserted");
-            //conn.Close();
+            language_cms.Items.Add("English");
+            language_cms.Items.Add("Filipino");
         }
 
         private void status_btn_Click(object sender, EventArgs e)
@@ -72,6 +71,8 @@ namespace Library_system
             user_panel.Visible = true;
             book_panel.Visible = false;
             borrow_record_panel.Visible = false;
+
+            loadUsers(); // Load users from the database
         }
 
         //ADD BOOKS CLICK
@@ -81,6 +82,8 @@ namespace Library_system
             user_panel.Visible = false;
             book_panel.Visible = true;
             borrow_record_panel.Visible = false;
+
+            loadBooks(); // Load books from the database
         }
 
         //BORROW RECORDS CLICK
@@ -170,7 +173,7 @@ namespace Library_system
         }
 
         //FUNCTIONS 
-        private void disableall(Panel enabledPanel)
+        private void disableall(Panel enabledPanel) //DISABLE ALL PANELS EXCEPT THE ONE THAT IS ENABLED
         {
             foreach (Control control in this.Controls)
             {
@@ -200,7 +203,7 @@ namespace Library_system
             }
         }
 
-        public void enableall(Panel disabledPanel)
+        public void enableall(Panel disabledPanel) //ENABLE ALL PANELS
         {
             foreach (Control control in this.Controls)
             {
@@ -229,6 +232,90 @@ namespace Library_system
             }
         }
 
+        public void loadUsers() //LOAD USER
+        {
+            //REFERENCE TABLE:
+            //CREATE TABLE users
+            // ("STUDENT_ID" VARCHAR2(10),
+            //  "FIRST_NAME" VARCHAR2(25),
+            //  "LAST_NAME" VARCHAR2(25),
+            //  "EMAIL" VARCHAR2(50)
+            // )
+            users_dgv.Rows.Clear(); // Clear existing rows in the DataGridView
+            try
+            {
+                string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+                using (OracleConnection conn = new OracleConnection(connectionString))
+                {
+                    string query = "SELECT STUDENT_ID, FIRST_NAME, LAST_NAME, EMAIL FROM users";
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    {
+                        conn.Open();
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                users_dgv.Rows.Add(
+                                    reader["STUDENT_ID"].ToString(),
+                                    reader["FIRST_NAME"].ToString() + " " + reader["LAST_NAME"].ToString(),
+                                    reader["EMAIL"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        public void loadBooks() //LOAD BOOKS
+        {
+            //REFERENCE TABLE:
+            //CREATE TABLE books
+            // ("TITLE" VARCHAR2(255),
+            //  "AUTHOR" VARCHAR2(255),
+            //  "PUBLISHER" VARCHAR2(255),
+            //  "PUBLICATION_DATE" DATE,
+            //  "GENRE" VARCHAR2(100),
+            //  "BOOK_LANGUAGE" VARCHAR2(50),
+            //  "PAGE_COUNT" NUMBER(*, 0),
+            //  "QUANTITY" NUMBER(*, 0)
+            // )
+            books_dgv.Rows.Clear(); // Clear existing rows in the DataGridView
+            try
+            {
+                string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+                using (OracleConnection conn = new OracleConnection(connectionString))
+                {
+                    string query = "SELECT TITLE, AUTHOR, PUBLICATION_DATE, GENRE, QUANTITY FROM books";
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    {
+                        conn.Open();
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                books_dgv.Rows.Add(
+                                    reader["TITLE"].ToString(),
+                                    reader["AUTHOR"].ToString(),
+                                    reader["PUBLICATION_DATE"].ToString(),
+                                    reader["GENRE"].ToString(),
+                                    Convert.ToInt32(reader["QUANTITY"])
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
         //VALIDATION FUNCTIONS TO BE RECYCLED IN ACCOUNT REGISTRATION
         private bool IsValidEmail(string email)
         {
@@ -248,6 +335,22 @@ namespace Library_system
             // Student number format: YY-NNNN
             string pattern = @"^\d{2}-\d{4}$";
             return Regex.IsMatch(studnum, pattern);
+        }
+
+        //SMALL FUNCTIONS
+        private void languages_cms_dropdown(object sender, EventArgs e)
+        {
+            language_cms.Width = addbook_language_txtbox.Width;
+            language_cms.Show(addbook_language_txtbox, new Point(0, addbook_language_txtbox.Height));
+        }
+
+        private void language_cms_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ToolStripMenuItem clickedItem = e.ClickedItem as ToolStripMenuItem;
+            if (clickedItem != null)
+            {
+                addbook_language_txtbox.Text = clickedItem.Text;
+            }
         }
     }
 }
