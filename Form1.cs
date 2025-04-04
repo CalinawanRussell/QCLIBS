@@ -13,16 +13,14 @@ using System.Linq;
 // SETTINGS
 // Change default timeframe. Give choices such ddaily, weekly, monthly 
 
+//BORROW RECORDS
+//Add available books (use borrowed books table to subtract books that is marked as
+//                      borrowed or reserved to the total quantity of the chosen book)
+
 namespace Library_system
 {
     public partial class Form1 : Form
     {
-
-        //BASAHIN MAIGI:
-        //TO DO:
-        // 1. Connect to oracle sql database
-        // 2. insert datas to the database from add panels
-        // IMPORTANT NOTE: burat burat haha tangina mo russell
 
         public Form1()
         {
@@ -50,17 +48,6 @@ namespace Library_system
             language_cms.Items.Add("Filipino");
         }
 
-        private void status_btn_Click(object sender, EventArgs e)
-        {
-            status_cms.Show(status_btn, new Point(0, status_btn.Height));
-        }
-
-        //TAB CLICKS TO DO
-        // Dashboard
-        // Users
-        // Books
-        // Borrow records
-
         //DASHBOARD CLICK
         private void dashboard_click(object sender, EventArgs e)
         {
@@ -80,8 +67,6 @@ namespace Library_system
 
             loadUsers(); // Load users from the database
         }
-
-        //users_dgv
         private void user_search_text_changed(object sender, EventArgs e)
         {
             string searchText = user_search_txtbox.Text.ToLower();
@@ -601,6 +586,11 @@ namespace Library_system
             {
                 addbook_language_txtbox.Text = clickedItem.Text;
             }
+        }
+
+        private void status_btn_Click(object sender, EventArgs e)
+        {
+            status_cms.Show(status_btn, new Point(0, status_btn.Height));
         }
     }
 }
