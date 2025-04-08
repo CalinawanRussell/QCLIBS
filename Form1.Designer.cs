@@ -126,12 +126,13 @@
             Column3 = new DataGridViewTextBoxColumn();
             user_search_txtbox = new TextBox();
             book_panel = new Panel();
+            pictureBox15 = new PictureBox();
+            label35 = new Label();
             pictureBox12 = new PictureBox();
             textBox8 = new TextBox();
             label30 = new Label();
             books_from_date = new DateTimePicker();
             books_to_date = new DateTimePicker();
-            addbook_popup_button = new Button();
             label28 = new Label();
             addbook_panel = new Panel();
             language_caret = new PictureBox();
@@ -243,6 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)users_dgv).BeginInit();
             book_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             addbook_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)language_caret).BeginInit();
@@ -1132,12 +1134,13 @@
             // 
             // book_panel
             // 
+            book_panel.Controls.Add(pictureBox15);
+            book_panel.Controls.Add(label35);
             book_panel.Controls.Add(pictureBox12);
             book_panel.Controls.Add(textBox8);
             book_panel.Controls.Add(label30);
             book_panel.Controls.Add(books_from_date);
             book_panel.Controls.Add(books_to_date);
-            book_panel.Controls.Add(addbook_popup_button);
             book_panel.Controls.Add(label28);
             book_panel.Controls.Add(addbook_panel);
             book_panel.Controls.Add(books_dgv);
@@ -1146,10 +1149,34 @@
             book_panel.Size = new Size(961, 729);
             book_panel.TabIndex = 6;
             // 
+            // pictureBox15
+            // 
+            pictureBox15.BackColor = Color.Transparent;
+            pictureBox15.Image = Properties.Resources.add__1_;
+            pictureBox15.Location = new Point(819, 651);
+            pictureBox15.Name = "pictureBox15";
+            pictureBox15.Size = new Size(31, 34);
+            pictureBox15.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox15.TabIndex = 16;
+            pictureBox15.TabStop = false;
+            pictureBox15.Click += addbook_popup;
+            // 
+            // label35
+            // 
+            label35.BorderStyle = BorderStyle.FixedSingle;
+            label35.Font = new Font("Trebuchet MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label35.Location = new Point(814, 645);
+            label35.Name = "label35";
+            label35.Size = new Size(114, 47);
+            label35.TabIndex = 17;
+            label35.Text = "Add Books";
+            label35.TextAlign = ContentAlignment.MiddleRight;
+            label35.Click += addbook_popup;
+            // 
             // pictureBox12
             // 
             pictureBox12.Image = Properties.Resources.Search_icon_black;
-            pictureBox12.Location = new Point(613, 25);
+            pictureBox12.Location = new Point(714, 25);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(22, 24);
             pictureBox12.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -1159,7 +1186,7 @@
             // textBox8
             // 
             textBox8.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox8.Location = new Point(352, 24);
+            textBox8.Location = new Point(453, 24);
             textBox8.Name = "textBox8";
             textBox8.PlaceholderText = "Search book title or author";
             textBox8.Size = new Size(284, 26);
@@ -1168,7 +1195,7 @@
             // label30
             // 
             label30.AutoSize = true;
-            label30.Location = new Point(641, 6);
+            label30.Location = new Point(742, 6);
             label30.Margin = new Padding(0);
             label30.Name = "label30";
             label30.Size = new Size(108, 15);
@@ -1179,7 +1206,7 @@
             // books_from_date
             // 
             books_from_date.Format = DateTimePickerFormat.Short;
-            books_from_date.Location = new Point(644, 26);
+            books_from_date.Location = new Point(745, 26);
             books_from_date.Name = "books_from_date";
             books_from_date.Size = new Size(100, 23);
             books_from_date.TabIndex = 7;
@@ -1187,21 +1214,10 @@
             // books_to_date
             // 
             books_to_date.Format = DateTimePickerFormat.Short;
-            books_to_date.Location = new Point(749, 26);
+            books_to_date.Location = new Point(850, 26);
             books_to_date.Name = "books_to_date";
             books_to_date.Size = new Size(100, 23);
             books_to_date.TabIndex = 8;
-            // 
-            // addbook_popup_button
-            // 
-            addbook_popup_button.FlatStyle = FlatStyle.Flat;
-            addbook_popup_button.Location = new Point(855, 19);
-            addbook_popup_button.Name = "addbook_popup_button";
-            addbook_popup_button.Size = new Size(97, 30);
-            addbook_popup_button.TabIndex = 4;
-            addbook_popup_button.Text = "Add Books";
-            addbook_popup_button.UseVisualStyleBackColor = true;
-            addbook_popup_button.Click += addbook_popup;
             // 
             // label28
             // 
@@ -1687,25 +1703,25 @@
             // 
             status_cms.Items.AddRange(new ToolStripItem[] { borrowedToolStripMenuItem, returnedToolStripMenuItem, reserveToolStripMenuItem });
             status_cms.Name = "contextMenuStrip1";
-            status_cms.Size = new Size(181, 92);
+            status_cms.Size = new Size(126, 70);
             status_cms.ItemClicked += status_filter;
             // 
             // borrowedToolStripMenuItem
             // 
             borrowedToolStripMenuItem.Name = "borrowedToolStripMenuItem";
-            borrowedToolStripMenuItem.Size = new Size(180, 22);
+            borrowedToolStripMenuItem.Size = new Size(125, 22);
             borrowedToolStripMenuItem.Text = "Borrowed";
             // 
             // returnedToolStripMenuItem
             // 
             returnedToolStripMenuItem.Name = "returnedToolStripMenuItem";
-            returnedToolStripMenuItem.Size = new Size(180, 22);
+            returnedToolStripMenuItem.Size = new Size(125, 22);
             returnedToolStripMenuItem.Text = "Returned";
             // 
             // reserveToolStripMenuItem
             // 
             reserveToolStripMenuItem.Name = "reserveToolStripMenuItem";
-            reserveToolStripMenuItem.Size = new Size(180, 22);
+            reserveToolStripMenuItem.Size = new Size(125, 22);
             reserveToolStripMenuItem.Text = "Reserve";
             // 
             // borrow_record_search_txtbox
@@ -1907,10 +1923,10 @@
             ClientSize = new Size(1168, 784);
             Controls.Add(tabs_panel);
             Controls.Add(panel1);
-            Controls.Add(borrow_record_panel);
             Controls.Add(book_panel);
             Controls.Add(user_panel);
             Controls.Add(dashboard_panel);
+            Controls.Add(borrow_record_panel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1975,6 +1991,7 @@
             ((System.ComponentModel.ISupportInitialize)users_dgv).EndInit();
             book_panel.ResumeLayout(false);
             book_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             addbook_panel.ResumeLayout(false);
             addbook_panel.PerformLayout();
@@ -2102,7 +2119,6 @@
         private Label label27;
         private Label label29;
         private DataGridView books_dgv;
-        private Button addbook_popup_button;
         private Label label30;
         private DateTimePicker books_from_date;
         private DateTimePicker books_to_date;
@@ -2154,5 +2170,7 @@
         private DataGridViewTextBoxColumn Column14;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column13;
+        private PictureBox pictureBox15;
+        private Label label35;
     }
 }
