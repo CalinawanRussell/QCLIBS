@@ -4,18 +4,30 @@ using System.Data;
 using System.Globalization;
 using System.Security.Policy;
 using System.Text.RegularExpressions;
-using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Linq;
+//using System.Windows.Forms.DataVisualization.Charting;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView.WinForms;
+using LiveChartsCore.SkiaSharpView;
+using SkiaSharp;
+using LiveChartsCore.SkiaSharpView.Painting;
+using LiveChartsCore.SkiaSharpView.VisualElements;
+
 
 //TODO:
 // SETTINGS
 // Change default timeframe. Give choices such ddaily, weekly, monthly 
 
-//BORROW RECORDS
-//Add available books (use borrowed books table to subtract books that is marked as
-//                      borrowed or reserved to the total quantity of the chosen book)
+//DASHBOARD:
+// FILL UP borrowed books, returnd books, overdue books, misssing books,
+// total books, visitors, and new members depending on the chosen date.
+
+// FINISH STATISTICS
+
+// BORROWED BOOKS:
+// Each table row items should be clickable and enables the user to set the book as returned, missing, or overdue.
 
 namespace Library_system
 {
@@ -25,6 +37,7 @@ namespace Library_system
         public Form1()
         {
             InitializeComponent();
+            InitializeChart();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,6 +59,7 @@ namespace Library_system
 
             language_cms.Items.Add("English");
             language_cms.Items.Add("Filipino");
+
         }
 
         //DASHBOARD CLICK
@@ -179,10 +193,10 @@ namespace Library_system
                         }
 
                         // Check if the book title exists
-                        string checkBookQuery = "SELECT COUNT(*) FROM books WHERE title = :book_title";
+                        string checkBookQuery = "SELECT COUNT(*) FROM books WHERE book_id = :book_id";
                         using (OracleCommand checkBookCmd = new OracleCommand(checkBookQuery, conn))
                         {
-                            checkBookCmd.Parameters.Add(new OracleParameter("book_title", book_title));
+                            checkBookCmd.Parameters.Add(new OracleParameter("book_id", book_title));
                             int bookCount = Convert.ToInt32(checkBookCmd.ExecuteScalar());
                             if (bookCount == 0)
                             {
@@ -193,27 +207,26 @@ namespace Library_system
 
                         // Insert the borrow record
                         string query = @"
-                            INSERT INTO borrowed_books (borrow_id, borrower_id, borrower_ln, borrower_fn, book_title, borrow_due, borrow_date, status)
+                            INSERT INTO borrowed_books (borrower_id, borrower_ln, borrower_fn, book_id, borrow_due, borrow_date, status)
                             SELECT 
-                                borrowed_books_seq.NEXTVAL, 
                                 u.student_id, 
                                 u.last_name, 
                                 u.first_name, 
-                                b.title, 
+                                b.book_id, 
                                 :return_date, 
                                 SYSDATE, 
                                 'Borrowed'
                             FROM 
                                 users u
                             JOIN 
-                                books b ON b.title = :book_title
+                                books b ON b.book_id = :book_id
                             WHERE 
                                 u.student_id = :student_id";
 
                         using (OracleCommand cmd = new OracleCommand(query, conn))
                         {
                             cmd.Parameters.Add(new OracleParameter("return_date", return_date));
-                            cmd.Parameters.Add(new OracleParameter("book_title", book_title));
+                            cmd.Parameters.Add(new OracleParameter("book_id", book_title));
                             cmd.Parameters.Add(new OracleParameter("student_id", student_id));
 
                             cmd.ExecuteNonQuery();
@@ -232,6 +245,24 @@ namespace Library_system
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void status_filter(object sender, ToolStripItemClickedEventArgs e)
+        {
+            // FILTER STATUS FROM borrow_dgv TABLE
+
+            string selectedStatus = e.ClickedItem.Text;
+            foreach (DataGridViewRow row in borrow_dgv.Rows)
+            {
+                if (row.Cells[6].Value.ToString().Contains(selectedStatus))
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
                 }
             }
         }
@@ -259,11 +290,11 @@ namespace Library_system
             addbook_title_txtbox.Text = "";
             addbook_author_txtbox.Text = "";
             addbook_publisher_txtbox.Text = "";
-            addbook_publicationDate_dtp.Value = DateTime.Now;
+            addbook_publicationDate_dtp.Value = DateTime.Now.AddMinutes(-1);
             addbook_genre_txtbox.Text = "";
             addbook_language_txtbox.Text = "";
             addbook_pagecount_num.Value = 0;
-            addbook_quantity_num.Value = 0;
+            addbook_quantity_num.Value = 1;
         }
 
         private void addbook(object sender, EventArgs e) //INPUTS BOOK DATA TO THE DATABASE
@@ -339,11 +370,11 @@ namespace Library_system
                         addbook_title_txtbox.Text = "";
                         addbook_author_txtbox.Text = "";
                         addbook_publisher_txtbox.Text = "";
-                        addbook_publicationDate_dtp.Value = DateTime.Now;
+                        addbook_publicationDate_dtp.Value = DateTime.Now.AddMinutes(-1);
                         addbook_genre_txtbox.Text = "";
                         addbook_language_txtbox.Text = "";
                         addbook_pagecount_num.Value = 0;
-                        addbook_quantity_num.Value = 0;
+                        addbook_quantity_num.Value = 1;
                     }
                 }
                 catch (Exception ex)
@@ -418,6 +449,7 @@ namespace Library_system
             }
         }
 
+        //LOAD FUNCTIONS
         public void loadUsers() //LOAD USER
         {
             //REFERENCE TABLE:
@@ -461,15 +493,17 @@ namespace Library_system
         public void loadBooks() //LOAD BOOKS
         {
             //REFERENCE TABLE:
-            //CREATE TABLE books
-            // ("TITLE" VARCHAR2(255),
-            //  "AUTHOR" VARCHAR2(255),
-            //  "PUBLISHER" VARCHAR2(255),
+            //CREATE TABLE "XEROJ"."BOOKS"
+            // ("TITLE" VARCHAR2(255 BYTE),
+            //  "AUTHOR" VARCHAR2(255 BYTE),
+            //  "PUBLISHER" VARCHAR2(255 BYTE),
             //  "PUBLICATION_DATE" DATE,
-            //  "GENRE" VARCHAR2(100),
-            //  "BOOK_LANGUAGE" VARCHAR2(50),
+            //  "GENRE" VARCHAR2(255 BYTE),
+            //  "BOOK_LANGUAGE" VARCHAR2(50 BYTE),
             //  "PAGE_COUNT" NUMBER(*, 0),
-            //  "QUANTITY" NUMBER(*, 0)
+            //  "QUANTITY" NUMBER(*, 0),
+            //  "LAST_UPDATED" TIMESTAMP(6),
+            //  "BOOK_ID" NUMBER
             // )
             books_dgv.Rows.Clear(); // Clear existing rows in the DataGridView
             try
@@ -477,7 +511,19 @@ namespace Library_system
                 string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
                 using (OracleConnection conn = new OracleConnection(connectionString))
                 {
-                    string query = "SELECT TITLE, AUTHOR, PUBLICATION_DATE, GENRE, QUANTITY FROM books";
+                    string query = @"
+                                        SELECT 
+                                            book_id,
+                                            title,
+                                            author,
+                                            publication_date,
+                                            genre,
+                                            quantity,
+                                            (quantity - (SELECT COUNT(*) 
+                                                         FROM borrowed_books bb
+                                                         WHERE b.book_id = bb.book_id)) AS available
+                                        FROM books b";
+
                     using (OracleCommand cmd = new OracleCommand(query, conn))
                     {
                         conn.Open();
@@ -486,11 +532,13 @@ namespace Library_system
                             while (reader.Read())
                             {
                                 books_dgv.Rows.Add(
+                                    Convert.ToInt32(reader["BOOK_ID"]),
                                     reader["TITLE"].ToString(),
                                     reader["AUTHOR"].ToString(),
                                     reader["PUBLICATION_DATE"].ToString(),
                                     reader["GENRE"].ToString(),
-                                    Convert.ToInt32(reader["QUANTITY"])
+                                    Convert.ToInt32(reader["QUANTITY"]),
+                                    Convert.ToInt32(reader["AVAILABLE"])
                                 );
                             }
                         }
@@ -522,7 +570,7 @@ namespace Library_system
                 string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
                 using (OracleConnection conn = new OracleConnection(connectionString))
                 {
-                    string query = "SELECT BORROW_ID, BORROWER_ID, BORROWER_LN, BORROWER_FN, BOOK_TITLE, BORROW_DUE, BORROW_DATE, STATUS FROM borrowed_books";
+                    string query = "SELECT BORROW_ID, BORROWER_ID, BORROWER_LN, BORROWER_FN, BOOK_ID, BORROW_DUE, BORROW_DATE, STATUS FROM borrowed_books";
                     using (OracleCommand cmd = new OracleCommand(query, conn))
                     {
                         conn.Open();
@@ -534,7 +582,7 @@ namespace Library_system
                                     reader["BORROW_ID"].ToString(),
                                     reader["BORROWER_ID"].ToString(),
                                     reader["BORROWER_LN"].ToString() + ", " + reader["BORROWER_FN"].ToString(),
-                                    reader["BOOK_TITLE"].ToString(),
+                                    Convert.ToInt32(reader["BOOK_ID"]),
                                     Convert.ToDateTime(reader["BORROW_DATE"]).ToString("yyyy-MM-dd"),
                                     Convert.ToDateTime(reader["BORROW_DUE"]).ToString("yyyy-MM-dd"),
                                     reader["STATUS"].ToString()
@@ -591,6 +639,107 @@ namespace Library_system
         private void status_btn_Click(object sender, EventArgs e)
         {
             status_cms.Show(status_btn, new Point(0, status_btn.Height));
+        }
+
+        private void statistics_dropdown(object sender, EventArgs e)
+        {
+            statistics_cms.Show(statistics_txtbox, new Point(0, statistics_txtbox.Height));
+        }
+        private void statistics_cms_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem != null)
+            {
+                statistics_txtbox.Text = e.ClickedItem.Text;
+            }
+        }
+
+        private void InitializeChart()
+        {
+            var cartesianChart = new CartesianChart
+            {
+                Dock = DockStyle.Fill,
+                BackColor = System.Drawing.Color.White
+            };
+
+            // Modern gradient colors
+            var gradientPaint = new LinearGradientPaint(
+                new[] {
+                    new SKColor(48, 63, 159, 180),  // Dark blue with transparency
+                    new SKColor(41, 182, 246, 150)  // Light blue with transparency
+                },
+                new SKPoint(0, 0),
+                new SKPoint(0, 1)
+            );
+
+            var values = new double[30];
+            var dates = new string[30];
+            var random = new Random();
+
+            // Generate realistic data that resembles library activity
+            for (int i = 0; i < 30; i++)
+            {
+                // Create more realistic borrowing patterns (higher during weekdays, lower on weekends)
+                int dayOfWeek = i % 7;
+                double baseValue = dayOfWeek < 5 ? random.Next(12, 25) : random.Next(5, 15);
+                values[i] = baseValue;
+
+                // Current date minus days
+                var date = DateTime.Now.AddDays(-30 + i + 1);
+                dates[i] = date.ToString("MMM dd");
+            }
+
+            cartesianChart.Series = new ISeries[]
+            {
+                new LineSeries<double>
+                {
+                    Name = "Books Borrowed",
+                    Values = values,
+                    Stroke = new SolidColorPaint(SKColors.DodgerBlue) { StrokeThickness = 3 },
+                    Fill = gradientPaint,
+                    GeometrySize = 0,
+                    LineSmoothness = 0.5
+                }
+            };
+
+            cartesianChart.XAxes = new Axis[]
+            {
+                new Axis
+                {
+                    Name = "Date",
+                    Labels = dates,
+                    TextSize = 10,
+                    SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
+                    TicksPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
+                    LabelsPaint = new SolidColorPaint(SKColors.Gray)
+                }
+            };
+
+            cartesianChart.YAxes = new Axis[]
+            {
+                new Axis
+                {
+                    Name = "Books",
+                    TextSize = 10,
+                    SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
+                    TicksPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
+                    LabelsPaint = new SolidColorPaint(SKColors.Gray),
+                    MinLimit = 0
+                }
+            };
+
+            // Add title and clean up the legend
+            cartesianChart.Title = new LabelVisual
+            {
+                Text = "Daily Book Borrowing Activity",
+                TextSize = 16,
+                Paint = new SolidColorPaint(SKColors.DarkSlateBlue)
+            };
+
+            cartesianChart.LegendPosition = LiveChartsCore.Measure.LegendPosition.Top;
+            cartesianChart.LegendTextPaint = new SolidColorPaint(SKColors.DarkSlateBlue);
+            cartesianChart.LegendTextSize = 12;
+
+            chart_panel.Controls.Add(cartesianChart);
         }
     }
 }

@@ -30,21 +30,21 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle31 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle32 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle33 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle34 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle35 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle36 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle37 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle38 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle39 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle40 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle45 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox3 = new PictureBox();
@@ -97,7 +97,10 @@
             Column9 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
             label10 = new Label();
-            panel18 = new Panel();
+            statistics_panel = new Panel();
+            pictureBox14 = new PictureBox();
+            statistics_txtbox = new TextBox();
+            chart_panel = new Panel();
             label9 = new Label();
             panel20 = new Panel();
             panel22 = new Panel();
@@ -151,6 +154,7 @@
             addbook_author_txtbox = new TextBox();
             addbook_title_txtbox = new TextBox();
             books_dgv = new DataGridView();
+            Column16 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
@@ -190,6 +194,15 @@
             Column7 = new DataGridViewTextBoxColumn();
             language_cms = new ContextMenuStrip(components);
             contextMenuStrip1 = new ContextMenuStrip(components);
+            statistics_cms = new ContextMenuStrip(components);
+            visitorsToolStripMenuItem = new ToolStripMenuItem();
+            newMembersToolStripMenuItem = new ToolStripMenuItem();
+            borrowedBooksToolStripMenuItem = new ToolStripMenuItem();
+            returnedBooksToolStripMenuItem = new ToolStripMenuItem();
+            overduesBooksToolStripMenuItem = new ToolStripMenuItem();
+            missingBooksToolStripMenuItem = new ToolStripMenuItem();
+            newMembersToolStripMenuItem1 = new ToolStripMenuItem();
+            totalBooksToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -219,7 +232,8 @@
             panel17.SuspendLayout();
             panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)overview_history_dgv).BeginInit();
-            panel18.SuspendLayout();
+            statistics_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel20.SuspendLayout();
             panel22.SuspendLayout();
             panel21.SuspendLayout();
@@ -241,6 +255,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             status_cms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)borrow_dgv).BeginInit();
+            statistics_cms.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -700,7 +715,7 @@
             // panel17
             // 
             panel17.Controls.Add(panel19);
-            panel17.Controls.Add(panel18);
+            panel17.Controls.Add(statistics_panel);
             panel17.Location = new Point(4, 226);
             panel17.Name = "panel17";
             panel17.Size = new Size(952, 225);
@@ -724,24 +739,24 @@
             overview_history_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             overview_history_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
             overview_history_dgv.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle31.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.BackColor = SystemColors.Control;
-            dataGridViewCellStyle31.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle31.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = DataGridViewTriState.True;
-            overview_history_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            overview_history_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             overview_history_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             overview_history_dgv.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn5, Column8, Column9, Column10 });
-            dataGridViewCellStyle32.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = SystemColors.Window;
-            dataGridViewCellStyle32.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle32.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = DataGridViewTriState.True;
-            overview_history_dgv.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            overview_history_dgv.DefaultCellStyle = dataGridViewCellStyle2;
             overview_history_dgv.GridColor = Color.White;
             overview_history_dgv.Location = new Point(4, 34);
             overview_history_dgv.MultiSelect = false;
@@ -750,9 +765,9 @@
             overview_history_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             overview_history_dgv.RowHeadersVisible = false;
             overview_history_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle33.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.Padding = new Padding(10);
-            overview_history_dgv.RowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new Padding(10);
+            overview_history_dgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             overview_history_dgv.ScrollBars = ScrollBars.Vertical;
             overview_history_dgv.ShowCellErrors = false;
             overview_history_dgv.ShowCellToolTips = false;
@@ -796,14 +811,45 @@
             label10.TabIndex = 1;
             label10.Text = "Overdue History";
             // 
-            // panel18
+            // statistics_panel
             // 
-            panel18.BackColor = Color.White;
-            panel18.Controls.Add(label9);
-            panel18.Location = new Point(3, 3);
-            panel18.Name = "panel18";
-            panel18.Size = new Size(470, 219);
-            panel18.TabIndex = 0;
+            statistics_panel.BackColor = Color.White;
+            statistics_panel.Controls.Add(pictureBox14);
+            statistics_panel.Controls.Add(statistics_txtbox);
+            statistics_panel.Controls.Add(chart_panel);
+            statistics_panel.Controls.Add(label9);
+            statistics_panel.Location = new Point(3, 3);
+            statistics_panel.Name = "statistics_panel";
+            statistics_panel.Size = new Size(470, 219);
+            statistics_panel.TabIndex = 0;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Image = Properties.Resources.Caret_down;
+            pictureBox14.Location = new Point(445, 7);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(19, 19);
+            pictureBox14.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox14.TabIndex = 22;
+            pictureBox14.TabStop = false;
+            pictureBox14.Click += statistics_dropdown;
+            // 
+            // statistics_txtbox
+            // 
+            statistics_txtbox.Location = new Point(289, 5);
+            statistics_txtbox.Name = "statistics_txtbox";
+            statistics_txtbox.ReadOnly = true;
+            statistics_txtbox.Size = new Size(177, 23);
+            statistics_txtbox.TabIndex = 2;
+            statistics_txtbox.Text = "Visitors";
+            statistics_txtbox.Click += statistics_dropdown;
+            // 
+            // chart_panel
+            // 
+            chart_panel.Location = new Point(5, 31);
+            chart_panel.Name = "chart_panel";
+            chart_panel.Size = new Size(461, 183);
+            chart_panel.TabIndex = 1;
             // 
             // label9
             // 
@@ -874,24 +920,24 @@
             recent_checkout_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             recent_checkout_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
             recent_checkout_dgv.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle34.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = SystemColors.Control;
-            dataGridViewCellStyle34.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle34.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = DataGridViewTriState.True;
-            recent_checkout_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            recent_checkout_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             recent_checkout_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             recent_checkout_dgv.Columns.AddRange(new DataGridViewColumn[] { Column11, dataGridViewTextBoxColumn6, Column12, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9 });
-            dataGridViewCellStyle35.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = SystemColors.Window;
-            dataGridViewCellStyle35.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle35.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle35.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = DataGridViewTriState.True;
-            recent_checkout_dgv.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            recent_checkout_dgv.DefaultCellStyle = dataGridViewCellStyle5;
             recent_checkout_dgv.GridColor = Color.White;
             recent_checkout_dgv.Location = new Point(5, 31);
             recent_checkout_dgv.MultiSelect = false;
@@ -900,9 +946,9 @@
             recent_checkout_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             recent_checkout_dgv.RowHeadersVisible = false;
             recent_checkout_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle36.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.Padding = new Padding(10);
-            recent_checkout_dgv.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Padding = new Padding(10);
+            recent_checkout_dgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
             recent_checkout_dgv.ScrollBars = ScrollBars.Vertical;
             recent_checkout_dgv.ShowCellErrors = false;
             recent_checkout_dgv.ShowCellToolTips = false;
@@ -1018,25 +1064,25 @@
             users_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             users_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
             users_dgv.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle37.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.BackColor = SystemColors.Control;
-            dataGridViewCellStyle37.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle37.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle37.Padding = new Padding(5);
-            dataGridViewCellStyle37.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = DataGridViewTriState.True;
-            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new Padding(5);
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            users_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             users_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             users_dgv.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dataGridViewCellStyle38.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.BackColor = SystemColors.Window;
-            dataGridViewCellStyle38.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle38.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle38.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = DataGridViewTriState.True;
-            users_dgv.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            users_dgv.DefaultCellStyle = dataGridViewCellStyle8;
             users_dgv.GridColor = Color.White;
             users_dgv.Location = new Point(7, 49);
             users_dgv.MultiSelect = false;
@@ -1045,9 +1091,9 @@
             users_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             users_dgv.RowHeadersVisible = false;
             users_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle39.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.Padding = new Padding(10);
-            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Padding = new Padding(10);
+            users_dgv.RowsDefaultCellStyle = dataGridViewCellStyle9;
             users_dgv.ShowCellErrors = false;
             users_dgv.ShowCellToolTips = false;
             users_dgv.ShowEditingIcon = false;
@@ -1391,25 +1437,25 @@
             books_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             books_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
             books_dgv.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle40.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = SystemColors.Control;
-            dataGridViewCellStyle40.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle40.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle40.Padding = new Padding(5);
-            dataGridViewCellStyle40.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = DataGridViewTriState.True;
-            books_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = SystemColors.Control;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.Padding = new Padding(5);
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            books_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             books_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            books_dgv.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, Column14, Column4, Column13 });
-            dataGridViewCellStyle41.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.BackColor = SystemColors.Window;
-            dataGridViewCellStyle41.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle41.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle41.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = DataGridViewTriState.True;
-            books_dgv.DefaultCellStyle = dataGridViewCellStyle41;
+            books_dgv.Columns.AddRange(new DataGridViewColumn[] { Column16, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, Column14, Column4, Column13 });
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = SystemColors.Window;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            books_dgv.DefaultCellStyle = dataGridViewCellStyle11;
             books_dgv.GridColor = Color.White;
             books_dgv.Location = new Point(8, 68);
             books_dgv.MultiSelect = false;
@@ -1418,15 +1464,22 @@
             books_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             books_dgv.RowHeadersVisible = false;
             books_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle42.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.Padding = new Padding(10);
-            books_dgv.RowsDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Padding = new Padding(10);
+            books_dgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             books_dgv.ShowCellErrors = false;
             books_dgv.ShowCellToolTips = false;
             books_dgv.ShowEditingIcon = false;
             books_dgv.ShowRowErrors = false;
             books_dgv.Size = new Size(945, 652);
             books_dgv.TabIndex = 3;
+            // 
+            // Column16
+            // 
+            Column16.HeaderText = "Book ID";
+            Column16.Name = "Column16";
+            Column16.ReadOnly = true;
+            Column16.Visible = false;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -1634,24 +1687,25 @@
             // 
             status_cms.Items.AddRange(new ToolStripItem[] { borrowedToolStripMenuItem, returnedToolStripMenuItem, reserveToolStripMenuItem });
             status_cms.Name = "contextMenuStrip1";
-            status_cms.Size = new Size(126, 70);
+            status_cms.Size = new Size(181, 92);
+            status_cms.ItemClicked += status_filter;
             // 
             // borrowedToolStripMenuItem
             // 
             borrowedToolStripMenuItem.Name = "borrowedToolStripMenuItem";
-            borrowedToolStripMenuItem.Size = new Size(125, 22);
+            borrowedToolStripMenuItem.Size = new Size(180, 22);
             borrowedToolStripMenuItem.Text = "Borrowed";
             // 
             // returnedToolStripMenuItem
             // 
             returnedToolStripMenuItem.Name = "returnedToolStripMenuItem";
-            returnedToolStripMenuItem.Size = new Size(125, 22);
+            returnedToolStripMenuItem.Size = new Size(180, 22);
             returnedToolStripMenuItem.Text = "Returned";
             // 
             // reserveToolStripMenuItem
             // 
             reserveToolStripMenuItem.Name = "reserveToolStripMenuItem";
-            reserveToolStripMenuItem.Size = new Size(125, 22);
+            reserveToolStripMenuItem.Size = new Size(180, 22);
             reserveToolStripMenuItem.Text = "Reserve";
             // 
             // borrow_record_search_txtbox
@@ -1701,25 +1755,25 @@
             borrow_dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             borrow_dgv.BackgroundColor = Color.FromArgb(249, 249, 249);
             borrow_dgv.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle43.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = SystemColors.Control;
-            dataGridViewCellStyle43.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle43.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle43.Padding = new Padding(5);
-            dataGridViewCellStyle43.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle43.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = DataGridViewTriState.True;
-            borrow_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = SystemColors.Control;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle13.Padding = new Padding(5);
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            borrow_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             borrow_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             borrow_dgv.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column15, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column6, Column5, Column7 });
-            dataGridViewCellStyle44.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.BackColor = SystemColors.Window;
-            dataGridViewCellStyle44.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle44.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle44.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = DataGridViewTriState.True;
-            borrow_dgv.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = SystemColors.Window;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            borrow_dgv.DefaultCellStyle = dataGridViewCellStyle14;
             borrow_dgv.GridColor = Color.White;
             borrow_dgv.Location = new Point(8, 50);
             borrow_dgv.MultiSelect = false;
@@ -1728,9 +1782,9 @@
             borrow_dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             borrow_dgv.RowHeadersVisible = false;
             borrow_dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle45.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle45.Padding = new Padding(10);
-            borrow_dgv.RowsDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Padding = new Padding(10);
+            borrow_dgv.RowsDefaultCellStyle = dataGridViewCellStyle15;
             borrow_dgv.ShowCellErrors = false;
             borrow_dgv.ShowCellToolTips = false;
             borrow_dgv.ShowEditingIcon = false;
@@ -1792,6 +1846,61 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // statistics_cms
+            // 
+            statistics_cms.Items.AddRange(new ToolStripItem[] { visitorsToolStripMenuItem, newMembersToolStripMenuItem, borrowedBooksToolStripMenuItem, returnedBooksToolStripMenuItem, overduesBooksToolStripMenuItem, missingBooksToolStripMenuItem, newMembersToolStripMenuItem1, totalBooksToolStripMenuItem });
+            statistics_cms.Name = "statistics_cms";
+            statistics_cms.Size = new Size(161, 180);
+            statistics_cms.ItemClicked += statistics_cms_ItemClicked;
+            // 
+            // visitorsToolStripMenuItem
+            // 
+            visitorsToolStripMenuItem.Name = "visitorsToolStripMenuItem";
+            visitorsToolStripMenuItem.Size = new Size(160, 22);
+            visitorsToolStripMenuItem.Text = "Visitors";
+            // 
+            // newMembersToolStripMenuItem
+            // 
+            newMembersToolStripMenuItem.Name = "newMembersToolStripMenuItem";
+            newMembersToolStripMenuItem.Size = new Size(160, 22);
+            newMembersToolStripMenuItem.Text = "New Members";
+            // 
+            // borrowedBooksToolStripMenuItem
+            // 
+            borrowedBooksToolStripMenuItem.Name = "borrowedBooksToolStripMenuItem";
+            borrowedBooksToolStripMenuItem.Size = new Size(160, 22);
+            borrowedBooksToolStripMenuItem.Text = "Borrowed Books";
+            // 
+            // returnedBooksToolStripMenuItem
+            // 
+            returnedBooksToolStripMenuItem.Name = "returnedBooksToolStripMenuItem";
+            returnedBooksToolStripMenuItem.Size = new Size(160, 22);
+            returnedBooksToolStripMenuItem.Text = "Returned Books";
+            // 
+            // overduesBooksToolStripMenuItem
+            // 
+            overduesBooksToolStripMenuItem.Name = "overduesBooksToolStripMenuItem";
+            overduesBooksToolStripMenuItem.Size = new Size(160, 22);
+            overduesBooksToolStripMenuItem.Text = "Overdues Books";
+            // 
+            // missingBooksToolStripMenuItem
+            // 
+            missingBooksToolStripMenuItem.Name = "missingBooksToolStripMenuItem";
+            missingBooksToolStripMenuItem.Size = new Size(160, 22);
+            missingBooksToolStripMenuItem.Text = "Missing Books";
+            // 
+            // newMembersToolStripMenuItem1
+            // 
+            newMembersToolStripMenuItem1.Name = "newMembersToolStripMenuItem1";
+            newMembersToolStripMenuItem1.Size = new Size(160, 22);
+            newMembersToolStripMenuItem1.Text = "New Members";
+            // 
+            // totalBooksToolStripMenuItem
+            // 
+            totalBooksToolStripMenuItem.Name = "totalBooksToolStripMenuItem";
+            totalBooksToolStripMenuItem.Size = new Size(160, 22);
+            totalBooksToolStripMenuItem.Text = "Total Books";
+            // 
             // Form1
             // 
             BackColor = Color.FromArgb(249, 249, 249);
@@ -1850,8 +1959,9 @@
             panel19.ResumeLayout(false);
             panel19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)overview_history_dgv).EndInit();
-            panel18.ResumeLayout(false);
-            panel18.PerformLayout();
+            statistics_panel.ResumeLayout(false);
+            statistics_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             panel20.ResumeLayout(false);
             panel22.ResumeLayout(false);
             panel21.ResumeLayout(false);
@@ -1880,6 +1990,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             status_cms.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)borrow_dgv).EndInit();
+            statistics_cms.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1924,7 +2035,7 @@
         private Panel panel16;
         private Panel panel17;
         private Panel panel19;
-        private Panel panel18;
+        private Panel statistics_panel;
         private Label label9;
         private Label label10;
         private Panel panel20;
@@ -2003,12 +2114,6 @@
         private NumericUpDown addbook_pagecount_num;
         private Label asdaw;
         private TextBox addbook_language_txtbox;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private DataGridViewTextBoxColumn Column14;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column13;
         private PictureBox language_caret;
         private ContextMenuStrip language_cms;
         private PictureBox pictureBox13;
@@ -2030,5 +2135,24 @@
         private TextBox addborrow_title_txtbox;
         private TextBox addborrow_studId_txtbox;
         private ContextMenuStrip contextMenuStrip1;
+        private Panel chart_panel;
+        private PictureBox pictureBox14;
+        private TextBox statistics_txtbox;
+        private ContextMenuStrip statistics_cms;
+        private ToolStripMenuItem visitorsToolStripMenuItem;
+        private ToolStripMenuItem newMembersToolStripMenuItem;
+        private ToolStripMenuItem borrowedBooksToolStripMenuItem;
+        private ToolStripMenuItem returnedBooksToolStripMenuItem;
+        private ToolStripMenuItem overduesBooksToolStripMenuItem;
+        private ToolStripMenuItem missingBooksToolStripMenuItem;
+        private ToolStripMenuItem newMembersToolStripMenuItem1;
+        private ToolStripMenuItem totalBooksToolStripMenuItem;
+        private DataGridViewTextBoxColumn Column16;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn Column14;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column13;
     }
 }
