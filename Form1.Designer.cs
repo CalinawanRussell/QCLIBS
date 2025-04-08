@@ -204,6 +204,13 @@
             missingBooksToolStripMenuItem = new ToolStripMenuItem();
             newMembersToolStripMenuItem1 = new ToolStripMenuItem();
             totalBooksToolStripMenuItem = new ToolStripMenuItem();
+            borrow_label = new Label();
+            returned_label = new Label();
+            overdue_label = new Label();
+            missing_label = new Label();
+            total_label = new Label();
+            visitor_label = new Label();
+            member_label = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -576,6 +583,7 @@
             // panel9
             // 
             panel9.BackColor = Color.White;
+            panel9.Controls.Add(borrow_label);
             panel9.Controls.Add(label19);
             panel9.Location = new Point(3, 3);
             panel9.Name = "panel9";
@@ -595,6 +603,7 @@
             // panel10
             // 
             panel10.BackColor = Color.White;
+            panel10.Controls.Add(returned_label);
             panel10.Controls.Add(label21);
             panel10.Location = new Point(241, 3);
             panel10.Name = "panel10";
@@ -614,6 +623,7 @@
             // panel11
             // 
             panel11.BackColor = Color.White;
+            panel11.Controls.Add(overdue_label);
             panel11.Controls.Add(label20);
             panel11.Location = new Point(479, 3);
             panel11.Name = "panel11";
@@ -633,6 +643,7 @@
             // panel12
             // 
             panel12.BackColor = Color.White;
+            panel12.Controls.Add(missing_label);
             panel12.Controls.Add(label22);
             panel12.Location = new Point(717, 3);
             panel12.Name = "panel12";
@@ -652,6 +663,7 @@
             // panel13
             // 
             panel13.BackColor = Color.White;
+            panel13.Controls.Add(total_label);
             panel13.Controls.Add(label23);
             panel13.Location = new Point(3, 99);
             panel13.Name = "panel13";
@@ -671,6 +683,7 @@
             // panel14
             // 
             panel14.BackColor = Color.White;
+            panel14.Controls.Add(visitor_label);
             panel14.Controls.Add(label24);
             panel14.Location = new Point(241, 99);
             panel14.Name = "panel14";
@@ -690,6 +703,7 @@
             // panel15
             // 
             panel15.BackColor = Color.White;
+            panel15.Controls.Add(member_label);
             panel15.Controls.Add(label25);
             panel15.Location = new Point(479, 99);
             panel15.Name = "panel15";
@@ -1917,16 +1931,86 @@
             totalBooksToolStripMenuItem.Size = new Size(160, 22);
             totalBooksToolStripMenuItem.Text = "Total Books";
             // 
+            // borrow_label
+            // 
+            borrow_label.AutoSize = true;
+            borrow_label.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            borrow_label.Location = new Point(103, 39);
+            borrow_label.Name = "borrow_label";
+            borrow_label.Size = new Size(26, 29);
+            borrow_label.TabIndex = 3;
+            borrow_label.Text = "0";
+            // 
+            // returned_label
+            // 
+            returned_label.AutoSize = true;
+            returned_label.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            returned_label.Location = new Point(103, 39);
+            returned_label.Name = "returned_label";
+            returned_label.Size = new Size(26, 29);
+            returned_label.TabIndex = 4;
+            returned_label.Text = "0";
+            // 
+            // overdue_label
+            // 
+            overdue_label.AutoSize = true;
+            overdue_label.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            overdue_label.Location = new Point(103, 39);
+            overdue_label.Name = "overdue_label";
+            overdue_label.Size = new Size(26, 29);
+            overdue_label.TabIndex = 4;
+            overdue_label.Text = "0";
+            // 
+            // missing_label
+            // 
+            missing_label.AutoSize = true;
+            missing_label.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            missing_label.Location = new Point(103, 39);
+            missing_label.Name = "missing_label";
+            missing_label.Size = new Size(26, 29);
+            missing_label.TabIndex = 4;
+            missing_label.Text = "0";
+            // 
+            // total_label
+            // 
+            total_label.AutoSize = true;
+            total_label.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            total_label.Location = new Point(103, 39);
+            total_label.Name = "total_label";
+            total_label.Size = new Size(26, 29);
+            total_label.TabIndex = 4;
+            total_label.Text = "0";
+            // 
+            // visitor_label
+            // 
+            visitor_label.AutoSize = true;
+            visitor_label.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            visitor_label.Location = new Point(103, 39);
+            visitor_label.Name = "visitor_label";
+            visitor_label.Size = new Size(26, 29);
+            visitor_label.TabIndex = 4;
+            visitor_label.Text = "0";
+            // 
+            // member_label
+            // 
+            member_label.AutoSize = true;
+            member_label.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            member_label.Location = new Point(103, 39);
+            member_label.Name = "member_label";
+            member_label.Size = new Size(26, 29);
+            member_label.TabIndex = 4;
+            member_label.Text = "0";
+            // 
             // Form1
             // 
             BackColor = Color.FromArgb(249, 249, 249);
             ClientSize = new Size(1168, 784);
             Controls.Add(tabs_panel);
             Controls.Add(panel1);
-            Controls.Add(book_panel);
-            Controls.Add(user_panel);
             Controls.Add(dashboard_panel);
             Controls.Add(borrow_record_panel);
+            Controls.Add(book_panel);
+            Controls.Add(user_panel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -2172,5 +2256,12 @@
         private DataGridViewTextBoxColumn Column13;
         private PictureBox pictureBox15;
         private Label label35;
+        private Label borrow_label;
+        private Label returned_label;
+        private Label overdue_label;
+        private Label missing_label;
+        private Label total_label;
+        private Label visitor_label;
+        private Label member_label;
     }
 }

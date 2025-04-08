@@ -14,6 +14,11 @@ using LiveChartsCore.SkiaSharpView;
 using SkiaSharp;
 using LiveChartsCore.SkiaSharpView.Painting;
 using LiveChartsCore.SkiaSharpView.VisualElements;
+using LiveChartsCore.Themes;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using static System.Reflection.Metadata.BlobBuilder;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Windows.Forms;
 
 
 //TODO:
@@ -60,6 +65,7 @@ namespace Library_system
             language_cms.Items.Add("English");
             language_cms.Items.Add("Filipino");
 
+            loadDashboard(); // Load dashboard data from the database
         }
 
         //DASHBOARD CLICK
@@ -69,6 +75,58 @@ namespace Library_system
             user_panel.Visible = false;
             book_panel.Visible = false;
             borrow_record_panel.Visible = false;
+
+            //DASHBOARD LOAD QUERY
+            //note: visitors missing, waiting for check in and check out table
+            //note: change to date depending on the user's choice (dashboard_from_dtp and dashboard_to_dtp)
+
+            //SELECT
+            //    (SELECT COUNT(*) 
+            //    FROM borrowed_books 
+            //    WHERE BORROW_DATE 
+            //        BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
+            //                TO_DATE('2025-04-08', 'YYYY-MM-DD')+1 
+            //        AND STATUS = 'Borrowed') 
+            //    AS borrowed_books,
+    
+            //    (SELECT COUNT(*) 
+            //    FROM borrowed_books 
+            //    WHERE BORROW_DATE 
+            //        BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
+            //                TO_DATE('2025-04-08', 'YYYY-MM-DD')+1 
+            //        AND STATUS = 'Returned')
+            //    AS returned_books,
+    
+            //    (SELECT COUNT(*) 
+            //    FROM borrowed_books 
+            //    WHERE BORROW_DATE 
+            //        BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
+            //                TO_DATE('2025-04-08', 'YYYY-MM-DD')+1 
+            //        AND SYSDATE > BORROW_DUE) 
+            //    AS overdue_books,
+    
+            //    (SELECT COUNT(*) 
+            //    FROM borrowed_books 
+            //    WHERE BORROW_DATE 
+            //        BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
+            //                TO_DATE('2025-04-08', 'YYYY-MM-DD')+1 
+            //        AND STATUS = 'Missing')
+            //    AS missing_books,
+
+            //    (SELECT SUM(QUANTITY) 
+            //    FROM books) 
+            //    AS total_books,
+    
+            //    (SELECT COUNT(*)
+            //    FROM users
+            //    WHERE DATE_CREATED 
+            //    BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
+            //            TO_DATE('2025-04-08', 'YYYY-MM-DD')+1)
+            //    AS new_members
+    
+            //FROM borrowed_books;
+
+            loadDashboard(); // Load dashboard data from the database
         }
 
         //USERS CLICK
@@ -450,6 +508,66 @@ namespace Library_system
         }
 
         //LOAD FUNCTIONS
+        public void loadDashboard()
+        {
+            string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+
+            using (OracleConnection conn = new OracleConnection(connectionString))
+            {
+                string query = @"
+                    SELECT 
+                        (SELECT COUNT(*) 
+                        FROM borrowed_books 
+                        WHERE BORROW_DATE 
+                            BETWEEN :from_date AND :to_date 
+                            AND STATUS = 'Borrowed') AS borrowed_books,
+    
+                        (SELECT COUNT(*) 
+                        FROM borrowed_books 
+                        WHERE BORROW_DATE 
+                            BETWEEN :from_date AND :to_date 
+                            AND STATUS = 'Returned') AS returned_books,
+    
+                        (SELECT COUNT(*) 
+                        FROM borrowed_books 
+                        WHERE BORROW_DATE 
+                            BETWEEN :from_date AND :to_date 
+                            AND SYSDATE > BORROW_DUE) AS overdue_books,
+    
+                        (SELECT COUNT(*) 
+                        FROM borrowed_books 
+                        WHERE BORROW_DATE 
+                            BETWEEN :from_date AND :to_date 
+                            AND STATUS = 'Missing') AS missing_books,
+    
+                        (SELECT SUM(QUANTITY) FROM books) AS total_books,
+    
+                        (SELECT COUNT(*)
+                        FROM users
+                        WHERE DATE_CREATED 
+                            BETWEEN :from_date AND :to_date) AS new_members
+                    FROM dual";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.Parameters.Add(new OracleParameter("from_date", dashboard_from_dtp.Value));
+                    cmd.Parameters.Add(new OracleParameter("to_date", dashboard_to_dtp.Value));
+                    conn.Open();
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            borrow_label.Text = reader["borrowed_books"].ToString();
+                            returned_label.Text = reader["returned_books"].ToString();
+                            overdue_label.Text = reader["overdue_books"].ToString();
+                            missing_label.Text = reader["missing_books"].ToString();
+                            total_label.Text = reader["total_books"].ToString();
+                            member_label.Text = reader["new_members"].ToString();
+                        }
+                    }
+                }
+            }
+        }
+
         public void loadUsers() //LOAD USER
         {
             //REFERENCE TABLE:
