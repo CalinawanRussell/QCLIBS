@@ -52,9 +52,6 @@ C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\runtimes\win-x8
 C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
 C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
 C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
-C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\MetroFramework.Design.dll
-C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\MetroFramework.Fonts.dll
-C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\MetroFramework.dll
 C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\OpenTK.dll
 C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\OpenTK.GLControl.dll
 C:\Users\Gigabyte\source\Library-System\bin\Debug\net8.0-windows\ScottPlot.dll

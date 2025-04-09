@@ -19,6 +19,8 @@ using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Reflection.Metadata.BlobBuilder;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 //TODO:
@@ -76,57 +78,22 @@ namespace Library_system
             book_panel.Visible = false;
             borrow_record_panel.Visible = false;
 
+            dashboard_from_dtp.MaxDate = DateTime.Now.AddDays(-1);
+            dashboard_from_dtp.Value = DateTime.Now.AddDays(-7);
+
+            dashboard_to_dtp.MaxDate = DateTime.Now.AddSeconds(1);
+            dashboard_to_dtp.Value = DateTime.Now;
+
             //DASHBOARD LOAD QUERY
             //note: visitors missing, waiting for check in and check out table
             //note: change to date depending on the user's choice (dashboard_from_dtp and dashboard_to_dtp)
 
-            //SELECT
-            //    (SELECT COUNT(*) 
-            //    FROM borrowed_books 
-            //    WHERE BORROW_DATE 
-            //        BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
-            //                TO_DATE('2025-04-08', 'YYYY-MM-DD')+1 
-            //        AND STATUS = 'Borrowed') 
-            //    AS borrowed_books,
-    
-            //    (SELECT COUNT(*) 
-            //    FROM borrowed_books 
-            //    WHERE BORROW_DATE 
-            //        BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
-            //                TO_DATE('2025-04-08', 'YYYY-MM-DD')+1 
-            //        AND STATUS = 'Returned')
-            //    AS returned_books,
-    
-            //    (SELECT COUNT(*) 
-            //    FROM borrowed_books 
-            //    WHERE BORROW_DATE 
-            //        BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
-            //                TO_DATE('2025-04-08', 'YYYY-MM-DD')+1 
-            //        AND SYSDATE > BORROW_DUE) 
-            //    AS overdue_books,
-    
-            //    (SELECT COUNT(*) 
-            //    FROM borrowed_books 
-            //    WHERE BORROW_DATE 
-            //        BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
-            //                TO_DATE('2025-04-08', 'YYYY-MM-DD')+1 
-            //        AND STATUS = 'Missing')
-            //    AS missing_books,
-
-            //    (SELECT SUM(QUANTITY) 
-            //    FROM books) 
-            //    AS total_books,
-    
-            //    (SELECT COUNT(*)
-            //    FROM users
-            //    WHERE DATE_CREATED 
-            //    BETWEEN TO_DATE('2025-01-01', 'YYYY-MM-DD')-1 AND 
-            //            TO_DATE('2025-04-08', 'YYYY-MM-DD')+1)
-            //    AS new_members
-    
-            //FROM borrowed_books;
-
             loadDashboard(); // Load dashboard data from the database
+        }
+        private void dashboard_date_changed(object sender, EventArgs e)
+        {
+            loadDashboard(); // Load dashboard data from the database
+            InitializeChart(); // Update the chart with new data
         }
 
         //USERS CLICK
@@ -512,41 +479,41 @@ namespace Library_system
         {
             string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
 
+            //COUNTERS
+            //COUNTERS
+            //COUNTERS
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
                 string query = @"
-                    SELECT 
-                        (SELECT COUNT(*) 
-                        FROM borrowed_books 
-                        WHERE BORROW_DATE 
-                            BETWEEN :from_date AND :to_date 
-                            AND STATUS = 'Borrowed') AS borrowed_books,
-    
-                        (SELECT COUNT(*) 
-                        FROM borrowed_books 
-                        WHERE BORROW_DATE 
-                            BETWEEN :from_date AND :to_date 
-                            AND STATUS = 'Returned') AS returned_books,
-    
-                        (SELECT COUNT(*) 
-                        FROM borrowed_books 
-                        WHERE BORROW_DATE 
-                            BETWEEN :from_date AND :to_date 
-                            AND SYSDATE > BORROW_DUE) AS overdue_books,
-    
-                        (SELECT COUNT(*) 
-                        FROM borrowed_books 
-                        WHERE BORROW_DATE 
-                            BETWEEN :from_date AND :to_date 
-                            AND STATUS = 'Missing') AS missing_books,
-    
-                        (SELECT SUM(QUANTITY) FROM books) AS total_books,
-    
-                        (SELECT COUNT(*)
-                        FROM users
-                        WHERE DATE_CREATED 
-                            BETWEEN :from_date AND :to_date) AS new_members
-                    FROM dual";
+                               SELECT 
+                                   (SELECT COUNT(*) 
+                                    FROM borrowed_books 
+                                    WHERE BORROW_DATE BETWEEN :from_date AND :to_date 
+                                      AND status = 'Borrowed') AS borrowed_books,
+
+                                   (SELECT COUNT(*) 
+                                    FROM borrowed_books 
+                                    WHERE BORROW_DATE BETWEEN :from_date AND :to_date 
+                                      AND status = 'Returned') AS returned_books,
+
+                                   (SELECT COUNT(*) 
+                                    FROM borrowed_books 
+                                    WHERE BORROW_DATE BETWEEN :from_date AND :to_date 
+                                      AND SYSDATE > BORROW_DUE
+                                      AND status != 'Returned') AS overdue_books,
+
+                                   (SELECT COUNT(*) 
+                                    FROM borrowed_books 
+                                    WHERE BORROW_DATE BETWEEN :from_date AND :to_date 
+                                      AND status = 'Missing') AS missing_books,
+
+                                   (SELECT SUM(QUANTITY) FROM books) AS total_books,
+
+                                   (SELECT COUNT(*)
+                                    FROM users
+                                    WHERE DATE_CREATED BETWEEN :from_date AND :to_date) AS new_members
+                               FROM dual";
+
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(new OracleParameter("from_date", dashboard_from_dtp.Value));
@@ -566,6 +533,46 @@ namespace Library_system
                     }
                 }
             }
+            //COUNTERS
+            //COUNTERS
+            //COUNTERS
+
+            //OVERDUE HISTORY
+            //OVERDUE HISTORY
+            //OVERDUE HISTORY
+            overview_history_dgv.Rows.Clear();
+
+            using (OracleConnection conn = new OracleConnection(connectionString))
+            {
+                string query = @"
+                                SELECT 
+                                    bb.borrower_id,
+                                    b.title,
+                                    bb.borrow_due,
+                                    bb.borrow_date
+                                FROM borrowed_books bb
+                                JOIN books b
+                                    ON b.book_id = bb.book_id
+                                WHERE SYSDATE > borrow_due AND
+                                    STATUS != 'Returned'";
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    conn.Open();
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            overview_history_dgv.Rows.Add(  reader["borrower_id"].ToString(),
+                                                            reader["title"].ToString(),
+                                                            Convert.ToDateTime(reader["borrow_due"]).ToString("MMMM d, yyyy"),
+                                                            Convert.ToDateTime(reader["borrow_date"]).ToString("MMMM d, yyyy"));
+                        }
+                    }
+                }
+            }
+            //OVERDUE HISTORY
+            //OVERDUE HISTORY
+            //OVERDUE HISTORY
         }
 
         public void loadUsers() //LOAD USER
@@ -653,7 +660,7 @@ namespace Library_system
                                     Convert.ToInt32(reader["BOOK_ID"]),
                                     reader["TITLE"].ToString(),
                                     reader["AUTHOR"].ToString(),
-                                    reader["PUBLICATION_DATE"].ToString(),
+                                    Convert.ToDateTime(reader["PUBLICATION_DATE"].ToString()).ToString("MMMM d, yyyy"),
                                     reader["GENRE"].ToString(),
                                     Convert.ToInt32(reader["QUANTITY"]),
                                     Convert.ToInt32(reader["AVAILABLE"])
@@ -701,8 +708,8 @@ namespace Library_system
                                     reader["BORROWER_ID"].ToString(),
                                     reader["BORROWER_LN"].ToString() + ", " + reader["BORROWER_FN"].ToString(),
                                     Convert.ToInt32(reader["BOOK_ID"]),
-                                    Convert.ToDateTime(reader["BORROW_DATE"]).ToString("yyyy-MM-dd"),
-                                    Convert.ToDateTime(reader["BORROW_DUE"]).ToString("yyyy-MM-dd"),
+                                    Convert.ToDateTime(reader["BORROW_DATE"]).ToString("MMMMM d, yyyy"),
+                                    Convert.ToDateTime(reader["BORROW_DUE"]).ToString("MMMMM d, yyyy"),
                                     reader["STATUS"].ToString()
                                 );
                             }
@@ -770,14 +777,29 @@ namespace Library_system
                 statistics_txtbox.Text = e.ClickedItem.Text;
             }
         }
+        private void statistics_chart_changed(object sender, EventArgs e)
+        {
+            statistics_cms.Hide();
+            InitializeChart();
+        }
 
+        //CHART INITIALIZATION
         private void InitializeChart()
         {
+            // Clear any existing chart
+            chart_panel.Controls.Clear();
+
             var cartesianChart = new CartesianChart
             {
                 Dock = DockStyle.Fill,
                 BackColor = System.Drawing.Color.White
             };
+
+            // Set tooltip configuration for smaller appearance
+            cartesianChart.TooltipPosition = LiveChartsCore.Measure.TooltipPosition.Top;
+            cartesianChart.TooltipBackgroundPaint = new SolidColorPaint(SKColors.White.WithAlpha(230));
+            cartesianChart.TooltipTextSize = 9; // Smaller text size
+            cartesianChart.TooltipTextPaint = new SolidColorPaint(SKColors.Black);
 
             // Modern gradient colors
             var gradientPaint = new LinearGradientPaint(
@@ -789,32 +811,168 @@ namespace Library_system
                 new SKPoint(0, 1)
             );
 
-            var values = new double[30];
-            var dates = new string[30];
-            var random = new Random();
+            string selectedStatistic = statistics_txtbox.Text;
+            string chartTitle = "Library Statistics";
+            string yAxisName = "Count";
+            string seriesName = selectedStatistic;
 
-            // Generate realistic data that resembles library activity
-            for (int i = 0; i < 30; i++)
+            List<double> values = new List<double>();
+            List<string> dates = new List<string>();
+            DateTime fromDate = dashboard_from_dtp.Value;
+            DateTime toDate = dashboard_to_dtp.Value;
+
+            // Set up the database connection
+            string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+            using (OracleConnection conn = new OracleConnection(connectionString))
             {
-                // Create more realistic borrowing patterns (higher during weekdays, lower on weekends)
-                int dayOfWeek = i % 7;
-                double baseValue = dayOfWeek < 5 ? random.Next(12, 25) : random.Next(5, 15);
-                values[i] = baseValue;
+                try
+                {
+                    conn.Open();
+                    string query = "";
 
-                // Current date minus days
-                var date = DateTime.Now.AddDays(-30 + i + 1);
-                dates[i] = date.ToString("MMM dd");
+                    switch (selectedStatistic)
+                    {
+                        case "Visitors":
+                            chartTitle = "Visitor Statistics";
+                            values = Enumerable.Repeat(0.0, 10).ToList();
+                            dates = Enumerable.Range(0, 10)
+                                .Select(i => fromDate.AddDays(i).ToString("MMM dd"))
+                                .ToList();
+                            seriesName = "No Visitor Data";
+                            break;
+
+                        case "New Members":
+                            query = @"
+                                    SELECT COUNT(*) AS count, TRUNC(date_created) AS created_date
+                                    FROM users
+                                    WHERE date_created BETWEEN :from_date AND :to_date
+                                    GROUP BY TRUNC(date_created)
+                                    ORDER BY TRUNC(date_created)";
+                            chartTitle = "New Member Registrations";
+                            seriesName = "New Members";
+                            break;
+
+                        case "Borrowed Books":
+                            query = @"
+                                    SELECT COUNT(*) AS count, TRUNC(borrow_date) AS created_date
+                                    FROM borrowed_books
+                                    WHERE status = 'Borrowed' AND 
+                                        borrow_date BETWEEN :from_date AND :to_date
+                                    GROUP BY TRUNC(borrow_date)
+                                    ORDER BY TRUNC(borrow_date)";
+                            chartTitle = "Books Borrowed Over Time";
+                            seriesName = "Borrowed Books";
+                            break;
+
+                        case "Returned Books":
+                            query = @"
+                                    SELECT COUNT(*) AS count, TRUNC(borrow_date) AS created_date
+                                    FROM borrowed_books
+                                    WHERE status = 'Returned' AND 
+                                        borrow_date BETWEEN :from_date AND :to_date
+                                    GROUP BY TRUNC(borrow_date)
+                                    ORDER BY TRUNC(borrow_date)";
+                            chartTitle = "Books Returned Over Time";
+                            seriesName = "Returned Books";
+                            break;
+
+                        case "Overdue Books":
+                            query = @"
+                                    SELECT COUNT(*) AS count, TRUNC(borrow_due) AS created_date
+                                    FROM borrowed_books
+                                    WHERE SYSDATE > borrow_due 
+                                        AND status != 'Returned'
+                                        AND borrow_due BETWEEN :from_date AND :to_date
+                                    GROUP BY TRUNC(borrow_due)
+                                    ORDER BY TRUNC(borrow_due)";
+                            chartTitle = "Overdue Books Over Time";
+                            seriesName = "Overdue Books";
+                            break;
+
+                        case "Missing Books":
+                            query = @"
+                                    SELECT COUNT(*) AS count, TRUNC(borrow_date) AS created_date
+                                    FROM borrowed_books
+                                    WHERE status = 'Missing' AND
+                                        borrow_date BETWEEN :from_date AND :to_date
+                                    GROUP BY TRUNC(borrow_date)
+                                    ORDER BY TRUNC(borrow_date)";
+                            chartTitle = "Missing Books Over Time";
+                            seriesName = "Missing Books";
+                            break;
+
+                        case "Total Books":
+                            query = @"
+                                    SELECT SUM(QUANTITY) AS count, TRUNC(LAST_UPDATED) AS created_date
+                                    FROM books
+                                    WHERE LAST_UPDATED BETWEEN :from_date AND :to_date
+                                    GROUP BY TRUNC(LAST_UPDATED)
+                                    ORDER BY TRUNC(LAST_UPDATED)";
+                            chartTitle = "Total Book Inventory Over Time";
+                            seriesName = "Total Books";
+                            break;
+
+                        default:
+                            values = Enumerable.Repeat(0.0, 10).ToList();
+                            dates = Enumerable.Range(0, 10)
+                                .Select(i => fromDate.AddDays(i).ToString("MMM dd"))
+                                .ToList();
+                            chartTitle = "Select a Statistic";
+                            seriesName = "No Data";
+                            break;
+                    }
+
+                    if (!string.IsNullOrEmpty(query))
+                    {
+                        var dataByDate = new Dictionary<DateTime, double>();
+
+                        for (var day = fromDate.Date; day <= toDate.Date; day = day.AddDays(1))
+                        {
+                            dataByDate[day] = 0;
+                        }
+
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            cmd.Parameters.Add(new OracleParameter("from_date", fromDate));
+                            cmd.Parameters.Add(new OracleParameter("to_date", toDate));
+
+                            using (OracleDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    DateTime date = Convert.ToDateTime(reader["created_date"]);
+                                    double count = Convert.ToDouble(reader["count"]);
+
+                                    dataByDate[date.Date] = count;
+                                }
+                            }
+                        }
+
+                        var sortedData = dataByDate.OrderBy(kvp => kvp.Key).ToList();
+                        values = sortedData.Select(kvp => kvp.Value).ToList();
+                        dates = sortedData.Select(kvp => kvp.Key.ToString("MMM dd")).ToList();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading chart data: {ex.Message}");
+
+                    values = Enumerable.Repeat(0.0, 10).ToList();
+                    dates = Enumerable.Range(0, 10)
+                        .Select(i => fromDate.AddDays(i).ToString("MMM dd"))
+                        .ToList();
+                }
             }
 
             cartesianChart.Series = new ISeries[]
             {
                 new LineSeries<double>
                 {
-                    Name = "Books Borrowed",
-                    Values = values,
+                    Name = seriesName,
+                    Values = values.ToArray(),
                     Stroke = new SolidColorPaint(SKColors.DodgerBlue) { StrokeThickness = 3 },
                     Fill = gradientPaint,
-                    GeometrySize = 0,
+                    GeometrySize = 2,
                     LineSmoothness = 0.5
                 }
             };
@@ -824,7 +982,7 @@ namespace Library_system
                 new Axis
                 {
                     Name = "Date",
-                    Labels = dates,
+                    Labels = dates.ToArray(),
                     TextSize = 10,
                     SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
                     TicksPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
@@ -836,7 +994,7 @@ namespace Library_system
             {
                 new Axis
                 {
-                    Name = "Books",
+                    Name = yAxisName,
                     TextSize = 10,
                     SeparatorsPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
                     TicksPaint = new SolidColorPaint(SKColors.LightGray) { StrokeThickness = 1 },
@@ -845,17 +1003,16 @@ namespace Library_system
                 }
             };
 
-            // Add title and clean up the legend
             cartesianChart.Title = new LabelVisual
             {
-                Text = "Daily Book Borrowing Activity",
+                Text = chartTitle,
                 TextSize = 16,
                 Paint = new SolidColorPaint(SKColors.DarkSlateBlue)
             };
 
             cartesianChart.LegendPosition = LiveChartsCore.Measure.LegendPosition.Top;
             cartesianChart.LegendTextPaint = new SolidColorPaint(SKColors.DarkSlateBlue);
-            cartesianChart.LegendTextSize = 12;
+            cartesianChart.LegendTextSize = 6;
 
             chart_panel.Controls.Add(cartesianChart);
         }
