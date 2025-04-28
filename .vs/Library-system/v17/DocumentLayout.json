@@ -1,14 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Gigabyte\\source\\Library-System\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\Library-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\gigabyte\\source\\library-system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\source\\repos\\library-system\\userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|C:\\Users\\Gigabyte\\source\\Library-System\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\source\\repos\\library-system\\userpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:userpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\source\\repos\\library-system\\splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\source\\repos\\library-system\\userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,15 +30,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:131:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -37,29 +57,69 @@
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Gigabyte\\source\\Library-System\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Gigabyte\\source\\Library-System\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "Title": "userPage.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.Designer.cs",
+              "RelativeDocumentMoniker": "userPage.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.Designer.cs",
+              "RelativeToolTip": "userPage.Designer.cs",
+              "ViewState": "AgIAAMYBAAAAAAAAAAAhwM0BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T05:41:05.149Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-27T12:47:12.29Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Gigabyte\\source\\Library-System\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Gigabyte\\source\\Library-System\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA0AAAAAAAAAA==",
+              "Title": "userPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.cs",
+              "RelativeDocumentMoniker": "userPage.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.cs [Design]",
+              "RelativeToolTip": "userPage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T11:50:35.001Z",
+              "WhenOpened": "2025-04-27T12:53:34.738Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "splashscreen.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs",
+              "RelativeDocumentMoniker": "splashscreen.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs",
+              "RelativeToolTip": "splashscreen.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAqwCMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T12:16:49.808Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "splashscreen.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs",
+              "RelativeDocumentMoniker": "splashscreen.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs [Design]",
+              "RelativeToolTip": "splashscreen.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T12:16:48.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "userPage.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.cs",
+              "RelativeDocumentMoniker": "userPage.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.cs",
+              "RelativeToolTip": "userPage.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAD4v6IAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T06:33:47.041Z"
             }
           ]
         }

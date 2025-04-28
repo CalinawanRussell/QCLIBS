@@ -38,10 +38,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Library_system
 {
-    public partial class Form1 : Form
+    public partial class adminForm : Form
     {
 
-        public Form1()
+        public adminForm()
         {
             InitializeComponent();
             InitializeChart();
@@ -84,9 +84,6 @@ namespace Library_system
             dashboard_to_dtp.MaxDate = DateTime.Now.AddSeconds(1);
             dashboard_to_dtp.Value = DateTime.Now;
 
-            //DASHBOARD LOAD QUERY
-            //note: visitors missing, waiting for check in and check out table
-            //note: change to date depending on the user's choice (dashboard_from_dtp and dashboard_to_dtp)
 
             loadDashboard(); // Load dashboard data from the database
         }
@@ -199,7 +196,7 @@ namespace Library_system
             {
                 try
                 {
-                    string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+                    string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
                     using (OracleConnection conn = new OracleConnection(connectionString))
                     {
                         conn.Open();
@@ -365,7 +362,7 @@ namespace Library_system
                 // Insert data into the database
                 try
                 {
-                    string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+                    string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
                     using (OracleConnection conn = new OracleConnection(connectionString))
                     {
                         string query = "INSERT INTO books (title, author, publisher, publication_date, genre, book_language, page_count, quantity) " +
@@ -477,7 +474,7 @@ namespace Library_system
         //LOAD FUNCTIONS
         public void loadDashboard()
         {
-            string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+            string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
 
             //COUNTERS
             //COUNTERS
@@ -562,7 +559,7 @@ namespace Library_system
                     {
                         while (reader.Read())
                         {
-                            overview_history_dgv.Rows.Add(  reader["borrower_id"].ToString(),
+                            overview_history_dgv.Rows.Add(reader["borrower_id"].ToString(),
                                                             reader["title"].ToString(),
                                                             Convert.ToDateTime(reader["borrow_due"]).ToString("MMMM d, yyyy"),
                                                             Convert.ToDateTime(reader["borrow_date"]).ToString("MMMM d, yyyy"));
@@ -575,23 +572,15 @@ namespace Library_system
             //OVERDUE HISTORY
         }
 
-        public void loadUsers() //LOAD USER
+        public void loadUsers() //LOAD STUDENTS AS USERS
         {
-            //REFERENCE TABLE:
-            //CREATE TABLE users
-            // ("STUDENT_ID" VARCHAR2(10),
-            //  "FIRST_NAME" VARCHAR2(25),
-            //  "LAST_NAME" VARCHAR2(25),
-            //  "EMAIL" VARCHAR2(50),
-            //  "DATE_CREATED" DATE
-            // )
             users_dgv.Rows.Clear(); // Clear existing rows in the DataGridView
             try
             {
-                string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+                string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
                 using (OracleConnection conn = new OracleConnection(connectionString))
                 {
-                    string query = "SELECT STUDENT_ID, FIRST_NAME, LAST_NAME, EMAIL FROM users";
+                    string query = "SELECT STUDENT_NUMBER, FIRST_NAME, LAST_NAME, EMAIL FROM students";
                     using (OracleCommand cmd = new OracleCommand(query, conn))
                     {
                         conn.Open();
@@ -600,7 +589,7 @@ namespace Library_system
                             while (reader.Read())
                             {
                                 users_dgv.Rows.Add(
-                                    reader["STUDENT_ID"].ToString(),
+                                    reader["STUDENT_NUMBER"].ToString(),
                                     reader["FIRST_NAME"].ToString() + " " + reader["LAST_NAME"].ToString(),
                                     reader["EMAIL"].ToString()
                                 );
@@ -633,7 +622,7 @@ namespace Library_system
             books_dgv.Rows.Clear(); // Clear existing rows in the DataGridView
             try
             {
-                string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+                string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
                 using (OracleConnection conn = new OracleConnection(connectionString))
                 {
                     string query = @"
@@ -692,7 +681,7 @@ namespace Library_system
             borrow_dgv.Rows.Clear(); // Clear existing rows in the DataGridView
             try
             {
-                string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+                string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
                 using (OracleConnection conn = new OracleConnection(connectionString))
                 {
                     string query = "SELECT BORROW_ID, BORROWER_ID, BORROWER_LN, BORROWER_FN, BOOK_ID, BORROW_DUE, BORROW_DATE, STATUS FROM borrowed_books";
@@ -822,7 +811,7 @@ namespace Library_system
             DateTime toDate = dashboard_to_dtp.Value;
 
             // Set up the database connection
-            string connectionString = "User Id=xeroj; Password=Xeroj456519; Data Source=localhost:1521/XE;";
+            string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
                 try
@@ -1015,6 +1004,16 @@ namespace Library_system
             cartesianChart.LegendTextSize = 6;
 
             chart_panel.Controls.Add(cartesianChart);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
