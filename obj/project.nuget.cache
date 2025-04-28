@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y1JIqFobR7k=",
+  "dgSpecHash": "443wsZ49to0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Source\\Repos\\Library-System\\Library-system.csproj",
+  "projectFilePath": "C:\\Users\\user\\Downloads\\QCLIBS\\Library-system.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\harfbuzzsharp\\8.3.0.1\\harfbuzzsharp.8.3.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\7.3.0.3\\harfbuzzsharp.nativeassets.linux.7.3.0.3.nupkg.sha512",
