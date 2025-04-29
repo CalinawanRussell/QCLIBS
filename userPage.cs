@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using OpenTK.Graphics.OpenGL;
 using Oracle.ManagedDataAccess.Client;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static Library_system.loginForm;
@@ -86,6 +87,11 @@ namespace Library_system
             ShowCheckInControls();
             HideDataGridView();
             pnlRECEIPT.Visible = false;
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+           Application.Exit();
         }
 
         private void ShowCheckInControls()
@@ -271,5 +277,7 @@ namespace Library_system
         {
 
         }
+
+       
     }
 }

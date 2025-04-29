@@ -73,12 +73,12 @@
             panel6 = new Panel();
             label6 = new Label();
             pictureBox7 = new PictureBox();
-            panel7 = new Panel();
-            label7 = new Label();
-            pictureBox8 = new PictureBox();
             panel8 = new Panel();
             label8 = new Label();
             pictureBox9 = new PictureBox();
+            panel7 = new Panel();
+            label7 = new Label();
+            pictureBox8 = new PictureBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
             panel9 = new Panel();
             borrow_label = new Label();
@@ -227,10 +227,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             flowLayoutPanel2.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
@@ -511,36 +511,6 @@
             pictureBox7.TabStop = false;
             pictureBox7.Click += borrow_record_click;
             // 
-            // panel7
-            // 
-            panel7.Controls.Add(label7);
-            panel7.Controls.Add(pictureBox8);
-            panel7.Location = new Point(5, 275);
-            panel7.Margin = new Padding(0, 0, 0, 5);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(184, 49);
-            panel7.TabIndex = 4;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(50, 13);
-            label7.Name = "label7";
-            label7.Size = new Size(65, 22);
-            label7.TabIndex = 9;
-            label7.Text = "Log Out";
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = Properties.Resources.logout1;
-            pictureBox8.Location = new Point(8, 8);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(32, 32);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 8;
-            pictureBox8.TabStop = false;
-            // 
             // panel8
             // 
             panel8.Controls.Add(label8);
@@ -570,6 +540,37 @@
             pictureBox9.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox9.TabIndex = 8;
             pictureBox9.TabStop = false;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(label7);
+            panel7.Controls.Add(pictureBox8);
+            panel7.Location = new Point(5, 275);
+            panel7.Margin = new Padding(0, 0, 0, 5);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(184, 49);
+            panel7.TabIndex = 4;
+            panel7.Paint += panel7_Paint;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(50, 13);
+            label7.Name = "label7";
+            label7.Size = new Size(65, 22);
+            label7.TabIndex = 9;
+            label7.Text = "Log Out";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = Properties.Resources.logout1;
+            pictureBox8.Location = new Point(8, 8);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(32, 32);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 8;
+            pictureBox8.TabStop = false;
             // 
             // flowLayoutPanel2
             // 
@@ -2029,12 +2030,12 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             flowLayoutPanel2.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();

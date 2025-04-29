@@ -163,63 +163,63 @@ namespace Library_system
             disableall(addborrow_panel);
         }
 
-       private void addborrow(object sender, EventArgs e)
-{
-    if (string.IsNullOrWhiteSpace(addborrow_studId_txtbox.Text) ||
-        string.IsNullOrWhiteSpace(addborrow_title_txtbox.Text))
-    {
-        MessageBox.Show("Please fill in all fields.");
-        return;
-    }
-
-    string student_id = addborrow_studId_txtbox.Text;
-    string book_title = addborrow_title_txtbox.Text;
-    DateTime return_date = addborrow_returnDate_dtp.Value;
-
-    if (!IsValidStudentNumber(student_id))
-    {
-        MessageBox.Show("Invalid student number format.");
-        return;
-    }
-
-    DialogResult result = MessageBox.Show("Do you confirm the data that you have entered?", "Confirm Borrow Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-    if (result == DialogResult.Yes)
-    {
-        try
+        private void addborrow(object sender, EventArgs e)
         {
-            string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
-            using (OracleConnection conn = new OracleConnection(connectionString))
+            if (string.IsNullOrWhiteSpace(addborrow_studId_txtbox.Text) ||
+                string.IsNullOrWhiteSpace(addborrow_title_txtbox.Text))
             {
-                conn.Open();
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
 
-                // Check if the student ID exists
-                string checkStudentQuery = "SELECT COUNT(*) FROM STUDENTS WHERE STUDENT_NUMBER = :student_id";
-                using (OracleCommand checkStudentCmd = new OracleCommand(checkStudentQuery, conn))
+            string student_id = addborrow_studId_txtbox.Text;
+            string book_title = addborrow_title_txtbox.Text;
+            DateTime return_date = addborrow_returnDate_dtp.Value;
+
+            if (!IsValidStudentNumber(student_id))
+            {
+                MessageBox.Show("Invalid student number format.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Do you confirm the data that you have entered?", "Confirm Borrow Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
                 {
-                    checkStudentCmd.Parameters.Add(new OracleParameter("student_id", student_id));
-                    int studentCount = Convert.ToInt32(checkStudentCmd.ExecuteScalar());
-                    if (studentCount == 0)
+                    string connectionString = "User Id=RUSSELL; Password=Russell_2700; Data Source=localhost:1521/XE;";
+                    using (OracleConnection conn = new OracleConnection(connectionString))
                     {
-                        MessageBox.Show("Student ID does not exist.");
-                        return;
-                    }
-                }
+                        conn.Open();
 
-                // Check if the book title exists
-                string checkBookQuery = "SELECT COUNT(*) FROM BOOKS WHERE TITLE = :book_title";
-                using (OracleCommand checkBookCmd = new OracleCommand(checkBookQuery, conn))
-                {
-                    checkBookCmd.Parameters.Add(new OracleParameter("book_title", book_title));
-                    int bookCount = Convert.ToInt32(checkBookCmd.ExecuteScalar());
-                    if (bookCount == 0)
-                    {
-                        MessageBox.Show("Book title does not exist.");
-                        return;
-                    }
-                }
+                        // Check if the student ID exists
+                        string checkStudentQuery = "SELECT COUNT(*) FROM STUDENTS WHERE STUDENT_NUMBER = :student_id";
+                        using (OracleCommand checkStudentCmd = new OracleCommand(checkStudentQuery, conn))
+                        {
+                            checkStudentCmd.Parameters.Add(new OracleParameter("student_id", student_id));
+                            int studentCount = Convert.ToInt32(checkStudentCmd.ExecuteScalar());
+                            if (studentCount == 0)
+                            {
+                                MessageBox.Show("Student ID does not exist.");
+                                return;
+                            }
+                        }
 
-                // Insert the borrow record
-                string query = @"
+                        // Check if the book title exists
+                        string checkBookQuery = "SELECT COUNT(*) FROM BOOKS WHERE TITLE = :book_title";
+                        using (OracleCommand checkBookCmd = new OracleCommand(checkBookQuery, conn))
+                        {
+                            checkBookCmd.Parameters.Add(new OracleParameter("book_title", book_title));
+                            int bookCount = Convert.ToInt32(checkBookCmd.ExecuteScalar());
+                            if (bookCount == 0)
+                            {
+                                MessageBox.Show("Book title does not exist.");
+                                return;
+                            }
+                        }
+
+                        // Insert the borrow record
+                        string query = @"
                     INSERT INTO borrowed_books (borrower_id, book_id, borrow_due, borrow_date, status)
                     SELECT 
                         s.student_number, 
@@ -234,26 +234,26 @@ namespace Library_system
                     WHERE 
                         s.student_number = :student_id";
 
-                using (OracleCommand cmd = new OracleCommand(query, conn))
-                {
-                    cmd.Parameters.Add(new OracleParameter("return_date", return_date));
-                    cmd.Parameters.Add(new OracleParameter("book_title", book_title));
-                    cmd.Parameters.Add(new OracleParameter("student_id", student_id));
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            cmd.Parameters.Add(new OracleParameter("return_date", return_date));
+                            cmd.Parameters.Add(new OracleParameter("book_title", book_title));
+                            cmd.Parameters.Add(new OracleParameter("student_id", student_id));
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Book borrowed successfully.");
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Book borrowed successfully.");
+                        }
+
+                        enableall(addborrow_panel); // Enable all panels after insertion
+                        loadBorrow(); // Reload borrowed books
+                    }
                 }
-
-                enableall(addborrow_panel); // Enable all panels after insertion
-                loadBorrow(); // Reload borrowed books
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error: " + ex.Message);
-        }
-    }
-}
 
         private void status_filter(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -1070,6 +1070,11 @@ namespace Library_system
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel7_Click(object sender, PaintEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
