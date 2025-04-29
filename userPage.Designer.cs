@@ -36,9 +36,6 @@
             pnlBORROW = new Panel();
             pictureBox2 = new PictureBox();
             label2 = new Label();
-            pnlBOOKMARKS = new Panel();
-            pictureBox3 = new PictureBox();
-            label3 = new Label();
             panel1 = new Panel();
             pictureBox4 = new PictureBox();
             label4 = new Label();
@@ -52,11 +49,6 @@
             lblLANGUAGE = new Label();
             lblTITLE = new Label();
             btnCONFIRM = new Button();
-            label7 = new Label();
-            label6 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label5 = new Label();
             btnBOOKMARK = new Button();
             btnBORROW = new Button();
             booksDGV = new DataGridView();
@@ -66,13 +58,13 @@
             AUTHOR = new DataGridViewTextBoxColumn();
             GENRE = new DataGridViewTextBoxColumn();
             AVAILABLE = new DataGridViewTextBoxColumn();
+            lblNAME = new Label();
+            lblSTUDENTNUM = new Label();
             flpDASHBOARD.SuspendLayout();
             pnlCHECKIN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlBORROW.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            pnlBOOKMARKS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             pnlCHECK.SuspendLayout();
@@ -88,13 +80,13 @@
             pnlHEADER.Name = "pnlHEADER";
             pnlHEADER.Size = new Size(1084, 55);
             pnlHEADER.TabIndex = 0;
+            pnlHEADER.Paint += pnlHEADER_Paint;
             // 
             // flpDASHBOARD
             // 
             flpDASHBOARD.BackColor = SystemColors.ButtonHighlight;
             flpDASHBOARD.Controls.Add(pnlCHECKIN);
             flpDASHBOARD.Controls.Add(pnlBORROW);
-            flpDASHBOARD.Controls.Add(pnlBOOKMARKS);
             flpDASHBOARD.Controls.Add(panel1);
             flpDASHBOARD.Location = new Point(0, 53);
             flpDASHBOARD.Name = "flpDASHBOARD";
@@ -162,49 +154,19 @@
             label2.TabIndex = 4;
             label2.Text = "BORROW BOOK";
             // 
-            // pnlBOOKMARKS
-            // 
-            pnlBOOKMARKS.BackColor = SystemColors.ButtonHighlight;
-            pnlBOOKMARKS.Controls.Add(pictureBox3);
-            pnlBOOKMARKS.Controls.Add(label3);
-            pnlBOOKMARKS.Location = new Point(3, 113);
-            pnlBOOKMARKS.Name = "pnlBOOKMARKS";
-            pnlBOOKMARKS.Size = new Size(184, 49);
-            pnlBOOKMARKS.TabIndex = 3;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.booksmark;
-            pictureBox3.Location = new Point(11, 8);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(32, 32);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 5;
-            pictureBox3.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(66, 13);
-            label3.Name = "label3";
-            label3.Size = new Size(96, 22);
-            label3.TabIndex = 5;
-            label3.Text = "BOOKMARKS";
-            // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ButtonHighlight;
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(label4);
-            panel1.Location = new Point(3, 168);
+            panel1.Location = new Point(3, 113);
             panel1.Name = "panel1";
             panel1.Size = new Size(184, 49);
             panel1.TabIndex = 6;
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.video_book;
+            pictureBox4.Image = Properties.Resources.logout;
             pictureBox4.Location = new Point(11, 8);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(32, 32);
@@ -216,11 +178,11 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(60, 13);
+            label4.Location = new Point(64, 13);
             label4.Name = "label4";
-            label4.Size = new Size(108, 22);
+            label4.Size = new Size(75, 22);
             label4.TabIndex = 5;
-            label4.Text = "VIEW LIBRARY";
+            label4.Text = "LOG OUT";
             // 
             // pnlCHECK
             // 
@@ -269,136 +231,104 @@
             // pnlRECEIPT
             // 
             pnlRECEIPT.BackColor = SystemColors.ActiveCaption;
+            pnlRECEIPT.BackgroundImage = Properties.Resources.BORROWERRECEIPT__1_;
+            pnlRECEIPT.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlRECEIPT.Controls.Add(lblSTUDENTNUM);
+            pnlRECEIPT.Controls.Add(lblNAME);
             pnlRECEIPT.Controls.Add(lblGENRE);
             pnlRECEIPT.Controls.Add(lblAUTHOR);
             pnlRECEIPT.Controls.Add(lblLANGUAGE);
             pnlRECEIPT.Controls.Add(lblTITLE);
             pnlRECEIPT.Controls.Add(btnCONFIRM);
-            pnlRECEIPT.Controls.Add(label7);
-            pnlRECEIPT.Controls.Add(label6);
-            pnlRECEIPT.Controls.Add(label10);
-            pnlRECEIPT.Controls.Add(label9);
-            pnlRECEIPT.Controls.Add(label5);
-            pnlRECEIPT.Location = new Point(290, 55);
+            pnlRECEIPT.Location = new Point(290, -3);
             pnlRECEIPT.Name = "pnlRECEIPT";
-            pnlRECEIPT.Size = new Size(281, 354);
+            pnlRECEIPT.Size = new Size(281, 440);
             pnlRECEIPT.TabIndex = 3;
             // 
             // lblGENRE
             // 
             lblGENRE.AutoSize = true;
-            lblGENRE.Location = new Point(114, 223);
+            lblGENRE.BackColor = SystemColors.ActiveCaptionText;
+            lblGENRE.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGENRE.ForeColor = SystemColors.ControlLightLight;
+            lblGENRE.Location = new Point(116, 182);
             lblGENRE.Name = "lblGENRE";
-            lblGENRE.Size = new Size(44, 15);
+            lblGENRE.Size = new Size(49, 17);
             lblGENRE.TabIndex = 12;
             lblGENRE.Text = "label13";
             // 
             // lblAUTHOR
             // 
             lblAUTHOR.AutoSize = true;
-            lblAUTHOR.Location = new Point(114, 177);
+            lblAUTHOR.BackColor = SystemColors.ActiveCaptionText;
+            lblAUTHOR.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAUTHOR.ForeColor = SystemColors.ControlLightLight;
+            lblAUTHOR.Location = new Point(127, 132);
             lblAUTHOR.Name = "lblAUTHOR";
-            lblAUTHOR.Size = new Size(44, 15);
+            lblAUTHOR.Size = new Size(49, 17);
             lblAUTHOR.TabIndex = 11;
             lblAUTHOR.Text = "label12";
             // 
             // lblLANGUAGE
             // 
             lblLANGUAGE.AutoSize = true;
-            lblLANGUAGE.Location = new Point(128, 129);
+            lblLANGUAGE.BackColor = SystemColors.ActiveCaptionText;
+            lblLANGUAGE.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLANGUAGE.ForeColor = SystemColors.ControlLightLight;
+            lblLANGUAGE.Location = new Point(150, 231);
             lblLANGUAGE.Name = "lblLANGUAGE";
-            lblLANGUAGE.Size = new Size(44, 15);
+            lblLANGUAGE.Size = new Size(48, 17);
             lblLANGUAGE.TabIndex = 10;
             lblLANGUAGE.Text = "label11";
             // 
             // lblTITLE
             // 
             lblTITLE.AutoSize = true;
-            lblTITLE.Location = new Point(98, 79);
+            lblTITLE.BackColor = SystemColors.ActiveCaptionText;
+            lblTITLE.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTITLE.ForeColor = SystemColors.Control;
+            lblTITLE.Location = new Point(107, 84);
             lblTITLE.Name = "lblTITLE";
-            lblTITLE.Size = new Size(38, 15);
+            lblTITLE.Size = new Size(42, 17);
             lblTITLE.TabIndex = 9;
             lblTITLE.Text = "label8";
             // 
             // btnCONFIRM
             // 
-            btnCONFIRM.BackColor = SystemColors.ActiveCaptionText;
+            btnCONFIRM.BackColor = SystemColors.ButtonFace;
             btnCONFIRM.FlatStyle = FlatStyle.Flat;
-            btnCONFIRM.ForeColor = SystemColors.Control;
-            btnCONFIRM.Location = new Point(92, 283);
+            btnCONFIRM.ForeColor = SystemColors.ActiveCaptionText;
+            btnCONFIRM.Location = new Point(86, 394);
             btnCONFIRM.Name = "btnCONFIRM";
-            btnCONFIRM.Size = new Size(104, 28);
+            btnCONFIRM.Size = new Size(109, 30);
             btnCONFIRM.TabIndex = 8;
             btnCONFIRM.Text = "CONFIRM";
             btnCONFIRM.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(45, 77);
-            label7.Name = "label7";
-            label7.Size = new Size(47, 18);
-            label7.TabIndex = 7;
-            label7.Text = "TITLE:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(45, 127);
-            label6.Name = "label6";
-            label6.Size = new Size(77, 18);
-            label6.TabIndex = 6;
-            label6.Text = "LANGUAGE:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(45, 174);
-            label10.Name = "label10";
-            label10.Size = new Size(63, 18);
-            label10.TabIndex = 5;
-            label10.Text = "AUTHOR:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(45, 220);
-            label9.Name = "label9";
-            label9.Size = new Size(52, 18);
-            label9.TabIndex = 4;
-            label9.Text = "GENRE:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(58, 29);
-            label5.Name = "label5";
-            label5.Size = new Size(173, 22);
-            label5.TabIndex = 0;
-            label5.Text = "BORROWER'S RECEIPT";
+            btnCONFIRM.Click += btnCONFIRM_Click_1;
             // 
             // btnBOOKMARK
             // 
+            btnBOOKMARK.BackColor = SystemColors.ActiveCaptionText;
+            btnBOOKMARK.FlatStyle = FlatStyle.Flat;
+            btnBOOKMARK.ForeColor = SystemColors.ControlLightLight;
             btnBOOKMARK.Location = new Point(580, 398);
             btnBOOKMARK.Name = "btnBOOKMARK";
             btnBOOKMARK.Size = new Size(127, 23);
             btnBOOKMARK.TabIndex = 2;
             btnBOOKMARK.Text = "ADD TO BOOKMARK";
-            btnBOOKMARK.UseVisualStyleBackColor = true;
+            btnBOOKMARK.UseVisualStyleBackColor = false;
             // 
             // btnBORROW
             // 
+            btnBORROW.BackColor = SystemColors.ActiveCaptionText;
+            btnBORROW.FlatStyle = FlatStyle.Flat;
+            btnBORROW.ForeColor = SystemColors.ControlLightLight;
             btnBORROW.Location = new Point(726, 398);
             btnBORROW.Name = "btnBORROW";
             btnBORROW.Size = new Size(127, 23);
             btnBORROW.TabIndex = 1;
             btnBORROW.Text = "BORROW";
-            btnBORROW.UseVisualStyleBackColor = true;
+            btnBORROW.UseVisualStyleBackColor = false;
             btnBORROW.Click += btnBorrow_Click;
             // 
             // booksDGV
@@ -459,6 +389,30 @@
             AVAILABLE.ReadOnly = true;
             AVAILABLE.Width = 120;
             // 
+            // lblNAME
+            // 
+            lblNAME.AutoSize = true;
+            lblNAME.BackColor = SystemColors.ActiveCaptionText;
+            lblNAME.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNAME.ForeColor = SystemColors.ControlLightLight;
+            lblNAME.Location = new Point(101, 281);
+            lblNAME.Name = "lblNAME";
+            lblNAME.Size = new Size(65, 17);
+            lblNAME.TabIndex = 13;
+            lblNAME.Text = "lblNAME";
+            // 
+            // lblSTUDENTNUM
+            // 
+            lblSTUDENTNUM.AutoSize = true;
+            lblSTUDENTNUM.BackColor = SystemColors.ActiveCaptionText;
+            lblSTUDENTNUM.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSTUDENTNUM.ForeColor = SystemColors.ControlLightLight;
+            lblSTUDENTNUM.Location = new Point(151, 331);
+            lblSTUDENTNUM.Name = "lblSTUDENTNUM";
+            lblSTUDENTNUM.Size = new Size(124, 17);
+            lblSTUDENTNUM.TabIndex = 14;
+            lblSTUDENTNUM.Text = "lblSTUDENTNUM";
+            // 
             // userPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -479,9 +433,6 @@
             pnlBORROW.ResumeLayout(false);
             pnlBORROW.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            pnlBOOKMARKS.ResumeLayout(false);
-            pnlBOOKMARKS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -498,15 +449,9 @@
 
         private Panel pnlHEADER;
         private FlowLayoutPanel flpDASHBOARD;
-        private Panel pnlCHECKIN;
         private Panel pnlBORROW;
-        private Panel pnlBOOKMARKS;
-        private Label label1;
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label2;
-        private PictureBox pictureBox3;
-        private Label label3;
         private Panel panel1;
         private PictureBox pictureBox4;
         private Label label4;
@@ -519,21 +464,21 @@
         private Button btnBORROW;
         private Button btnBOOKMARK;
         private Panel pnlRECEIPT;
-        private Label label6;
-        private Label label10;
-        private Label label9;
-        private Label label5;
         private Label lblGENRE;
         private Label lblAUTHOR;
         private Label lblLANGUAGE;
         private Label lblTITLE;
         private Button btnCONFIRM;
-        private Label label7;
         private DataGridViewTextBoxColumn BOOK_ID;
         private DataGridViewTextBoxColumn BOOK_LANGUAGE;
         private DataGridViewTextBoxColumn TITLE;
         private DataGridViewTextBoxColumn AUTHOR;
         private DataGridViewTextBoxColumn GENRE;
         private DataGridViewTextBoxColumn AVAILABLE;
+        private Panel pnlCHECKIN;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private Label lblSTUDENTNUM;
+        private Label lblNAME;
     }
 }

@@ -22,11 +22,111 @@ namespace Library_system
         private Color defaultColor = Color.Black;
         private Color hoverColor = Color.FromArgb(255, 248, 160, 28);
 
+        // Static session class to hold logged-in user information
+        public static class Session
+        {
+            public static string StudentID { get; set; } = ""; // Use string if student numbers have dashes/letters
+            public static string FirstName { get; set; }
+            public static string LastName { get; set; }
+        }
+
         private void loginForm_Load(object sender, EventArgs e)
         {
             RoundedButtonHelper.ApplyRoundedCorners(btnLOGIN, 18);
             btnLOGIN.MouseLeave += Button_MouseLeave;
             btnLOGIN.MouseEnter += Button_MouseEnter;
+        }
+
+        private void btnLOGIN_Click(object sender, EventArgs e)
+        {
+            string userInput = txtboxUNAME.Text.Trim();
+            string password = txtboxPASS.Text;
+
+            if (string.IsNullOrWhiteSpace(userInput) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter your Student Number (or Email) and Password.");
+                return;
+            }
+
+            string passwordHash = HashPassword(password);
+
+            if (AuthenticateUser(userInput, passwordHash))
+            {
+                MessageBox.Show($"Welcome, {Session.FirstName} {Session.LastName}!");
+                this.Hide();
+                userPage userPage = new userPage(); // userPage will access loginForm.Session for user info
+                userPage.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Student Number/Email or Password.");
+            }
+        }
+
+        /// <summary>
+        /// Authenticates the user and sets the session variables if successful.
+        /// </summary>
+        /// <param name="userInput">Student number or email</param>
+        /// <param name="passwordHash">Hashed password</param>
+        /// <returns>true if authentication successful, false otherwise</returns>
+        private bool AuthenticateUser(string userInput, string passwordHash)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(connectionString))
+                {
+                    string query = @"
+                        SELECT STUDENT_NUMBER, FIRST_NAME, LAST_NAME
+                        FROM STUDENTS
+                        WHERE (STUDENT_NUMBER = :StudentNumber OR EMAIL = :Email)
+                        AND PASSWORD_HASH = :PasswordHash
+                    ";
+
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    {
+                        cmd.Parameters.Add(new OracleParameter("StudentNumber", userInput));
+                        cmd.Parameters.Add(new OracleParameter("Email", userInput));
+                        cmd.Parameters.Add(new OracleParameter("PasswordHash", passwordHash));
+
+                        conn.Open();
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Set session variables
+                                Session.StudentID = reader["STUDENT_NUMBER"].ToString();
+                                Session.FirstName = reader["FIRST_NAME"].ToString();
+                                Session.LastName = reader["LAST_NAME"].ToString();
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Hashes the given password using SHA256.
+        /// </summary>
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha = SHA256.Create())
+            {
+                byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                    builder.Append(b.ToString("x2"));
+                return builder.ToString();
+            }
         }
 
         private void Button_MouseEnter(object sender, EventArgs e)
@@ -55,74 +155,6 @@ namespace Library_system
             }
         }
 
-        private void btnLOGIN_Click(object sender, EventArgs e)
-        {
-            string userInput = txtboxUNAME.Text.Trim();
-            string password = txtboxPASS.Text;
-
-            if (string.IsNullOrWhiteSpace(userInput) || string.IsNullOrWhiteSpace(password))
-            {
-                MessageBox.Show("Please enter your Student Number (or Email) and Password.");
-                return;
-            }
-
-            string passwordHash = HashPassword(password);
-
-            if (AuthenticateUser(userInput, passwordHash))
-            {
-                MessageBox.Show("Login successful!");
-                this.Hide();
-                userPage userPage = new userPage();
-                userPage.Show();
-            }
-            else
-            {
-                MessageBox.Show("Invalid Student Number/Email or Password.");
-            }
-        }
-
-        private bool AuthenticateUser(string userInput, string passwordHash)
-        {
-            try
-            {
-                using (OracleConnection conn = new OracleConnection(connectionString))
-                {
-                    string query = @"
-                        SELECT COUNT(*) FROM STUDENTS
-                        WHERE (STUDENT_NUMBER = :StudentNumber OR EMAIL = :Email)
-                        AND PASSWORD_HASH = :PasswordHash
-                    ";
-
-                    using (OracleCommand cmd = new OracleCommand(query, conn))
-                    {
-                        cmd.Parameters.Add(new OracleParameter("StudentNumber", userInput));
-                        cmd.Parameters.Add(new OracleParameter("Email", userInput));
-                        cmd.Parameters.Add(new OracleParameter("PasswordHash", passwordHash));
-
-                        conn.Open();
-                        int userCount = Convert.ToInt32(cmd.ExecuteScalar());
-                        return userCount > 0;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
-                return false;
-            }
-        }
-
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha = SHA256.Create())
-            {
-                byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                    builder.Append(b.ToString("x2"));
-                return builder.ToString();
-            }
-        }
         private void picboxSHOWlogpass_Click(object sender, EventArgs e)
         {
             txtboxPASS.UseSystemPasswordChar = false;      // Show password

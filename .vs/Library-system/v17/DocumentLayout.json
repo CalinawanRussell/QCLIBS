@@ -1,26 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\Library-System\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Downloads\\QCLIBS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\source\\repos\\library-system\\userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|C:\\Users\\user\\Downloads\\QCLIBS\\userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\source\\repos\\library-system\\userpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\userpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:userpage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\source\\repos\\library-system\\splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:splashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\source\\repos\\library-system\\userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:userpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\signupform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:signupform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\signupform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:signupform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|c:\\users\\user\\downloads\\qclibs\\adminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07FC97-D70F-49AC-AC4C-491234F79757}|Library-system.csproj|solutionrelative:adminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +50,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 11,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "userPage.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\userPage.cs",
+              "RelativeDocumentMoniker": "userPage.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\userPage.cs [Design]",
+              "RelativeToolTip": "userPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T04:49:58.854Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -50,10 +83,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
@@ -62,64 +91,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "userPage.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.Designer.cs",
-              "RelativeDocumentMoniker": "userPage.Designer.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.Designer.cs",
-              "RelativeToolTip": "userPage.Designer.cs",
-              "ViewState": "AgIAAMYBAAAAAAAAAAAhwM0BAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "adminForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\adminForm.Designer.cs",
+              "RelativeDocumentMoniker": "adminForm.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\adminForm.Designer.cs",
+              "RelativeToolTip": "adminForm.Designer.cs",
+              "ViewState": "AgIAAHwGAAAAAAAAAAAQwIoGAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:47:12.29Z",
+              "WhenOpened": "2025-04-29T05:39:03.882Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "userPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.cs",
-              "RelativeDocumentMoniker": "userPage.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.cs [Design]",
-              "RelativeToolTip": "userPage.cs [Design]",
+              "DocumentIndex": 6,
+              "Title": "signupForm.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\signupForm.cs",
+              "RelativeDocumentMoniker": "signupForm.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\signupForm.cs",
+              "RelativeToolTip": "signupForm.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAqwLQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:53:34.738Z",
+              "WhenOpened": "2025-04-29T05:27:44.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "signupForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\signupForm.cs",
+              "RelativeDocumentMoniker": "signupForm.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\signupForm.cs [Design]",
+              "RelativeToolTip": "signupForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T05:27:43.233Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "splashscreen.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs",
-              "RelativeDocumentMoniker": "splashscreen.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs",
-              "RelativeToolTip": "splashscreen.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAqwCMAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "loginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\loginForm.cs",
+              "RelativeDocumentMoniker": "loginForm.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\loginForm.cs [Design]",
+              "RelativeToolTip": "loginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:16:49.808Z",
+              "WhenOpened": "2025-04-29T05:13:16.578Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "userPage.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\userPage.cs",
+              "RelativeDocumentMoniker": "userPage.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\userPage.cs",
+              "RelativeToolTip": "userPage.cs",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAAAO8AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T04:55:11.973Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "splashscreen.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs",
-              "RelativeDocumentMoniker": "splashscreen.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\splashscreen.cs [Design]",
-              "RelativeToolTip": "splashscreen.cs [Design]",
+              "DocumentIndex": 8,
+              "Title": "adminForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\adminForm.cs",
+              "RelativeDocumentMoniker": "adminForm.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\adminForm.cs [Design]",
+              "RelativeToolTip": "adminForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:16:48.013Z"
+              "WhenOpened": "2025-04-29T04:52:26.704Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "userPage.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\userPage.Designer.cs",
+              "RelativeDocumentMoniker": "userPage.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\userPage.Designer.cs",
+              "RelativeToolTip": "userPage.Designer.cs",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAlwOYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T04:24:41.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "adminForm.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\adminForm.cs",
+              "RelativeDocumentMoniker": "adminForm.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\adminForm.cs",
+              "RelativeToolTip": "adminForm.cs",
+              "ViewState": "AgIAAKACAAAAAAAAAAAAAMACAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T03:45:03.914Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "userPage.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.cs",
-              "RelativeDocumentMoniker": "userPage.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Library-System\\userPage.cs",
-              "RelativeToolTip": "userPage.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAD4v6IAAABLAAAAAAAAAA==",
+              "Title": "loginForm.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\QCLIBS\\loginForm.cs",
+              "RelativeDocumentMoniker": "loginForm.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\QCLIBS\\loginForm.cs",
+              "RelativeToolTip": "loginForm.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAABsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T06:33:47.041Z"
+              "WhenOpened": "2025-04-29T03:38:29.184Z",
+              "EditorCaption": ""
             }
           ]
         }

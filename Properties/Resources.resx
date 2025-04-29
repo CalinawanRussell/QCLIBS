@@ -124,8 +124,8 @@
   <data name="user icon white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user icon white.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="showpass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\showpass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="book-borrow-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book-borrow-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,17 +145,23 @@
   <data name="SIGNUP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SIGNUP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="book2 icon black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book2 icon black.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="showpass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\showpass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Setting icon white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Setting icon white.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="booksmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\booksmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BUNNY (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BUNNY (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Book icon white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Book icon white.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,11 +181,14 @@
   <data name="Library icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Library icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BORROWERRECEIPT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BORROWERRECEIPT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Search icon white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search icon white.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BORROWERRECEIPT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BORROWERRECEIPT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Caret down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Caret down.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +208,9 @@
   <data name="Search icon black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search icon black.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="book2 icon black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\book2 icon black.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user2 icon white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user2 icon white.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,13 +226,13 @@
   <data name="user2 icon black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user2 icon black.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hidepass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hidepass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user icon black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user icon black.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hidepass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hidepass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BORROWERRECEIPT (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BORROWERRECEIPT (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
