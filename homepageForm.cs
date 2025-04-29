@@ -59,9 +59,8 @@ namespace Library_system
         private void btnADMIN_Click(object sender, EventArgs e)
         {
             this.Hide();
-            adminForm adminForm = new adminForm();
-            adminForm.Show();
-
+            adminLoginForm adminLoginForm = new adminLoginForm();
+            adminLoginForm.Show();
         }
     }
 }

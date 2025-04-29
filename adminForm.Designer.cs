@@ -370,8 +370,8 @@
             flowLayoutPanel1.Controls.Add(panel4);
             flowLayoutPanel1.Controls.Add(panel5);
             flowLayoutPanel1.Controls.Add(panel6);
-            flowLayoutPanel1.Controls.Add(panel7);
             flowLayoutPanel1.Controls.Add(panel8);
+            flowLayoutPanel1.Controls.Add(panel7);
             flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(5);
@@ -515,7 +515,7 @@
             // 
             panel7.Controls.Add(label7);
             panel7.Controls.Add(pictureBox8);
-            panel7.Location = new Point(5, 221);
+            panel7.Location = new Point(5, 275);
             panel7.Margin = new Padding(0, 0, 0, 5);
             panel7.Name = "panel7";
             panel7.Size = new Size(184, 49);
@@ -527,17 +527,17 @@
             label7.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(50, 13);
             label7.Name = "label7";
-            label7.Size = new Size(66, 22);
+            label7.Size = new Size(65, 22);
             label7.TabIndex = 9;
-            label7.Text = "Settings";
+            label7.Text = "Log Out";
             // 
             // pictureBox8
             // 
-            pictureBox8.Image = Properties.Resources.Setting_icon_black;
+            pictureBox8.Image = Properties.Resources.logout1;
             pictureBox8.Location = new Point(8, 8);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(32, 32);
-            pictureBox8.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 8;
             pictureBox8.TabStop = false;
             // 
@@ -545,7 +545,7 @@
             // 
             panel8.Controls.Add(label8);
             panel8.Controls.Add(pictureBox9);
-            panel8.Location = new Point(5, 275);
+            panel8.Location = new Point(5, 221);
             panel8.Margin = new Padding(0, 0, 0, 5);
             panel8.Name = "panel8";
             panel8.Size = new Size(184, 49);
@@ -1672,7 +1672,6 @@
             button3.TabIndex = 5;
             button3.Text = "Cancel";
             button3.UseVisualStyleBackColor = true;
-            
             // 
             // addborrow_returnDate_dtp
             // 

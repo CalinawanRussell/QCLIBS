@@ -49,7 +49,7 @@
             btnLOGIN.FlatStyle = FlatStyle.Flat;
             btnLOGIN.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLOGIN.ForeColor = Color.White;
-            btnLOGIN.Location = new Point(33, 375);
+            btnLOGIN.Location = new Point(32, 374);
             btnLOGIN.Name = "btnLOGIN";
             btnLOGIN.Size = new Size(132, 35);
             btnLOGIN.TabIndex = 2;
@@ -60,7 +60,7 @@
             // picQCLIBS
             // 
             picQCLIBS.Image = (Image)resources.GetObject("picQCLIBS.Image");
-            picQCLIBS.Location = new Point(12, 52);
+            picQCLIBS.Location = new Point(11, 52);
             picQCLIBS.Name = "picQCLIBS";
             picQCLIBS.Size = new Size(175, 128);
             picQCLIBS.SizeMode = PictureBoxSizeMode.Zoom;
@@ -139,7 +139,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(199, 457);
+            ClientSize = new Size(200, 457);
             Controls.Add(picboxHIDElogpass);
             Controls.Add(picboxSHOWlogpass);
             Controls.Add(lblSIGNUP);

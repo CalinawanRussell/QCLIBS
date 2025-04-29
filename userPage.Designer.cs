@@ -44,6 +44,8 @@
             btnCHECK = new Button();
             pnlDGV = new Panel();
             pnlRECEIPT = new Panel();
+            lblSTUDENTNUM = new Label();
+            lblNAME = new Label();
             lblGENRE = new Label();
             lblAUTHOR = new Label();
             lblLANGUAGE = new Label();
@@ -58,8 +60,6 @@
             AUTHOR = new DataGridViewTextBoxColumn();
             GENRE = new DataGridViewTextBoxColumn();
             AVAILABLE = new DataGridViewTextBoxColumn();
-            lblNAME = new Label();
-            lblSTUDENTNUM = new Label();
             flpDASHBOARD.SuspendLayout();
             pnlCHECKIN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -118,7 +118,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(71, 14);
+            label1.Location = new Point(66, 14);
             label1.Name = "label1";
             label1.Size = new Size(77, 22);
             label1.TabIndex = 3;
@@ -244,6 +244,30 @@
             pnlRECEIPT.Name = "pnlRECEIPT";
             pnlRECEIPT.Size = new Size(281, 440);
             pnlRECEIPT.TabIndex = 3;
+            // 
+            // lblSTUDENTNUM
+            // 
+            lblSTUDENTNUM.AutoSize = true;
+            lblSTUDENTNUM.BackColor = SystemColors.ActiveCaptionText;
+            lblSTUDENTNUM.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSTUDENTNUM.ForeColor = SystemColors.ControlLightLight;
+            lblSTUDENTNUM.Location = new Point(151, 331);
+            lblSTUDENTNUM.Name = "lblSTUDENTNUM";
+            lblSTUDENTNUM.Size = new Size(124, 17);
+            lblSTUDENTNUM.TabIndex = 14;
+            lblSTUDENTNUM.Text = "lblSTUDENTNUM";
+            // 
+            // lblNAME
+            // 
+            lblNAME.AutoSize = true;
+            lblNAME.BackColor = SystemColors.ActiveCaptionText;
+            lblNAME.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNAME.ForeColor = SystemColors.ControlLightLight;
+            lblNAME.Location = new Point(101, 281);
+            lblNAME.Name = "lblNAME";
+            lblNAME.Size = new Size(65, 17);
+            lblNAME.TabIndex = 13;
+            lblNAME.Text = "lblNAME";
             // 
             // lblGENRE
             // 
@@ -388,30 +412,6 @@
             AVAILABLE.Name = "AVAILABLE";
             AVAILABLE.ReadOnly = true;
             AVAILABLE.Width = 120;
-            // 
-            // lblNAME
-            // 
-            lblNAME.AutoSize = true;
-            lblNAME.BackColor = SystemColors.ActiveCaptionText;
-            lblNAME.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNAME.ForeColor = SystemColors.ControlLightLight;
-            lblNAME.Location = new Point(101, 281);
-            lblNAME.Name = "lblNAME";
-            lblNAME.Size = new Size(65, 17);
-            lblNAME.TabIndex = 13;
-            lblNAME.Text = "lblNAME";
-            // 
-            // lblSTUDENTNUM
-            // 
-            lblSTUDENTNUM.AutoSize = true;
-            lblSTUDENTNUM.BackColor = SystemColors.ActiveCaptionText;
-            lblSTUDENTNUM.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSTUDENTNUM.ForeColor = SystemColors.ControlLightLight;
-            lblSTUDENTNUM.Location = new Point(151, 331);
-            lblSTUDENTNUM.Name = "lblSTUDENTNUM";
-            lblSTUDENTNUM.Size = new Size(124, 17);
-            lblSTUDENTNUM.TabIndex = 14;
-            lblSTUDENTNUM.Text = "lblSTUDENTNUM";
             // 
             // userPage
             // 

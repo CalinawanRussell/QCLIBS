@@ -4,6 +4,9 @@
     <Compile Update="adminForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="adminLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ColoredProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
