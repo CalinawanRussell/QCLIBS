@@ -54,11 +54,6 @@ namespace Library_system
             foreach (Control ctl in pnlBORROW.Controls)
                 ctl.Click += pnlBORROW_Click;
 
-            pnlCHECKIN.Cursor = Cursors.Hand;
-            pnlCHECKIN.Click += pnlCHECKIN_Click;
-            foreach (Control ctl in pnlCHECKIN.Controls)
-                ctl.Click += pnlCHECKIN_Click;
-
             SetupBooksDGV();
         }
 
@@ -91,21 +86,17 @@ namespace Library_system
 
         private void panel1_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+            Application.Exit();
         }
 
         private void ShowCheckInControls()
         {
-            pnlCHECK.Visible = true;
-            lblTIME.Visible = true;
-            btnCHECK.Visible = true;
+
         }
 
         private void HideCheckInControls()
         {
-            pnlCHECK.Visible = false;
-            lblTIME.Visible = false;
-            btnCHECK.Visible = false;
+
         }
 
         private void ShowDataGridView()
@@ -181,12 +172,6 @@ namespace Library_system
             // Custom painting logic if needed
         }
 
-        private void btnCHECK_Click(object sender, EventArgs e)
-        {
-            string currentTime = DateTime.Now.ToString("hh:mmtt");
-            lblTIME.Text = $"You checked in at: {currentTime}";
-        }
-
         // --- Borrowing Receipt Logic ---
 
         // When user clicks the "Borrow" button under the DGV
@@ -258,10 +243,7 @@ namespace Library_system
             pnlRECEIPT.Visible = false; // Hide receipt panel
             LoadBooks(); // Reload books
         }
-        private void pnlHEADER_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void btnCONFIRM_Click_1(object sender, EventArgs e)
         {
@@ -278,6 +260,14 @@ namespace Library_system
 
         }
 
-       
+        private void picEXIT_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void picMINI_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

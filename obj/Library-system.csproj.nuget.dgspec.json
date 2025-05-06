@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Downloads\\QCLIBS\\Library-system.csproj": {}
+    "C:\\Users\\user\\OneDrive\\Desktop\\QCLIBS111\\Library-system.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Downloads\\QCLIBS\\Library-system.csproj": {
+    "C:\\Users\\user\\OneDrive\\Desktop\\QCLIBS111\\Library-system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Downloads\\QCLIBS\\Library-system.csproj",
+        "projectUniqueName": "C:\\Users\\user\\OneDrive\\Desktop\\QCLIBS111\\Library-system.csproj",
         "projectName": "Library-system",
-        "projectPath": "C:\\Users\\user\\Downloads\\QCLIBS\\Library-system.csproj",
+        "projectPath": "C:\\Users\\user\\OneDrive\\Desktop\\QCLIBS111\\Library-system.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Downloads\\QCLIBS\\obj\\",
+        "outputPath": "C:\\Users\\user\\OneDrive\\Desktop\\QCLIBS111\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

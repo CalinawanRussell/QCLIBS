@@ -1074,7 +1074,20 @@ namespace Library_system
 
         private void panel7_Click(object sender, PaintEventArgs e)
         {
+            this.Hide();
+            adminLoginForm adminLoginForm = new adminLoginForm();
+            adminLoginForm.Show();
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
             Application.Exit();
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

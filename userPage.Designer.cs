@@ -29,19 +29,17 @@
         private void InitializeComponent()
         {
             pnlHEADER = new Panel();
-            flpDASHBOARD = new FlowLayoutPanel();
-            pnlCHECKIN = new Panel();
-            pictureBox1 = new PictureBox();
+            picEXIT = new PictureBox();
+            picMINI = new PictureBox();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            flpDASHBOARD = new FlowLayoutPanel();
             pnlBORROW = new Panel();
             pictureBox2 = new PictureBox();
             label2 = new Label();
             panel1 = new Panel();
             pictureBox4 = new PictureBox();
             label4 = new Label();
-            pnlCHECK = new Panel();
-            lblTIME = new Label();
-            btnCHECK = new Button();
             pnlDGV = new Panel();
             pnlRECEIPT = new Panel();
             lblSTUDENTNUM = new Label();
@@ -51,7 +49,6 @@
             lblLANGUAGE = new Label();
             lblTITLE = new Label();
             btnCONFIRM = new Button();
-            btnBOOKMARK = new Button();
             btnBORROW = new Button();
             booksDGV = new DataGridView();
             BOOK_ID = new DataGridViewTextBoxColumn();
@@ -60,14 +57,15 @@
             AUTHOR = new DataGridViewTextBoxColumn();
             GENRE = new DataGridViewTextBoxColumn();
             AVAILABLE = new DataGridViewTextBoxColumn();
-            flpDASHBOARD.SuspendLayout();
-            pnlCHECKIN.SuspendLayout();
+            pnlHEADER.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picEXIT).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picMINI).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            flpDASHBOARD.SuspendLayout();
             pnlBORROW.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            pnlCHECK.SuspendLayout();
             pnlDGV.SuspendLayout();
             pnlRECEIPT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)booksDGV).BeginInit();
@@ -75,17 +73,61 @@
             // 
             // pnlHEADER
             // 
-            pnlHEADER.BackColor = SystemColors.ActiveCaptionText;
+            pnlHEADER.BackColor = SystemColors.ControlLightLight;
+            pnlHEADER.Controls.Add(picEXIT);
+            pnlHEADER.Controls.Add(picMINI);
+            pnlHEADER.Controls.Add(label1);
+            pnlHEADER.Controls.Add(pictureBox1);
             pnlHEADER.Location = new Point(-9, -1);
             pnlHEADER.Name = "pnlHEADER";
             pnlHEADER.Size = new Size(1084, 55);
             pnlHEADER.TabIndex = 0;
-            pnlHEADER.Paint += pnlHEADER_Paint;
+            // 
+            // picEXIT
+            // 
+            picEXIT.Image = Properties.Resources.exit;
+            picEXIT.Location = new Point(1033, 17);
+            picEXIT.Name = "picEXIT";
+            picEXIT.Size = new Size(18, 18);
+            picEXIT.SizeMode = PictureBoxSizeMode.StretchImage;
+            picEXIT.TabIndex = 11;
+            picEXIT.TabStop = false;
+            picEXIT.Click += picEXIT_Click;
+            // 
+            // picMINI
+            // 
+            picMINI.Image = Properties.Resources.minimize_sign;
+            picMINI.Location = new Point(996, 17);
+            picMINI.Name = "picMINI";
+            picMINI.Size = new Size(18, 18);
+            picMINI.SizeMode = PictureBoxSizeMode.StretchImage;
+            picMINI.TabIndex = 10;
+            picMINI.TabStop = false;
+            picMINI.Click += picMINI_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(61, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(70, 24);
+            label1.TabIndex = 8;
+            label1.Text = "QCLIBS";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Library_icon;
+            pictureBox1.Location = new Point(21, 13);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // flpDASHBOARD
             // 
             flpDASHBOARD.BackColor = SystemColors.ButtonHighlight;
-            flpDASHBOARD.Controls.Add(pnlCHECKIN);
             flpDASHBOARD.Controls.Add(pnlBORROW);
             flpDASHBOARD.Controls.Add(panel1);
             flpDASHBOARD.Location = new Point(0, 53);
@@ -93,43 +135,12 @@
             flpDASHBOARD.Size = new Size(194, 733);
             flpDASHBOARD.TabIndex = 1;
             // 
-            // pnlCHECKIN
-            // 
-            pnlCHECKIN.BackColor = SystemColors.ButtonHighlight;
-            pnlCHECKIN.Controls.Add(pictureBox1);
-            pnlCHECKIN.Controls.Add(label1);
-            pnlCHECKIN.Cursor = Cursors.Hand;
-            pnlCHECKIN.Location = new Point(3, 3);
-            pnlCHECKIN.Name = "pnlCHECKIN";
-            pnlCHECKIN.Size = new Size(184, 49);
-            pnlCHECKIN.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.check_in;
-            pictureBox1.Location = new Point(11, 8);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(32, 32);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(66, 14);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 22);
-            label1.TabIndex = 3;
-            label1.Text = "CHECK IN";
-            // 
             // pnlBORROW
             // 
             pnlBORROW.BackColor = SystemColors.ButtonHighlight;
             pnlBORROW.Controls.Add(pictureBox2);
             pnlBORROW.Controls.Add(label2);
-            pnlBORROW.Location = new Point(3, 58);
+            pnlBORROW.Location = new Point(3, 3);
             pnlBORROW.Name = "pnlBORROW";
             pnlBORROW.Size = new Size(184, 49);
             pnlBORROW.TabIndex = 3;
@@ -159,11 +170,10 @@
             panel1.BackColor = SystemColors.ButtonHighlight;
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(label4);
-            panel1.Location = new Point(3, 113);
+            panel1.Location = new Point(3, 58);
             panel1.Name = "panel1";
             panel1.Size = new Size(184, 49);
             panel1.TabIndex = 6;
-            panel1.Paint += panel1_Paint;
             // 
             // pictureBox4
             // 
@@ -185,43 +195,9 @@
             label4.TabIndex = 5;
             label4.Text = "LOG OUT";
             // 
-            // pnlCHECK
-            // 
-            pnlCHECK.BackColor = Color.Gainsboro;
-            pnlCHECK.Controls.Add(lblTIME);
-            pnlCHECK.Controls.Add(btnCHECK);
-            pnlCHECK.Location = new Point(483, 140);
-            pnlCHECK.Name = "pnlCHECK";
-            pnlCHECK.Size = new Size(281, 325);
-            pnlCHECK.TabIndex = 2;
-            pnlCHECK.Paint += pnlCHECK_Paint;
-            // 
-            // lblTIME
-            // 
-            lblTIME.AutoSize = true;
-            lblTIME.ForeColor = SystemColors.ActiveCaptionText;
-            lblTIME.Location = new Point(73, 89);
-            lblTIME.Name = "lblTIME";
-            lblTIME.Size = new Size(0, 15);
-            lblTIME.TabIndex = 1;
-            // 
-            // btnCHECK
-            // 
-            btnCHECK.BackColor = SystemColors.Desktop;
-            btnCHECK.FlatStyle = FlatStyle.Flat;
-            btnCHECK.ForeColor = SystemColors.ControlLightLight;
-            btnCHECK.Location = new Point(62, 246);
-            btnCHECK.Name = "btnCHECK";
-            btnCHECK.Size = new Size(163, 44);
-            btnCHECK.TabIndex = 0;
-            btnCHECK.Text = "CHECK IN";
-            btnCHECK.UseVisualStyleBackColor = false;
-            btnCHECK.Click += btnCHECK_Click;
-            // 
             // pnlDGV
             // 
             pnlDGV.Controls.Add(pnlRECEIPT);
-            pnlDGV.Controls.Add(btnBOOKMARK);
             pnlDGV.Controls.Add(btnBORROW);
             pnlDGV.Controls.Add(booksDGV);
             pnlDGV.Location = new Point(193, 56);
@@ -241,9 +217,9 @@
             pnlRECEIPT.Controls.Add(lblLANGUAGE);
             pnlRECEIPT.Controls.Add(lblTITLE);
             pnlRECEIPT.Controls.Add(btnCONFIRM);
-            pnlRECEIPT.Location = new Point(290, -3);
+            pnlRECEIPT.Location = new Point(288, 3);
             pnlRECEIPT.Name = "pnlRECEIPT";
-            pnlRECEIPT.Size = new Size(281, 440);
+            pnlRECEIPT.Size = new Size(281, 434);
             pnlRECEIPT.TabIndex = 3;
             // 
             // lblSTUDENTNUM
@@ -252,7 +228,7 @@
             lblSTUDENTNUM.BackColor = SystemColors.ActiveCaptionText;
             lblSTUDENTNUM.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSTUDENTNUM.ForeColor = SystemColors.ControlLightLight;
-            lblSTUDENTNUM.Location = new Point(151, 331);
+            lblSTUDENTNUM.Location = new Point(150, 326);
             lblSTUDENTNUM.Name = "lblSTUDENTNUM";
             lblSTUDENTNUM.Size = new Size(124, 17);
             lblSTUDENTNUM.TabIndex = 14;
@@ -264,7 +240,7 @@
             lblNAME.BackColor = SystemColors.ActiveCaptionText;
             lblNAME.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNAME.ForeColor = SystemColors.ControlLightLight;
-            lblNAME.Location = new Point(101, 281);
+            lblNAME.Location = new Point(100, 277);
             lblNAME.Name = "lblNAME";
             lblNAME.Size = new Size(65, 17);
             lblNAME.TabIndex = 13;
@@ -276,7 +252,7 @@
             lblGENRE.BackColor = SystemColors.ActiveCaptionText;
             lblGENRE.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblGENRE.ForeColor = SystemColors.ControlLightLight;
-            lblGENRE.Location = new Point(116, 182);
+            lblGENRE.Location = new Point(116, 180);
             lblGENRE.Name = "lblGENRE";
             lblGENRE.Size = new Size(49, 17);
             lblGENRE.TabIndex = 12;
@@ -288,7 +264,7 @@
             lblAUTHOR.BackColor = SystemColors.ActiveCaptionText;
             lblAUTHOR.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAUTHOR.ForeColor = SystemColors.ControlLightLight;
-            lblAUTHOR.Location = new Point(127, 132);
+            lblAUTHOR.Location = new Point(127, 130);
             lblAUTHOR.Name = "lblAUTHOR";
             lblAUTHOR.Size = new Size(49, 17);
             lblAUTHOR.TabIndex = 11;
@@ -300,7 +276,7 @@
             lblLANGUAGE.BackColor = SystemColors.ActiveCaptionText;
             lblLANGUAGE.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblLANGUAGE.ForeColor = SystemColors.ControlLightLight;
-            lblLANGUAGE.Location = new Point(150, 231);
+            lblLANGUAGE.Location = new Point(150, 228);
             lblLANGUAGE.Name = "lblLANGUAGE";
             lblLANGUAGE.Size = new Size(48, 17);
             lblLANGUAGE.TabIndex = 10;
@@ -312,7 +288,7 @@
             lblTITLE.BackColor = SystemColors.ActiveCaptionText;
             lblTITLE.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTITLE.ForeColor = SystemColors.Control;
-            lblTITLE.Location = new Point(107, 84);
+            lblTITLE.Location = new Point(106, 83);
             lblTITLE.Name = "lblTITLE";
             lblTITLE.Size = new Size(42, 17);
             lblTITLE.TabIndex = 9;
@@ -323,7 +299,7 @@
             btnCONFIRM.BackColor = SystemColors.ButtonFace;
             btnCONFIRM.FlatStyle = FlatStyle.Flat;
             btnCONFIRM.ForeColor = SystemColors.ActiveCaptionText;
-            btnCONFIRM.Location = new Point(86, 394);
+            btnCONFIRM.Location = new Point(89, 388);
             btnCONFIRM.Name = "btnCONFIRM";
             btnCONFIRM.Size = new Size(109, 30);
             btnCONFIRM.TabIndex = 8;
@@ -331,26 +307,14 @@
             btnCONFIRM.UseVisualStyleBackColor = false;
             btnCONFIRM.Click += btnCONFIRM_Click_1;
             // 
-            // btnBOOKMARK
-            // 
-            btnBOOKMARK.BackColor = SystemColors.ActiveCaptionText;
-            btnBOOKMARK.FlatStyle = FlatStyle.Flat;
-            btnBOOKMARK.ForeColor = SystemColors.ControlLightLight;
-            btnBOOKMARK.Location = new Point(580, 398);
-            btnBOOKMARK.Name = "btnBOOKMARK";
-            btnBOOKMARK.Size = new Size(127, 23);
-            btnBOOKMARK.TabIndex = 2;
-            btnBOOKMARK.Text = "ADD TO BOOKMARK";
-            btnBOOKMARK.UseVisualStyleBackColor = false;
-            // 
             // btnBORROW
             // 
             btnBORROW.BackColor = SystemColors.ActiveCaptionText;
             btnBORROW.FlatStyle = FlatStyle.Flat;
             btnBORROW.ForeColor = SystemColors.ControlLightLight;
-            btnBORROW.Location = new Point(726, 398);
+            btnBORROW.Location = new Point(725, 391);
             btnBORROW.Name = "btnBORROW";
-            btnBORROW.Size = new Size(127, 23);
+            btnBORROW.Size = new Size(128, 35);
             btnBORROW.TabIndex = 1;
             btnBORROW.Text = "BORROW";
             btnBORROW.UseVisualStyleBackColor = false;
@@ -420,25 +384,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1058, 502);
             Controls.Add(pnlDGV);
-            Controls.Add(pnlCHECK);
             Controls.Add(flpDASHBOARD);
             Controls.Add(pnlHEADER);
             FormBorderStyle = FormBorderStyle.None;
             Name = "userPage";
             Text = "userPage";
             Load += userPage_Load;
-            flpDASHBOARD.ResumeLayout(false);
-            pnlCHECKIN.ResumeLayout(false);
-            pnlCHECKIN.PerformLayout();
+            pnlHEADER.ResumeLayout(false);
+            pnlHEADER.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picEXIT).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picMINI).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            flpDASHBOARD.ResumeLayout(false);
             pnlBORROW.ResumeLayout(false);
             pnlBORROW.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            pnlCHECK.ResumeLayout(false);
-            pnlCHECK.PerformLayout();
             pnlDGV.ResumeLayout(false);
             pnlRECEIPT.ResumeLayout(false);
             pnlRECEIPT.PerformLayout();
@@ -456,14 +419,10 @@
         private Panel panel1;
         private PictureBox pictureBox4;
         private Label label4;
-        private Panel pnlCHECK;
-        private Button btnCHECK;
-        private Label lblTIME;
         private Panel pnlDGV;
         private DataGridView booksDGV;
         private DataGridViewCellEventHandler booksDGV_CellContentClick;
         private Button btnBORROW;
-        private Button btnBOOKMARK;
         private Panel pnlRECEIPT;
         private Label lblGENRE;
         private Label lblAUTHOR;
@@ -476,10 +435,11 @@
         private DataGridViewTextBoxColumn AUTHOR;
         private DataGridViewTextBoxColumn GENRE;
         private DataGridViewTextBoxColumn AVAILABLE;
-        private Panel pnlCHECKIN;
-        private PictureBox pictureBox1;
-        private Label label1;
         private Label lblSTUDENTNUM;
         private Label lblNAME;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private PictureBox picMINI;
+        private PictureBox picEXIT;
     }
 }

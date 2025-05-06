@@ -52,8 +52,7 @@
             DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            label1 = new Label();
-            pictureBox3 = new PictureBox();
+            pictureBox16 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             label2 = new Label();
@@ -214,7 +213,7 @@
             missingBooksToolStripMenuItem = new ToolStripMenuItem();
             totalBooksToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabs_panel.SuspendLayout();
@@ -272,8 +271,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pictureBox16);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label2);
@@ -285,35 +283,27 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // label1
+            // pictureBox16
             // 
-            label1.AutoEllipsis = true;
-            label1.Font = new Font("Trebuchet MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1032, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(123, 23);
-            label1.TabIndex = 7;
-            label1.Text = "Username";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.user2_icon_black;
-            pictureBox3.Location = new Point(994, 9);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(32, 32);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox3.TabIndex = 6;
-            pictureBox3.TabStop = false;
+            pictureBox16.Image = Properties.Resources.minimize_sign;
+            pictureBox16.Location = new Point(1094, 18);
+            pictureBox16.Name = "pictureBox16";
+            pictureBox16.Size = new Size(18, 18);
+            pictureBox16.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox16.TabIndex = 9;
+            pictureBox16.TabStop = false;
+            pictureBox16.Click += pictureBox16_Click;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.notification_black;
-            pictureBox2.Location = new Point(956, 9);
+            pictureBox2.Image = Properties.Resources.exit;
+            pictureBox2.Location = new Point(1135, 18);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(32, 32);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 5;
+            pictureBox2.Size = new Size(18, 18);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox1
             // 
@@ -550,7 +540,6 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(184, 49);
             panel7.TabIndex = 4;
-            panel7.Paint += panel7_Paint;
             // 
             // label7
             // 
@@ -2013,7 +2002,7 @@
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabs_panel.ResumeLayout(false);
@@ -2092,16 +2081,12 @@
         }
 
         #endregion
-
-        private Label label1;
         private Panel panel1;
         private Panel tabs_panel;
         private FlowLayoutPanel flowLayoutPanel1;
         private DateTimePicker dashboard_from_dtp;
         private PictureBox pictureBox1;
         private Label label2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
         private DateTimePicker dashboard_to_dtp;
         private Panel panel4;
         private Label label4;
@@ -2255,5 +2240,7 @@
         private Panel panel3;
         private Label label3;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox16;
+        private PictureBox pictureBox2;
     }
 }
