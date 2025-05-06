@@ -34,6 +34,7 @@ namespace Library_system
         {
             lblNAME.Text = loginForm.Session.FirstName + " " + loginForm.Session.LastName;
             lblSTUDENTNUM.Text = loginForm.Session.StudentID.ToString();
+            lblUsername.Text = loginForm.Session.FirstName;
 
             RoundedButtonHelper.ApplyRoundedCorners(btnBORROW, 18);
             RoundedButtonHelper.ApplyRoundedCorners(btnCONFIRM, 18);

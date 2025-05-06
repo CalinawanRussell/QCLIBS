@@ -57,6 +57,8 @@
             AUTHOR = new DataGridViewTextBoxColumn();
             GENRE = new DataGridViewTextBoxColumn();
             AVAILABLE = new DataGridViewTextBoxColumn();
+            pictureBox3 = new PictureBox();
+            lblUsername = new Label();
             pnlHEADER.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picEXIT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picMINI).BeginInit();
@@ -69,11 +71,14 @@
             pnlDGV.SuspendLayout();
             pnlRECEIPT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)booksDGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // pnlHEADER
             // 
             pnlHEADER.BackColor = SystemColors.ControlLightLight;
+            pnlHEADER.Controls.Add(lblUsername);
+            pnlHEADER.Controls.Add(pictureBox3);
             pnlHEADER.Controls.Add(picEXIT);
             pnlHEADER.Controls.Add(picMINI);
             pnlHEADER.Controls.Add(label1);
@@ -378,6 +383,26 @@
             AVAILABLE.ReadOnly = true;
             AVAILABLE.Width = 120;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.user;
+            pictureBox3.Location = new Point(788, 16);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(25, 25);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 12;
+            pictureBox3.TabStop = false;
+            // 
+            // lblUsername
+            // 
+            lblUsername.AutoSize = true;
+            lblUsername.Font = new Font("Trebuchet MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsername.Location = new Point(825, 19);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(76, 20);
+            lblUsername.TabIndex = 13;
+            lblUsername.Text = "Username";
+            // 
             // userPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -406,6 +431,7 @@
             pnlRECEIPT.ResumeLayout(false);
             pnlRECEIPT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)booksDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -441,5 +467,7 @@
         private Label label1;
         private PictureBox picMINI;
         private PictureBox picEXIT;
+        private PictureBox pictureBox3;
+        private Label lblUsername;
     }
 }
